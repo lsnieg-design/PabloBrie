@@ -44,10 +44,9 @@ body {
 
     color: var(--texto-oscuro);
 
-    overflow: hidden;
+    overflow: visible;
 
 }
-
 
 /* ==================================================
    APERTURA
