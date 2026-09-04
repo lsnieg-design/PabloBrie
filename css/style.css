@@ -1047,3 +1047,192 @@ button {
     }
 
 }
+
+/* ==================================================
+   FOOTER GENERAL
+================================================== */
+
+.site-footer {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 90px;
+
+    padding:
+        25px
+        clamp(25px, 5vw, 80px);
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+    align-items: center;
+
+    background: var(--negro);
+
+    color: var(--texto-suave);
+
+    border-top: 1px solid rgba(198, 163, 90, .25);
+
+}
+
+
+/* ==================================================
+   FOOTER — IZQUIERDA
+================================================== */
+
+.footer-left {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.footer-left span:first-child {
+
+    font-size: 9px;
+
+    letter-spacing: .18em;
+
+    color: var(--blanco);
+
+}
+
+
+.footer-left span:last-child {
+
+    font-size: 7px;
+
+    letter-spacing: .28em;
+
+    color: var(--gris-claro);
+
+}
+
+
+/* ==================================================
+   FOOTER — CENTRO
+================================================== */
+
+.footer-center {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 7px;
+
+}
+
+
+.footer-center span {
+
+    font-size: 7px;
+
+    letter-spacing: .18em;
+
+    color: var(--gris-claro);
+
+}
+
+
+.footer-center a {
+
+    font-family: var(--serif);
+
+    font-size: 17px;
+
+    font-style: italic;
+
+    color: var(--beige);
+
+    transition: color .3s ease;
+
+}
+
+
+.footer-center a:hover {
+
+    color: var(--dorado);
+
+}
+
+
+/* ==================================================
+   FOOTER — DERECHA
+================================================== */
+
+.footer-right {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+}
+
+
+.footer-right span {
+
+    font-size: 7px;
+
+    letter-spacing: .18em;
+
+    color: var(--gris-claro);
+
+}
+
+
+/* ==================================================
+   FOOTER MOBILE
+================================================== */
+
+@media (max-width: 760px) {
+
+    .site-footer {
+
+        min-height: 150px;
+
+        padding: 30px 25px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        justify-content: center;
+
+        gap: 20px;
+
+    }
+
+
+    .footer-center {
+
+        justify-content: flex-start;
+
+    }
+
+
+    .footer-right {
+
+        justify-content: flex-start;
+
+    }
+
+
+    .footer-right span {
+
+        font-size: 6px;
+
+    }
+
+}
