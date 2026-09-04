@@ -1,6 +1,6 @@
 /* ==================================================
    PABLO BRIE — MÚSICA
-================================================== */  
+================================================== */ 
 
 .music-page,
 .music-detail-page {
@@ -1076,18 +1076,21 @@
 }
 
 /* ==================================================
-   CANCIONERO — ÚNICA VERSIÓN
-   Esta sección coincide con el HTML actual.
+   PABLO BRIE — CANCIONERO
+   ÚNICO BLOQUE — COINCIDE CON musica/cancionero/index.html
 ================================================== */
 
 .cancionero-page {
+    padding-top: 170px;
     background: var(--gris-piedra);
     color: var(--blanco);
 }
 
+/* ---------- ENCABEZADO ---------- */
+
 .cancionero-page .cancionero-hero {
     min-height: 62vh;
-    padding: 90px 11vw 80px;
+    padding: 82px 11vw 78px;
     display: grid;
     grid-template-columns: 16% 49% 35%;
     gap: 45px;
@@ -1107,7 +1110,7 @@
 }
 
 .cancionero-page .music-kicker {
-    margin-bottom: 22px;
+    margin: 0 0 22px;
     color: var(--beige);
     font-size: 9px;
     letter-spacing: .2em;
@@ -1125,6 +1128,7 @@
 
 .cancionero-page .cancionero-title h1 em {
     font-style: italic;
+    font-weight: 400;
 }
 
 .cancionero-page .cancionero-title .year {
@@ -1157,6 +1161,7 @@
     display: grid;
     grid-template-columns: 45% 55%;
     gap: 75px;
+    align-items: start;
     background: var(--beige);
     color: var(--texto-oscuro);
 }
@@ -1183,7 +1188,7 @@
 
 .cancionero-page .album-intro-copy p {
     max-width: 710px;
-    margin-bottom: 24px;
+    margin: 0 0 24px;
     color: var(--gris-medio);
     font-size: 14px;
     line-height: 1.85;
@@ -1222,6 +1227,7 @@
 
 .cancionero-page .songs-header > p {
     max-width: 540px;
+    margin: 0;
     color: var(--gris-medio);
     font-size: 14px;
     line-height: 1.8;
@@ -1275,6 +1281,14 @@
     white-space: nowrap;
 }
 
+.cancionero-page .song-open::after {
+    content: "＋";
+    display: inline-block;
+    margin-left: 6px;
+    font-size: 13px;
+    font-weight: 300;
+}
+
 .cancionero-page .song-content {
     padding: 8px 0 58px 9%;
     display: grid;
@@ -1305,6 +1319,14 @@
     color: var(--terracota);
 }
 
+.cancionero-page .song[open] summary {
+    color: var(--terracota);
+}
+
+.cancionero-page .song[open] .song-open::after {
+    content: "−";
+}
+
 /* ---------- FICHA ---------- */
 
 .cancionero-page .credits-section {
@@ -1316,7 +1338,11 @@
     color: var(--blanco);
 }
 
-.cancionero-page .credits h2 {
+.cancionero-page .credits-section > div:first-child {
+    max-width: 650px;
+}
+
+.cancionero-page .credits-section h2 {
     margin: 25px 0 0;
     max-width: 650px;
     font-family: var(--sans);
@@ -1326,9 +1352,10 @@
     letter-spacing: -.065em;
 }
 
-.cancionero-page .credits h2 em {
+.cancionero-page .credits-section h2 em {
     font-family: var(--serif);
     font-style: italic;
+    font-weight: 400;
 }
 
 .cancionero-page .credits {
@@ -1354,19 +1381,50 @@
     font-size: 8px;
 }
 
-/* ---------- ESTADO ABIERTO ---------- */
+/* ---------- CIERRE / BOTÓN VOLVER ---------- */
 
-.cancionero-page .song[open] summary {
-    color: var(--terracota);
+.cancionero-page .cancionero-closing {
+    min-height: 68vh;
+    padding: 120px 9vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--crema);
+    color: var(--texto-oscuro);
 }
 
-.cancionero-page .song[open] .song-open {
-    color: var(--terracota);
+.cancionero-page .cancionero-closing h2 {
+    margin: 28px 0 55px;
+    font-family: var(--sans);
+    font-size: clamp(60px, 8vw, 120px);
+    font-weight: 300;
+    line-height: .82;
+    letter-spacing: -.07em;
+}
+
+.cancionero-page .cancionero-closing h2 em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.cancionero-page .back-link {
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--terracota);
+    color: var(--texto-oscuro);
+    font-size: 9px;
+    letter-spacing: .18em;
 }
 
 /* ---------- MOBILE ---------- */
 
 @media (max-width: 800px) {
+
+    .cancionero-page {
+        padding-top: 95px;
+    }
 
     .cancionero-page .cancionero-hero {
         min-height: auto;
@@ -1400,7 +1458,7 @@
 
     .cancionero-page .album-intro h2,
     .cancionero-page .songs-header h2,
-    .cancionero-page .credits h2 {
+    .cancionero-page .credits-section h2 {
         font-size: 16vw;
     }
 
@@ -1436,11 +1494,20 @@
         display: block;
     }
 
-    .cancionero-page .song-content > .song-spotify {
+    .cancionero-page .song-spotify {
         margin-top: 30px;
     }
 
     .cancionero-page .credits {
         margin-top: 10px;
+    }
+
+    .cancionero-page .cancionero-closing {
+        min-height: 55vh;
+        padding: 90px 25px;
+    }
+
+    .cancionero-page .cancionero-closing h2 {
+        font-size: 17vw;
     }
 }
