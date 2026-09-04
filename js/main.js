@@ -1,19 +1,82 @@
-// Año automático del footer
+/* ==================================================
+   PABLO BRIE
+   JAVASCRIPT PRINCIPAL
+================================================== */
 
-document.getElementById("year").textContent =
-    new Date().getFullYear();
+
+/* ==================================================
+   MENÚ MOBILE
+================================================== */
+
+const menuButton = document.querySelector(".menu-button");
+const mobileMenu = document.querySelector(".mobile-menu");
 
 
-// Menú mobile
+if (menuButton && mobileMenu) {
 
-const menuToggle = document.querySelector(".menu-toggle");
-const nav = document.querySelector(".nav");
+    menuButton.addEventListener("click", () => {
 
-if (menuToggle) {
+        const isOpen =
+            mobileMenu.classList.toggle("open");
 
-    menuToggle.addEventListener("click", () => {
+        menuButton.setAttribute(
+            "aria-expanded",
+            isOpen
+        );
 
-        nav.classList.toggle("mobile-open");
+        /* Animación de las dos líneas */
+
+        const lines =
+            menuButton.querySelectorAll("span");
+
+        if (isOpen) {
+
+            lines[0].style.transform =
+                "translateY(10px) rotate(45deg)";
+
+            lines[1].style.transform =
+                "translateY(-10px) rotate(-45deg)";
+
+        } else {
+
+            lines[0].style.transform =
+                "translateY(0) rotate(0)";
+
+            lines[1].style.transform =
+                "translateY(0) rotate(0)";
+
+        }
+
+    });
+
+
+    /* Cerrar menú al hacer click en un enlace */
+
+    const mobileLinks =
+        mobileMenu.querySelectorAll("a");
+
+
+    mobileLinks.forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            mobileMenu.classList.remove("open");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            const lines =
+                menuButton.querySelectorAll("span");
+
+            lines[0].style.transform =
+                "translateY(0) rotate(0)";
+
+            lines[1].style.transform =
+                "translateY(0) rotate(0)";
+
+        });
 
     });
 
