@@ -1,41 +1,35 @@
 /* ==================================================
    PABLO BRIE
-   WEB PRINCIPAL
+   HOME
 ================================================== */
 
 
 /* ==================================================
-   PALETA
+   VARIABLES
 ================================================== */
 
 :root {
 
     --gris-piedra: #585451;
-    --gris-medio: #66615E;
-    --gris-claro: #8B8783;
+    --gris-medio: #66615e;
+    --gris-claro: #8b8783;
 
-    --beige: #D8CEC4;
-    --crema: #F0E9E1;
-    --blanco: #F7F4EF;
+    --beige: #d8cec4;
+    --crema: #f0e9e1;
+    --blanco: #f7f4ef;
 
     --carbon: #252321;
     --negro: #171513;
 
-    --terracota: #B85B3C;
-    --rojo-tierra: #8F3928;
+    --terracota: #b85b3c;
+    --rojo-tierra: #8f3928;
 
-    --dorado: #C6A35A;
-    --ocre: #A9813E;
+    --dorado: #c6a35a;
+    --ocre: #a9813e;
 
-    --texto: #F2EEE8;
+    --texto: #f2eee8;
     --texto-oscuro: #292725;
-
-    --texto-suave: #C9C2BB;
-
-    --linea: rgba(242, 238, 232, 0.25);
-
-
-    /* Tipografías */
+    --texto-suave: #c9c2bb;
 
     --serif: "Cormorant Garamond", Georgia, serif;
 
@@ -51,7 +45,6 @@
 * {
 
     margin: 0;
-
     padding: 0;
 
     box-sizing: border-box;
@@ -63,7 +56,6 @@ html,
 body {
 
     width: 100%;
-
     height: 100%;
 
 }
@@ -116,20 +108,19 @@ button {
     position: fixed;
 
     top: 0;
-
     left: 0;
 
     z-index: 100;
 
     width: 100%;
 
-    height: 145px;
+    height: 170px;
 
-    padding: 28px clamp(30px, 7vw, 110px);
+    padding: 30px clamp(45px, 9vw, 170px);
 
     display: flex;
 
-    align-items: flex-start;
+    align-items: center;
 
     justify-content: space-between;
 
@@ -146,7 +137,9 @@ button {
 
     display: block;
 
-    width: 270px;
+    width: 235px;
+
+    height: auto;
 
     flex-shrink: 0;
 
@@ -161,6 +154,12 @@ button {
 
     height: auto;
 
+    max-height: 80px;
+
+    object-fit: contain;
+
+    object-position: left center;
+
 }
 
 
@@ -170,15 +169,11 @@ button {
 
 .main-nav {
 
-    height: 100%;
-
     display: flex;
 
     align-items: center;
 
-    gap: clamp(22px, 2.8vw, 48px);
-
-    padding-top: 3px;
+    gap: clamp(24px, 3vw, 50px);
 
 }
 
@@ -198,18 +193,16 @@ button {
 
     font-weight: 300;
 
-    letter-spacing: .02em;
+    letter-spacing: .01em;
 
     white-space: nowrap;
 
-    transition:
-        color .3s ease,
-        opacity .3s ease;
+    transition: color .3s ease;
 
 }
 
 
-/* Línea inferior */
+/* línea dorada */
 
 .main-nav > a::after,
 .nav-item > a::after {
@@ -220,7 +213,7 @@ button {
 
     left: 0;
 
-    bottom: -7px;
+    bottom: -9px;
 
     width: 0;
 
@@ -242,8 +235,7 @@ button {
 
 
 .main-nav > a:hover::after,
-.nav-item > a:hover::after,
-.main-nav > a.active::after {
+.nav-item > a:hover::after {
 
     width: 100%;
 
@@ -253,6 +245,13 @@ button {
 .main-nav > a.active {
 
     color: var(--beige);
+
+}
+
+
+.main-nav > a.active::after {
+
+    width: 100%;
 
 }
 
@@ -272,13 +271,13 @@ button {
 
     position: absolute;
 
-    top: 30px;
+    top: 28px;
 
-    left: -10px;
+    left: -15px;
 
-    min-width: 210px;
+    min-width: 220px;
 
-    padding: 18px 10px;
+    padding: 18px 15px;
 
     display: flex;
 
@@ -323,8 +322,6 @@ button {
 
     color: var(--blanco);
 
-    transition: color .25s ease;
-
 }
 
 
@@ -336,20 +333,19 @@ button {
 
 
 /* ==================================================
-   PORTADA
+   HOME
 ================================================== */
 
 .home {
 
     position: fixed;
 
-    top: 145px;
-
+    top: 170px;
     left: 0;
 
     width: 100%;
 
-    height: calc(100vh - 145px);
+    height: calc(100vh - 170px);
 
 }
 
@@ -363,7 +359,6 @@ button {
     position: relative;
 
     width: 100%;
-
     height: 100%;
 
     overflow: hidden;
@@ -374,20 +369,19 @@ button {
 
 
 /* ==================================================
-   IMAGEN
+   FOTO
 ================================================== */
 
 .hero-image {
 
     position: absolute;
 
-    top: 14px;
-
+    top: 18px;
     bottom: 0;
 
-    left: clamp(40px, 12.5vw, 230px);
+    left: clamp(45px, 12.5vw, 230px);
 
-    right: clamp(40px, 9.2vw, 170px);
+    right: clamp(45px, 9.8vw, 180px);
 
     overflow: hidden;
 
@@ -396,24 +390,21 @@ button {
 
 .hero-image img {
 
-    width: 100%;
-
-    height: 100%;
-
     display: block;
+
+    width: 100%;
+    height: 100%;
 
     object-fit: cover;
 
     object-position: center center;
 
-    animation: entrance 1.2s ease-out both;
+    animation: heroEntrance 1.1s ease-out both;
 
 }
 
 
-/* Entrada de imagen */
-
-@keyframes entrance {
+@keyframes heroEntrance {
 
     from {
 
@@ -435,7 +426,7 @@ button {
 
 
 /* ==================================================
-   CAPA SOBRE IMAGEN
+   CAPA
 ================================================== */
 
 .hero-shade {
@@ -449,27 +440,27 @@ button {
     background:
         linear-gradient(
             90deg,
-            rgba(20, 16, 14, .12),
-            transparent 50%,
-            rgba(20, 16, 14, .20)
+            rgba(20, 16, 14, .08),
+            transparent 55%,
+            rgba(20, 16, 14, .12)
         );
 
 }
 
 
 /* ==================================================
-   NOMBRE SOBRE FOTO
+   NOMBRE
 ================================================== */
 
 .hero-intro {
 
     position: absolute;
 
-    left: clamp(60px, 15vw, 270px);
+    left: clamp(65px, 15vw, 275px);
 
-    bottom: 35px;
+    bottom: 28px;
 
-    z-index: 5;
+    z-index: 10;
 
     display: flex;
 
@@ -499,7 +490,7 @@ button {
 
     font-family: var(--serif);
 
-    font-size: clamp(34px, 3.3vw, 58px);
+    font-size: clamp(40px, 3.5vw, 60px);
 
     font-weight: 400;
 
@@ -513,18 +504,18 @@ button {
 
 
 /* ==================================================
-   BOTÓN PRINCIPAL
+   BOTÓN HISTORIAS
 ================================================== */
 
 .hero-button {
 
     position: absolute;
 
-    z-index: 10;
-
-    right: clamp(70px, 17vw, 310px);
+    right: clamp(75px, 17vw, 310px);
 
     bottom: 70px;
+
+    z-index: 10;
 
     display: flex;
 
@@ -532,17 +523,19 @@ button {
 
     gap: 25px;
 
-    padding: 18px 20px 17px;
+    padding: 18px 21px;
 
     background: var(--crema);
 
     color: var(--texto-oscuro);
 
-    font-size: 11px;
+    font-family: var(--sans);
+
+    font-size: 10px;
 
     font-weight: 300;
 
-    letter-spacing: .15em;
+    letter-spacing: .16em;
 
     transition:
         background .3s ease,
@@ -567,11 +560,9 @@ button {
 
     font-size: 17px;
 
-    line-height: 1;
-
     color: var(--terracota);
 
-    transition: color .3s ease;
+    line-height: 1;
 
 }
 
@@ -584,16 +575,16 @@ button {
 
 
 /* ==================================================
-   FIRMA INFERIOR
+   TEXTO VERTICAL
 ================================================== */
 
 .hero-signature {
 
     position: absolute;
 
-    right: clamp(20px, 2.5vw, 45px);
+    right: 22px;
 
-    bottom: 20px;
+    bottom: 25px;
 
     z-index: 10;
 
@@ -608,7 +599,7 @@ button {
 
     font-size: 7px;
 
-    letter-spacing: .25em;
+    letter-spacing: .24em;
 
     color: var(--texto-suave);
 
@@ -616,18 +607,17 @@ button {
 
 
 /* ==================================================
-   BOTÓN MENÚ MOBILE
+   MENÚ MOBILE
 ================================================== */
 
 .menu-button {
 
     display: none;
 
-    width: 34px;
+    width: 32px;
+    height: 25px;
 
-    height: 28px;
-
-    padding: 4px 0;
+    padding: 3px 0;
 
     border: none;
 
@@ -644,24 +634,17 @@ button {
 
 .menu-button span {
 
-    width: 100%;
-
-    height: 1px;
-
     display: block;
+
+    width: 100%;
+    height: 1px;
 
     background: var(--blanco);
 
-    transition:
-        transform .3s ease,
-        opacity .3s ease;
+    transition: transform .3s ease;
 
 }
 
-
-/* ==================================================
-   MENÚ MOBILE
-================================================== */
 
 .mobile-menu {
 
@@ -674,12 +657,11 @@ button {
    TABLET
 ================================================== */
 
-@media (max-width: 1100px) {
+@media (max-width: 1150px) {
 
     .site-header {
 
         padding-left: 35px;
-
         padding-right: 35px;
 
     }
@@ -687,7 +669,7 @@ button {
 
     .logo {
 
-        width: 220px;
+        width: 200px;
 
     }
 
@@ -710,7 +692,6 @@ button {
     .hero-image {
 
         left: 35px;
-
         right: 35px;
 
     }
@@ -718,7 +699,7 @@ button {
 
     .hero-button {
 
-        right: 70px;
+        right: 65px;
 
     }
 
@@ -731,13 +712,8 @@ button {
 
 @media (max-width: 760px) {
 
-    html {
 
-        overflow: hidden;
-
-    }
-
-
+    html,
     body {
 
         overflow: hidden;
@@ -751,16 +727,21 @@ button {
 
         height: 95px;
 
-        padding: 20px 22px;
-
-        align-items: center;
+        padding: 18px 22px;
 
     }
 
 
     .logo {
 
-        width: 190px;
+        width: 175px;
+
+    }
+
+
+    .logo img {
+
+        max-height: 60px;
 
     }
 
@@ -779,7 +760,7 @@ button {
     }
 
 
-    /* PORTADA */
+    /* HOME */
 
     .home {
 
@@ -790,17 +771,15 @@ button {
     }
 
 
-    /* IMAGEN */
+    /* FOTO */
 
     .hero-image {
 
         top: 0;
+        bottom: 0;
 
         left: 0;
-
         right: 0;
-
-        bottom: 0;
 
     }
 
@@ -812,16 +791,16 @@ button {
     }
 
 
-    /* SOMBRA */
+    /* CAPA */
 
     .hero-shade {
 
         background:
             linear-gradient(
                 to bottom,
-                rgba(20, 16, 14, .15),
+                rgba(20, 16, 14, .08),
                 transparent 45%,
-                rgba(20, 16, 14, .5)
+                rgba(20, 16, 14, .45)
             );
 
     }
@@ -833,13 +812,13 @@ button {
 
         left: 25px;
 
-        bottom: 35px;
+        bottom: 28px;
 
         flex-direction: column;
 
         align-items: flex-start;
 
-        gap: 4px;
+        gap: 3px;
 
     }
 
@@ -859,7 +838,7 @@ button {
 
         right: auto;
 
-        bottom: 120px;
+        bottom: 115px;
 
         padding: 15px 17px;
 
@@ -870,7 +849,7 @@ button {
     }
 
 
-    /* FIRMA */
+    /* TEXTO VERTICAL */
 
     .hero-signature {
 
@@ -879,7 +858,7 @@ button {
     }
 
 
-    /* MENÚ MOBILE */
+    /* MOBILE MENU */
 
     .mobile-menu {
 
@@ -891,7 +870,7 @@ button {
 
         display: flex;
 
-        padding: 50px 25px;
+        padding: 45px 25px;
 
         background: var(--gris-piedra);
 
@@ -926,62 +905,29 @@ button {
 
         flex-direction: column;
 
-        gap: 22px;
+        gap: 21px;
 
     }
 
 
     .mobile-menu nav a {
 
-        font-size: 17px;
+        font-size: 16px;
 
         letter-spacing: .04em;
-
-        color: var(--blanco);
 
     }
 
 
     .mobile-menu nav a small {
 
-        display: block;
-
         margin-left: 15px;
 
-        font-size: 10px;
+        font-size: 9px;
 
         letter-spacing: .12em;
 
         color: var(--beige);
-
-    }
-
-}
-
-
-/* ==================================================
-   MOBILE PEQUEÑO
-================================================== */
-
-@media (max-width: 400px) {
-
-    .logo {
-
-        width: 165px;
-
-    }
-
-
-    .hero-button {
-
-        bottom: 105px;
-
-    }
-
-
-    .hero-intro h1 {
-
-        font-size: 38px;
 
     }
 
