@@ -21,6 +21,7 @@
     <!-- TIPOGRAFÍAS -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link
         rel="preconnect"
         href="https://fonts.gstatic.com"
@@ -33,7 +34,7 @@
     >
 
 
-    <!-- ESTILOS -->
+    <!-- CSS -->
 
     <link
         rel="stylesheet"
@@ -43,7 +44,7 @@
 </head>
 
 
-<body>
+<body class="home-page">
 
 
     <!-- =========================================
@@ -53,12 +54,12 @@
     <header class="site-header">
 
 
-        <!-- LOGO + NOMBRE -->
+        <!-- MARCA -->
 
         <a
             href="./"
             class="brand"
-            aria-label="Pablo Brie — Inicio"
+            aria-label="Pablo Brie - Inicio"
         >
 
             <img
@@ -111,7 +112,6 @@
                     MÚSICA
                 </a>
 
-
                 <div class="submenu">
 
                     <a href="musica/mi-musica/">
@@ -142,13 +142,13 @@
         </nav>
 
 
-        <!-- BOTÓN MOBILE -->
+        <!-- MENÚ MOBILE -->
 
         <button
             class="menu-button"
+            type="button"
             aria-label="Abrir menú"
             aria-expanded="false"
-            type="button"
         >
 
             <span></span>
@@ -159,14 +159,13 @@
     </header>
 
 
-
     <!-- =========================================
          MENÚ MOBILE
     ========================================== -->
 
     <div class="mobile-menu">
 
-        <nav aria-label="Menú móvil">
+        <nav>
 
             <a href="./">
                 INICIO
@@ -209,13 +208,11 @@
     </div>
 
 
-
     <!-- =========================================
-         PORTADA
+         HOME
     ========================================== -->
 
     <main class="home">
-
 
         <section class="hero">
 
@@ -232,7 +229,7 @@
             </div>
 
 
-            <!-- CAPA SUTIL -->
+            <!-- CAPA -->
 
             <div class="hero-shade"></div>
 
@@ -280,11 +277,9 @@
 
             </div>
 
-
         </section>
 
     </main>
-
 
 
     <!-- =========================================
@@ -296,7 +291,7 @@
         <div class="footer-left">
 
             <span>
-                © <span id="footer-year">2026</span> · PABLO BRIE
+                © <span id="footer-year"></span> · PABLO BRIE
             </span>
 
         </div>
@@ -330,6 +325,12 @@
     </footer>
 
 
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="js/main.js"></script>
+
 
     <!-- =========================================
          ACCESIBILIDAD
@@ -340,21 +341,6 @@
         config-url="https://static.getwcag.com/configs/L5VOLgu5S8h80TInUxdV/config.json"
         use-important="false"
     ></script>
-
-
-    <!-- JAVASCRIPT -->
-
-    <script src="js/main.js"></script>
-
-
-    <script>
-        const yearElement = document.getElementById("footer-year");
-
-        if (yearElement) {
-            yearElement.textContent = new Date().getFullYear();
-        }
-    </script>
-
 
 </body>
 
