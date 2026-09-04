@@ -1,11 +1,11 @@
 /* ==================================================
-   PABLO BRIE — MÚSICAs
+   PABLO BRIE — MÚSICA
 ================================================== */
 
-.music-page, 
+.music-page,
 .music-detail-page {
     background: var(--gris-piedra);
-    color: var(--blanco); 
+    color: var(--blanco);
 }
 
 .music-landing {
@@ -280,133 +280,239 @@
 
 /* ---------- CANCIONERO ---------- */
 
-.cancionero-hero {
-    min-height: 60vh;
-    padding: 95px 11vw 90px;
+.cancionero-intro {
+    min-height: 500px;
+    padding: 78px 9vw 75px;
     display: grid;
-    grid-template-columns: 18% 42% 40%;
-    align-items: end;
+    grid-template-columns: 1fr 280px;
+    gap: 70px;
+    align-items: center;
     background: var(--gris-piedra);
 }
 
-.cancionero-title .year {
-    margin-top: 20px;
+.cancionero-title-block {
+    align-self: start;
+}
+
+.cancionero-title-block .section-index {
+    margin-bottom: 38px;
+}
+
+.cancionero-title-block h1 {
+    margin: 14px 0 15px;
+    font-family: var(--serif);
+    font-size: clamp(68px, 7vw, 112px);
+    font-weight: 400;
+    line-height: .8;
+    letter-spacing: -.04em;
     color: var(--beige);
-    font-size: 18px;
-    letter-spacing: .08em;
+}
+
+.cancionero-title-block h1 em {
+    font-style: italic;
+}
+
+.album-year {
+    font-size: 17px;
+    letter-spacing: .07em;
+    color: var(--blanco);
+}
+
+.album-cover-wrap {
+    width: 280px;
+    justify-self: end;
 }
 
 .album-cover {
-    justify-self: end;
-    width: min(340px, 100%);
-    aspect-ratio: 1;
-    overflow: hidden;
-    transform: translateY(30px);
-}
-
-.album-cover img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    aspect-ratio: 1;
     display: block;
+    object-fit: cover;
+    box-shadow: 18px 18px 0 rgba(37,35,33,.28);
 }
 
-.album-intro {
-    padding: 145px 11vw;
+.album-info {
+    padding: 120px 9vw;
     display: grid;
-    grid-template-columns: 45% 55%;
+    grid-template-columns: 52% 48%;
     gap: 70px;
     background: var(--beige);
     color: var(--texto-oscuro);
 }
 
-.album-intro-copy p {
+.album-story {
+    max-width: 760px;
+}
+
+.album-story h2 {
+    margin: 25px 0 42px;
     max-width: 700px;
+    font-family: var(--sans);
+    font-size: clamp(52px, 5.5vw, 88px);
+    font-weight: 300;
+    line-height: .86;
+    letter-spacing: -.06em;
+}
+
+.album-story h2 em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.album-story > p:not(.section-label) {
+    max-width: 680px;
     margin-bottom: 24px;
     color: var(--gris-medio);
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.85;
 }
 
+.album-player-block {
+    padding-top: 6px;
+}
+
+.album-player {
+    margin-top: 22px;
+}
+
+.album-player iframe {
+    display: block;
+    width: 100%;
+    border: 0;
+    border-radius: 12px;
+}
+
 .songs-section {
-    padding: 150px 11vw;
+    padding: 145px 9vw;
     background: var(--blanco);
     color: var(--texto-oscuro);
 }
 
-.songs-header {
+.songs-intro {
+    margin-bottom: 70px;
     display: grid;
     grid-template-columns: 55% 45%;
     gap: 70px;
     align-items: end;
-    margin-bottom: 85px;
 }
 
-.songs-header > p {
+.songs-intro h2 {
+    margin-top: 22px;
+    font-family: var(--sans);
+    font-size: clamp(55px, 6vw, 95px);
+    font-weight: 300;
+    line-height: .85;
+    letter-spacing: -.065em;
+}
+
+.songs-intro h2 em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.songs-help {
+    max-width: 520px;
     color: var(--gris-medio);
     font-size: 14px;
     line-height: 1.8;
 }
 
-.song {
+.songs-list {
     border-top: 1px solid rgba(41,39,37,.18);
 }
 
-.song:last-child {
+.song-row {
     border-bottom: 1px solid rgba(41,39,37,.18);
 }
 
-.song summary {
+.song-trigger {
+    width: 100%;
     min-height: 92px;
-    padding: 22px 0;
+    padding: 20px 0;
     display: grid;
-    grid-template-columns: 10% 1fr auto;
+    grid-template-columns: 8% 1fr auto;
     gap: 25px;
     align-items: center;
+    border: 0;
+    background: transparent;
+    color: var(--texto-oscuro);
+    text-align: left;
     cursor: pointer;
-    list-style: none;
 }
 
-.song summary::-webkit-details-marker {
-    display: none;
-}
-
-.song-number {
+.song-trigger:hover {
     color: var(--terracota);
+}
+
+.song-no {
     font-size: 9px;
     letter-spacing: .18em;
+    color: var(--terracota);
 }
 
-.song-title {
+.song-name {
     font-family: var(--serif);
-    font-size: clamp(28px, 3vw, 45px);
+    font-size: clamp(27px, 3vw, 44px);
     font-style: italic;
+    line-height: .95;
 }
 
-.song-open {
+.song-action {
     font-size: 8px;
-    letter-spacing: .17em;
+    letter-spacing: .16em;
     color: var(--gris-claro);
+    white-space: nowrap;
 }
 
-.song-content {
-    padding: 5px 10% 45px;
+.song-action b {
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.song-trigger[aria-expanded="true"] {
+    color: var(--terracota);
+}
+
+.song-panel {
+    padding: 10px 0 55px 8%;
     display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 55px;
+    grid-template-columns: 58% 42%;
+    gap: 60px;
     align-items: start;
 }
 
 .lyrics {
-    max-width: 700px;
-    font-size: 15px;
-    line-height: 1.85;
+    max-width: 650px;
     color: var(--gris-medio);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.listen-column {
+    padding-top: 3px;
+}
+
+.mini-label {
+    margin-bottom: 15px;
+    color: var(--gris-claro);
+    font-size: 8px;
+    letter-spacing: .18em;
+}
+
+.listen-column iframe {
+    display: block;
+    width: 100%;
+    border: 0;
+    border-radius: 12px;
 }
 
 .song-spotify {
     width: max-content;
+    margin-top: 18px;
     padding-bottom: 8px;
+    display: block;
     border-bottom: 1px solid var(--terracota);
     color: var(--texto-oscuro);
     font-size: 8px;
@@ -681,30 +787,55 @@
         margin-top: 50px;
     }
 
-    .album-cover {
+    .album-cover-wrap {
         width: 75vw;
-        margin: 55px auto 0 0;
-        transform: none;
+        margin-top: 50px;
     }
 
-    .songs-header > p {
-        margin-top: 40px;
-    }
-
-    .song summary {
-        grid-template-columns: 12% 1fr auto;
-        gap: 12px;
-        min-height: 75px;
-    }
-
-    .song-content {
+    .album-info {
+        padding: 95px 25px;
         display: block;
-        padding: 5px 0 35px 12%;
     }
 
-    .song-spotify {
-        margin-top: 30px;
-    } 
+    .album-player-block {
+        margin-top: 55px;
+    }
+
+    .songs-section {
+        padding: 95px 25px;
+    }
+
+    .songs-intro {
+        display: block;
+        margin-bottom: 55px;
+    }
+
+    .songs-help {
+        margin-top: 35px;
+    }
+
+    .song-trigger {
+        min-height: 78px;
+        grid-template-columns: 11% 1fr auto;
+        gap: 10px;
+    }
+
+    .song-name {
+        font-size: 27px;
+    }
+
+    .song-action {
+        font-size: 7px;
+    }
+
+    .song-panel {
+        padding: 5px 0 45px 11%;
+        display: block;
+    }
+
+    .listen-column {
+        margin-top: 35px;
+    }
 
     .theatre-works {
         grid-template-columns: 1fr;
@@ -722,6 +853,495 @@
     }
 
     .theatre-listen .theatre-question {
+        margin-top: 55px;
+    }
+}
+
+
+/* ==================================================
+   PABLO BRIE — CANCIONERO
+================================================== */
+
+.cancionero-page {
+    background: var(--gris-piedra);
+    color: var(--blanco);
+}
+
+.cancionero-main {
+    padding-top: 170px;
+}
+
+/* ---------- ENCABEZADO ---------- */
+
+.cancionero-intro {
+    min-height: 500px;
+    padding: 78px 9vw 75px;
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 70px;
+    align-items: center;
+    background: var(--gris-piedra);
+}
+
+.cancionero-title-block {
+    align-self: start;
+}
+
+.cancionero-title-block .section-index {
+    margin-bottom: 38px;
+    color: var(--beige);
+    font-size: 9px;
+    letter-spacing: .18em;
+}
+
+.cancionero-title-block h1 {
+    margin: 14px 0 15px;
+    font-family: var(--serif);
+    font-size: clamp(68px, 7vw, 112px);
+    font-weight: 400;
+    line-height: .8;
+    letter-spacing: -.04em;
+    color: var(--beige);
+}
+
+.cancionero-title-block h1 em {
+    font-style: italic;
+}
+
+.album-year {
+    font-size: 17px;
+    letter-spacing: .07em;
+    color: var(--blanco);
+}
+
+.album-cover-wrap {
+    width: 280px;
+    justify-self: end;
+}
+
+.album-cover {
+    width: 100%;
+    aspect-ratio: 1;
+    display: block;
+    object-fit: cover;
+    box-shadow: 18px 18px 0 rgba(37,35,33,.28);
+}
+
+/* ---------- INFO + SPOTIFY ---------- */
+
+.album-info {
+    padding: 120px 9vw;
+    display: grid;
+    grid-template-columns: 52% 48%;
+    gap: 70px;
+    background: var(--beige);
+    color: var(--texto-oscuro);
+}
+
+.album-story {
+    max-width: 760px;
+}
+
+.album-story h2 {
+    margin: 25px 0 42px;
+    max-width: 700px;
+    font-family: var(--sans);
+    font-size: clamp(52px, 5.5vw, 88px);
+    font-weight: 300;
+    line-height: .86;
+    letter-spacing: -.06em;
+}
+
+.album-story h2 em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.album-story > p:not(.section-label) {
+    max-width: 680px;
+    margin-bottom: 24px;
+    color: var(--gris-medio);
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+.album-player-block {
+    padding-top: 6px;
+}
+
+.album-player {
+    margin-top: 22px;
+}
+
+.album-player iframe {
+    display: block;
+    width: 100%;
+    border: 0;
+    border-radius: 12px;
+}
+
+/* ---------- LISTADO ---------- */
+
+.songs-section {
+    padding: 145px 9vw;
+    background: var(--blanco);
+    color: var(--texto-oscuro);
+}
+
+.songs-intro {
+    margin-bottom: 70px;
+    display: grid;
+    grid-template-columns: 55% 45%;
+    gap: 70px;
+    align-items: end;
+}
+
+.songs-intro h2 {
+    margin-top: 22px;
+    font-family: var(--sans);
+    font-size: clamp(55px, 6vw, 95px);
+    font-weight: 300;
+    line-height: .85;
+    letter-spacing: -.065em;
+}
+
+.songs-intro h2 em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.songs-help {
+    max-width: 520px;
+    color: var(--gris-medio);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.songs-list {
+    border-top: 1px solid rgba(41,39,37,.18);
+}
+
+.song-row {
+    border-bottom: 1px solid rgba(41,39,37,.18);
+}
+
+.song-trigger {
+    width: 100%;
+    min-height: 92px;
+    padding: 20px 0;
+    display: grid;
+    grid-template-columns: 8% 1fr auto;
+    gap: 25px;
+    align-items: center;
+    border: 0;
+    background: transparent;
+    color: var(--texto-oscuro);
+    text-align: left;
+    cursor: pointer;
+}
+
+.song-trigger:hover {
+    color: var(--terracota);
+}
+
+.song-no {
+    font-size: 9px;
+    letter-spacing: .18em;
+    color: var(--terracota);
+}
+
+.song-name {
+    font-family: var(--serif);
+    font-size: clamp(27px, 3vw, 44px);
+    font-style: italic;
+    line-height: .95;
+}
+
+.song-action {
+    font-size: 8px;
+    letter-spacing: .16em;
+    color: var(--gris-claro);
+    white-space: nowrap;
+}
+
+.song-action b {
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.song-trigger[aria-expanded="true"] {
+    color: var(--terracota);
+}
+
+/* ---------- LETRA ABIERTA ---------- */
+
+.song-panel {
+    padding: 10px 0 55px 8%;
+    display: grid;
+    grid-template-columns: 58% 42%;
+    gap: 60px;
+    align-items: start;
+}
+
+.lyrics {
+    max-width: 650px;
+    color: var(--gris-medio);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.listen-column {
+    padding-top: 3px;
+}
+
+.mini-label {
+    margin-bottom: 15px;
+    color: var(--gris-claro);
+    font-size: 8px;
+    letter-spacing: .18em;
+}
+
+.listen-column iframe {
+    display: block;
+    width: 100%;
+    border: 0;
+    border-radius: 12px;
+}
+
+.song-spotify {
+    width: max-content;
+    margin-top: 18px;
+    padding-bottom: 8px;
+    display: block;
+    border-bottom: 1px solid var(--terracota);
+    color: var(--texto-oscuro);
+    font-size: 8px;
+    letter-spacing: .16em;
+}
+
+/* ---------- FICHA ---------- */
+
+.credits-section {
+    padding: 160px 9vw;
+    display: grid;
+    grid-template-columns: 46% 54%;
+    gap: 70px;
+    background: var(--carbon);
+    color: var(--blanco);
+}
+
+.credits-title h2 {
+    margin-top: 25px;
+    max-width: 650px;
+    font-family: var(--sans);
+    font-size: clamp(58px, 6.5vw, 98px);
+    font-weight: 300;
+    line-height: .83;
+    letter-spacing: -.065em;
+}
+
+.credits-title h2 em {
+    font-family: var(--serif);
+    font-style: italic;
+}
+
+.credits-list {
+    border-top: 1px solid rgba(247,244,239,.17);
+}
+
+.credits-list > div {
+    padding: 15px 0;
+    display: grid;
+    grid-template-columns: 45% 55%;
+    gap: 20px;
+    border-bottom: 1px solid rgba(247,244,239,.11);
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+.credits-list span {
+    color: var(--texto-suave);
+}
+
+.credits-list strong {
+    color: var(--blanco);
+    font-weight: 300;
+}
+
+.guest-credit {
+    margin-top: 25px;
+    padding-top: 25px !important;
+}
+
+.guest-credit span {
+    color: var(--dorado);
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    font-size: 8px;
+}
+
+/* ---------- CIERRE ---------- */
+
+.cancionero-closing {
+    min-height: 70vh;
+    padding: 120px 9vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--crema);
+    color: var(--texto-oscuro);
+}
+
+.cancionero-closing h2 {
+    margin: 28px 0 55px;
+    font-family: var(--sans);
+    font-size: clamp(60px, 8vw, 120px);
+    font-weight: 300;
+    line-height: .82;
+    letter-spacing: -.07em;
+}
+
+.cancionero-closing h2 em {
+    font-family: var(--serif);
+    font-style: italic;
+}
+
+.back-link {
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--terracota);
+    font-size: 9px;
+    letter-spacing: .18em;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 800px) {
+
+    .cancionero-main {
+        padding-top: 95px;
+    }
+
+    .cancionero-intro {
+        min-height: auto;
+        padding: 75px 25px 80px;
+        display: block;
+    }
+
+    .cancionero-title-block .section-index {
+        margin-bottom: 50px;
+    }
+
+    .cancionero-title-block h1 {
+        font-size: 21vw;
+    }
+
+    .album-cover-wrap {
+        width: min(78vw, 340px);
+        margin-top: 50px;
+    }
+
+    .album-info,
+    .credits-section {
+        padding: 95px 25px;
+        display: block;
+    }
+
+    .album-player-block {
+        margin-top: 55px;
+    }
+
+    .songs-section {
+        padding: 95px 25px;
+    }
+
+    .songs-intro {
+        display: block;
+        margin-bottom: 55px;
+    }
+
+    .songs-help {
+        margin-top: 35px;
+    }
+
+    .song-trigger {
+        min-height: 78px;
+        grid-template-columns: 11% 1fr auto;
+        gap: 10px;
+    }
+
+    .song-name {
+        font-size: 27px;
+    }
+
+    .song-action {
+        font-size: 7px;
+    }
+
+    .song-panel {
+        padding: 5px 0 45px 11%;
+        display: block;
+    }
+
+    .listen-column {
+        margin-top: 35px;
+    }
+
+    .credits-title {
+        margin-bottom: 55px;
+    }
+
+    .credits-list > div {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .cancionero-closing {
+        min-height: 60vh;
+        padding: 90px 25px;
+    }
+}
+
+
+/* ==================================================
+   CANCIONERO — OVERRIDES FOR CURRENT MARKUP
+================================================== */
+
+.cancionero-page .section-label {
+    color: var(--beige);
+}
+
+.cancionero-page .cancionero-intro .section-label {
+    color: var(--beige);
+}
+
+.cancionero-page .album-info .section-label,
+.cancionero-page .songs-section .section-label {
+    color: var(--gris-claro);
+}
+
+.cancionero-page .credits-section .section-label {
+    color: var(--dorado);
+}
+
+@media (max-width: 800px) {
+    .cancionero-page .cancionero-intro {
+        display: block;
+    }
+
+    .cancionero-page .album-cover-wrap {
+        width: min(78vw, 340px);
+        margin-top: 50px;
+    }
+
+    .cancionero-page .album-cover {
+        transform: none;
+    }
+
+    .cancionero-page .album-player-block {
         margin-top: 55px;
     }
 }
