@@ -130,35 +130,98 @@ button {
 
 
 /* ==================================================
-   LOGO
+   LOGO + NOMBRE
 ================================================== */
 
-.logo {
+.brand {
 
-    display: block;
+    display: flex;
 
-    width: 235px;
+    align-items: center;
 
-    height: auto;
+    gap: 12px;
+
+    width: max-content;
 
     flex-shrink: 0;
 
 }
 
 
-.logo img {
+/* Símbolo del logo */
+
+.brand-symbol {
 
     display: block;
 
-    width: 100%;
+    width: 42px;
 
-    height: auto;
-
-    max-height: 80px;
+    height: 62px;
 
     object-fit: contain;
 
-    object-position: left center;
+    object-position: center;
+
+    flex-shrink: 0;
+
+}
+
+
+/* Contenedor del nombre */
+
+.brand-name {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 2px;
+
+}
+
+
+/* Pablo Brie */
+
+.brand-title {
+
+    font-family: var(--serif);
+
+    font-size: 38px;
+
+    font-weight: 400;
+
+    font-style: italic;
+
+    line-height: .9;
+
+    letter-spacing: -.025em;
+
+    color: var(--blanco);
+
+    white-space: nowrap;
+
+}
+
+
+/* Músico */
+
+.brand-subtitle {
+
+    padding-left: 3px;
+
+    font-family: var(--sans);
+
+    font-size: 9px;
+
+    font-weight: 300;
+
+    letter-spacing: .38em;
+
+    color: var(--beige);
+
+    white-space: nowrap;
 
 }
 
@@ -404,6 +467,10 @@ button {
 }
 
 
+/* ==================================================
+   ANIMACIÓN ENTRADA
+================================================== */
+
 @keyframes heroEntrance {
 
     from {
@@ -449,7 +516,7 @@ button {
 
 
 /* ==================================================
-   NOMBRE
+   NOMBRE SOBRE LA FOTO
 ================================================== */
 
 .hero-intro {
@@ -662,14 +729,33 @@ button {
     .site-header {
 
         padding-left: 35px;
+
         padding-right: 35px;
 
     }
 
 
-    .logo {
+    /* Logo */
 
-        width: 200px;
+    .brand-symbol {
+
+        width: 36px;
+
+        height: 54px;
+
+    }
+
+
+    .brand-title {
+
+        font-size: 32px;
+
+    }
+
+
+    .brand-subtitle {
+
+        font-size: 8px;
 
     }
 
@@ -692,6 +778,7 @@ button {
     .hero-image {
 
         left: 35px;
+
         right: 35px;
 
     }
@@ -732,19 +819,43 @@ button {
     }
 
 
-    .logo {
+    /* Logo + nombre */
 
-        width: 175px;
+    .brand {
+
+        gap: 9px;
+
+    }
+
+
+    .brand-symbol {
+
+        width: 32px;
+
+        height: 48px;
 
     }
 
 
-    .logo img {
+    .brand-title {
 
-        max-height: 60px;
+        font-size: 29px;
 
     }
 
+
+    .brand-subtitle {
+
+        padding-left: 2px;
+
+        font-size: 7px;
+
+        letter-spacing: .32em;
+
+    }
+
+
+    /* NAV DESKTOP */
 
     .main-nav {
 
@@ -752,6 +863,8 @@ button {
 
     }
 
+
+    /* BOTÓN */
 
     .menu-button {
 
@@ -858,7 +971,9 @@ button {
     }
 
 
-    /* MOBILE MENU */
+    /* ==================================================
+       MOBILE MENU
+    ================================================== */
 
     .mobile-menu {
 
