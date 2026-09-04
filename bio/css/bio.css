@@ -1,4 +1,34 @@
 /* ==================================================
+   HABILITAR SCROLL EN BIO
+================================================== */
+
+html,
+body {
+
+    height: auto;
+
+    min-height: 100%;
+
+    overflow-x: hidden;
+
+    overflow-y: auto;
+
+}
+
+
+body {
+
+    overflow-y: auto;
+
+}
+
+
+.bio-page {
+
+    overflow: visible;
+
+}
+/* ==================================================
    PABLO BRIE
    BIO
 ================================================== */
