@@ -5,7 +5,7 @@
 .music-page, 
 .music-detail-page {
     background: var(--gris-piedra);
-    color: var(--blanco);
+    color: var(--blanco); 
 }
 
 .music-landing {
