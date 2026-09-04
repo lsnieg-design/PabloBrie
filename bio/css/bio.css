@@ -16,11 +16,7 @@ body {
 }
 
 
-body {
 
-    overflow-y: auto;
-
-}
 
 
 .bio-page {
@@ -43,8 +39,6 @@ body {
     background: var(--crema);
 
     color: var(--texto-oscuro);
-
-    overflow: visible;
 
 }
 
@@ -1040,36 +1034,6 @@ body {
 
 
 .bio-final-link:hover {
-
-    color: var(--dorado);
-
-}
-
-
-/* ==================================================
-   FOOTER
-================================================== */
-
-.bio-footer {
-
-    padding: 30px 40px;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    background: var(--negro);
-
-    color: var(--texto-suave);
-
-    font-size: 8px;
-
-    letter-spacing: .16em;
-
-}
-
-
-.bio-footer a:hover {
 
     color: var(--dorado);
 
