@@ -682,10 +682,6 @@
     </main>
 
 
-
-    <!-- JAVASCRIPT -->
-
-    <script src="../js/main.js"></script>
 <!-- =========================================
      FOOTER
 ========================================== -->
@@ -695,11 +691,7 @@
     <div class="footer-left">
 
         <span>
-            PABLO BRIE
-        </span>
-
-        <span>
-            MÚSICO
+            © <span id="footer-year">2026</span> · PABLO BRIE
         </span>
 
     </div>
@@ -733,6 +725,7 @@
 </footer>
 
 
+
 <!-- =========================================
      ACCESIBILIDAD
 ========================================== -->
@@ -742,6 +735,21 @@
     config-url="https://static.getwcag.com/configs/L5VOLgu5S8h80TInUxdV/config.json"
     use-important="false"
 ></script>
+
+
+<!-- JAVASCRIPT -->
+
+<script src="../js/main.js"></script>
+
+
+<script>
+    const yearElement = document.getElementById("footer-year");
+
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+</script>
+
 
 </body>
 
