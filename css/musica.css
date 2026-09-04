@@ -1,0 +1,727 @@
+/* ==================================================
+   PABLO BRIE — MÚSICA
+================================================== */
+
+.music-page,
+.music-detail-page {
+    background: var(--gris-piedra);
+    color: var(--blanco);
+}
+
+.music-landing {
+    padding-top: 170px;
+}
+
+.music-landing-hero {
+    min-height: 55vh;
+    padding: 110px 9vw 90px;
+    display: grid;
+    grid-template-columns: 18% 82%;
+    align-items: end;
+    background: var(--gris-piedra);
+}
+
+.music-landing-meta {
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: var(--texto-suave);
+    font-size: 9px;
+    letter-spacing: .18em;
+}
+
+.music-landing-copy {
+    max-width: 1050px;
+}
+
+.music-kicker,
+.section-label {
+    font-size: 9px;
+    letter-spacing: .2em;
+}
+
+.music-kicker {
+    margin-bottom: 25px;
+    color: var(--beige);
+}
+
+.music-landing h1 {
+    margin-bottom: 35px;
+    font-family: var(--sans);
+    font-size: clamp(75px, 10vw, 155px);
+    font-weight: 300;
+    line-height: .8;
+    letter-spacing: -.07em;
+}
+
+.music-landing h1 em,
+.detail-hero h1 em,
+.cancionero-title h1 em,
+.theatre-title h1 em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.music-landing-copy > p:last-child {
+    max-width: 620px;
+    color: var(--texto-suave);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.music-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.music-card {
+    min-height: 520px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: 1px solid rgba(247,244,239,.17);
+    border-right: 1px solid rgba(247,244,239,.17);
+    transition: transform .4s ease, color .4s ease, background .4s ease;
+}
+
+.music-card:first-child { border-left: 1px solid rgba(247,244,239,.17); }
+
+.card-solista { background: var(--terracota); }
+.card-cancionero { background: var(--beige); color: var(--texto-oscuro); }
+.card-teatro { background: var(--carbon); }
+
+.music-card:hover {
+    transform: translateY(-8px);
+}
+
+.music-card p {
+    font-size: 8px;
+    letter-spacing: .18em;
+    opacity: .7;
+}
+
+.music-card h2 {
+    margin-top: 35px;
+    font-family: var(--sans);
+    font-size: clamp(45px, 5vw, 78px);
+    font-weight: 300;
+    line-height: .85;
+    letter-spacing: -.06em;
+}
+
+.music-card h2 em {
+    font-family: var(--serif);
+    font-style: italic;
+}
+
+.card-no {
+    font-size: 9px;
+    letter-spacing: .2em;
+    opacity: .7;
+}
+
+.card-link {
+    font-size: 9px;
+    letter-spacing: .16em;
+}
+
+/* ---------- DETAIL HERO ---------- */
+
+.mi-musica-page,
+.cancionero-page,
+.teatro-page {
+    padding-top: 170px;
+}
+
+.detail-hero {
+    min-height: 48vh;
+    padding: 100px 9vw;
+    display: grid;
+    grid-template-columns: 18% 82%;
+    align-items: end;
+}
+
+.detail-hero-muted { background: var(--gris-piedra); }
+
+.detail-index {
+    align-self: start;
+    color: var(--dorado);
+    font-size: 9px;
+    letter-spacing: .2em;
+}
+
+.detail-hero h1,
+.cancionero-title h1,
+.theatre-title h1 {
+    font-family: var(--sans);
+    font-size: clamp(72px, 10vw, 150px);
+    font-weight: 300;
+    line-height: .78;
+    letter-spacing: -.07em;
+}
+
+.detail-lead {
+    max-width: 600px;
+    margin-top: 35px;
+    color: var(--texto-suave);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* ---------- PROJECT OVERVIEW ---------- */
+
+.project-overview {
+    padding: 150px 9vw;
+    display: grid;
+    grid-template-columns: 42% 58%;
+    gap: 70px;
+    background: var(--blanco);
+    color: var(--texto-oscuro);
+}
+
+.project-overview h2,
+.spotify-feature h2,
+.album-intro h2,
+.songs-header h2,
+.credits-section h2,
+.theatre-story h2,
+.theatre-listen h2 {
+    margin: 25px 0 45px;
+    font-family: var(--sans);
+    font-size: clamp(54px, 6vw, 98px);
+    font-weight: 300;
+    line-height: .84;
+    letter-spacing: -.06em;
+}
+
+.project-overview h2 em,
+.spotify-feature h2 em,
+.album-intro h2 em,
+.songs-header h2 em,
+.credits-section h2 em,
+.theatre-story h2 em,
+.theatre-listen h2 em {
+    font-family: var(--serif);
+    font-style: italic;
+}
+
+.overview-copy > p:last-child {
+    max-width: 600px;
+    color: var(--gris-medio);
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+.overview-media {
+    display: grid;
+    grid-template-columns: 1.3fr .7fr;
+    gap: 20px;
+    align-items: end;
+}
+
+.video-card {
+    position: relative;
+    min-height: 420px;
+    overflow: hidden;
+    background: #111;
+}
+
+.video-card-small {
+    min-height: 260px;
+}
+
+.video-card iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    border: 0;
+}
+
+.video-card-small iframe {
+    min-height: 260px;
+}
+
+.media-label {
+    position: absolute;
+    z-index: 3;
+    top: 15px;
+    left: 15px;
+    padding: 8px 10px;
+    background: var(--crema);
+    color: var(--texto-oscuro);
+    font-size: 7px;
+    letter-spacing: .16em;
+}
+
+/* ---------- SPOTIFY ---------- */
+
+.spotify-feature {
+    padding: 170px 9vw;
+    display: grid;
+    grid-template-columns: 45% 55%;
+    gap: 70px;
+    align-items: center;
+    background: var(--carbon);
+}
+
+.spotify-feature > div:first-child > p:not(.section-label) {
+    max-width: 560px;
+    color: var(--texto-suave);
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+.spotify-embed {
+    width: 100%;
+}
+
+/* ---------- CANCIONERO ---------- */
+
+.cancionero-hero {
+    min-height: 60vh;
+    padding: 95px 11vw 90px;
+    display: grid;
+    grid-template-columns: 18% 42% 40%;
+    align-items: end;
+    background: var(--gris-piedra);
+}
+
+.cancionero-title .year {
+    margin-top: 20px;
+    color: var(--beige);
+    font-size: 18px;
+    letter-spacing: .08em;
+}
+
+.album-cover {
+    justify-self: end;
+    width: min(340px, 100%);
+    aspect-ratio: 1;
+    overflow: hidden;
+    transform: translateY(30px);
+}
+
+.album-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.album-intro {
+    padding: 145px 11vw;
+    display: grid;
+    grid-template-columns: 45% 55%;
+    gap: 70px;
+    background: var(--beige);
+    color: var(--texto-oscuro);
+}
+
+.album-intro-copy p {
+    max-width: 700px;
+    margin-bottom: 24px;
+    color: var(--gris-medio);
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+.songs-section {
+    padding: 150px 11vw;
+    background: var(--blanco);
+    color: var(--texto-oscuro);
+}
+
+.songs-header {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    gap: 70px;
+    align-items: end;
+    margin-bottom: 85px;
+}
+
+.songs-header > p {
+    color: var(--gris-medio);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.song {
+    border-top: 1px solid rgba(41,39,37,.18);
+}
+
+.song:last-child {
+    border-bottom: 1px solid rgba(41,39,37,.18);
+}
+
+.song summary {
+    min-height: 92px;
+    padding: 22px 0;
+    display: grid;
+    grid-template-columns: 10% 1fr auto;
+    gap: 25px;
+    align-items: center;
+    cursor: pointer;
+    list-style: none;
+}
+
+.song summary::-webkit-details-marker {
+    display: none;
+}
+
+.song-number {
+    color: var(--terracota);
+    font-size: 9px;
+    letter-spacing: .18em;
+}
+
+.song-title {
+    font-family: var(--serif);
+    font-size: clamp(28px, 3vw, 45px);
+    font-style: italic;
+}
+
+.song-open {
+    font-size: 8px;
+    letter-spacing: .17em;
+    color: var(--gris-claro);
+}
+
+.song-content {
+    padding: 5px 10% 45px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 55px;
+    align-items: start;
+}
+
+.lyrics {
+    max-width: 700px;
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--gris-medio);
+}
+
+.song-spotify {
+    width: max-content;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--terracota);
+    color: var(--texto-oscuro);
+    font-size: 8px;
+    letter-spacing: .16em;
+}
+
+.credits-section {
+    padding: 160px 11vw;
+    display: grid;
+    grid-template-columns: 45% 55%;
+    gap: 70px;
+    background: var(--carbon);
+    color: var(--blanco);
+}
+
+.credits {
+    border-top: 1px solid rgba(247,244,239,.18);
+}
+
+.credits p {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(247,244,239,.12);
+    color: var(--texto-suave);
+    font-size: 13px;
+}
+
+.credits .guest {
+    margin-top: 28px;
+    padding-bottom: 5px;
+    color: var(--dorado);
+    border-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    font-size: 8px;
+}
+
+/* ---------- TEATRO ---------- */
+
+.theatre-hero {
+    min-height: 62vh;
+    padding: 105px 11vw;
+    display: grid;
+    grid-template-columns: 18% 82%;
+    align-items: end;
+    background: var(--terracota);
+}
+
+.theatre-title h1 {
+    color: var(--blanco);
+}
+
+.theatre-title > p:last-child {
+    max-width: 600px;
+    margin-top: 35px;
+    color: rgba(247,244,239,.82);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.theatre-story {
+    padding: 160px 11vw;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    background: var(--blanco);
+    color: var(--texto-oscuro);
+}
+
+.theatre-year {
+    font-family: var(--serif);
+    font-size: 105px;
+    color: var(--terracota);
+    font-style: italic;
+}
+
+.theatre-story > div:last-child {
+    max-width: 900px;
+}
+
+.theatre-story > div:last-child p:not(.section-label) {
+    max-width: 700px;
+    margin-bottom: 24px;
+    color: var(--gris-medio);
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+.theatre-works {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.work-card {
+    min-height: 420px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--gris-piedra);
+    color: var(--blanco);
+    border-right: 1px solid rgba(247,244,239,.15);
+}
+
+.work-card:nth-child(2) { background: var(--beige); color: var(--texto-oscuro); }
+.work-card:nth-child(3) { background: var(--carbon); }
+
+.work-card > span {
+    font-size: 9px;
+    letter-spacing: .18em;
+}
+
+.work-card h3 {
+    font-family: var(--serif);
+    font-size: clamp(38px, 4vw, 62px);
+    font-weight: 400;
+    line-height: .9;
+}
+
+.work-card p {
+    max-width: 280px;
+    font-size: 12px;
+    line-height: 1.7;
+    opacity: .75;
+}
+
+.work-card a {
+    width: max-content;
+    padding-bottom: 8px;
+    border-bottom: 1px solid currentColor;
+    font-size: 8px;
+    letter-spacing: .16em;
+}
+
+.theatre-listen {
+    padding: 160px 11vw;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 70px;
+    background: var(--crema);
+    color: var(--texto-oscuro);
+}
+
+.theatre-listen > div:first-child {
+    max-width: 900px;
+}
+
+.theatre-listen p:not(.section-label) {
+    max-width: 590px;
+    color: var(--gris-medio);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.solid-link {
+    display: inline-flex;
+    margin-top: 40px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--dorado);
+    color: var(--texto);
+    font-size: 8px;
+    letter-spacing: .17em;
+}
+
+.theatre-listen .solid-link {
+    color: var(--texto-oscuro);
+}
+
+.theatre-question {
+    min-height: 300px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--beige);
+}
+
+.theatre-question span {
+    font-size: 8px;
+    letter-spacing: .18em;
+    color: var(--gris-medio);
+}
+
+.theatre-question strong {
+    font-family: var(--serif);
+    font-size: 36px;
+    font-weight: 400;
+    line-height: .95;
+}
+
+.outline-link {
+    width: max-content;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--texto-oscuro);
+    font-size: 8px;
+    letter-spacing: .16em;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 800px) {
+
+    .music-landing,
+    .mi-musica-page,
+    .cancionero-page,
+    .teatro-page {
+        padding-top: 95px;
+    }
+
+    .music-landing-hero,
+    .detail-hero,
+    .cancionero-hero,
+    .theatre-hero {
+        min-height: auto;
+        padding: 75px 25px 70px;
+        display: block;
+    }
+
+    .music-landing-meta,
+    .detail-index {
+        margin-bottom: 55px;
+    }
+
+    .music-landing h1,
+    .detail-hero h1,
+    .cancionero-title h1,
+    .theatre-title h1 {
+        font-size: 19vw;
+    }
+
+    .music-cards,
+    .project-overview,
+    .spotify-feature,
+    .album-intro,
+    .songs-header,
+    .credits-section,
+    .theatre-story,
+    .theatre-listen {
+        display: block;
+    }
+
+    .music-card {
+        min-height: 350px;
+        border-left: 1px solid rgba(247,244,239,.17);
+    }
+
+    .project-overview,
+    .album-intro,
+    .songs-section,
+    .credits-section,
+    .theatre-story,
+    .theatre-listen {
+        padding: 90px 25px;
+    }
+
+    .overview-media {
+        display: flex;
+        flex-direction: column;
+        margin-top: 55px;
+    }
+
+    .video-card,
+    .video-card-small {
+        min-height: 300px;
+        width: 100%;
+    }
+
+    .video-card iframe,
+    .video-card-small iframe {
+        min-height: 300px;
+    }
+
+    .spotify-embed {
+        margin-top: 50px;
+    }
+
+    .album-cover {
+        width: 75vw;
+        margin: 55px auto 0 0;
+        transform: none;
+    }
+
+    .songs-header > p {
+        margin-top: 40px;
+    }
+
+    .song summary {
+        grid-template-columns: 12% 1fr auto;
+        gap: 12px;
+        min-height: 75px;
+    }
+
+    .song-content {
+        display: block;
+        padding: 5px 0 35px 12%;
+    }
+
+    .song-spotify {
+        margin-top: 30px;
+    }
+
+    .theatre-works {
+        grid-template-columns: 1fr;
+    }
+
+    .work-card {
+        min-height: 320px;
+        border-right: 0;
+        border-bottom: 1px solid rgba(247,244,239,.15);
+    }
+
+    .theatre-year {
+        margin-bottom: 45px;
+        font-size: 75px;
+    }
+
+    .theatre-listen .theatre-question {
+        margin-top: 55px;
+    }
+}
