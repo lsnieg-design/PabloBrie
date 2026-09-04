@@ -17,17 +17,31 @@
 
     <title>Bio — Pablo Brie</title>
 
+
+    <!-- TIPOGRAFÍAS -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap"
         rel="stylesheet"
     >
+
+
+    <!-- CSS GENERAL -->
 
     <link
         rel="stylesheet"
         href="../css/style.css"
     >
+
+
+    <!-- CSS ESPECÍFICO BIO -->
 
     <link
         rel="stylesheet"
@@ -38,6 +52,10 @@
 
 
 <body class="internal-page">
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
 
     <header class="site-header">
 
@@ -67,12 +85,15 @@
 
         </a>
 
+
         <nav
             class="main-nav"
             aria-label="Navegación principal"
         >
 
-            <a href="../">INICIO</a>
+            <a href="../">
+                INICIO
+            </a>
 
             <a
                 href="./"
@@ -93,8 +114,14 @@
 
                 <div class="submenu">
 
-                    <a href="../musica/mi-musica/">MI MÚSICA</a>
-                    <a href="../musica/cancionero/">CANCIONERO</a>
+                    <a href="../musica/mi-musica/">
+                        MI MÚSICA
+                    </a>
+
+                    <a href="../musica/cancionero/">
+                        CANCIONERO
+                    </a>
+
                     <a href="../musica/musica-para-teatro/">
                         MÚSICA PARA TEATRO
                     </a>
@@ -103,10 +130,16 @@
 
             </div>
 
-            <a href="../experiencias/">EXPERIENCIAS</a>
-            <a href="../contacto/">CONTACTO</a>
+            <a href="../experiencias/">
+                EXPERIENCIAS
+            </a>
+
+            <a href="../contacto/">
+                CONTACTO
+            </a>
 
         </nav>
+
 
         <button
             class="menu-button"
@@ -114,33 +147,68 @@
             aria-label="Abrir menú"
             aria-expanded="false"
         >
+
             <span></span>
             <span></span>
+
         </button>
 
     </header>
 
+
+    <!-- =========================================
+         MENÚ MOBILE
+    ========================================== -->
 
     <div class="mobile-menu">
 
         <nav>
 
             <a href="../">INICIO</a>
+
             <a href="./">BIO</a>
-            <a href="../historias-contrabajo/">HISTORIAS CONTRABAJO</a>
-            <a href="../musica/">MÚSICA</a>
-            <a href="../musica/mi-musica/"><small>MI MÚSICA</small></a>
-            <a href="../musica/cancionero/"><small>CANCIONERO</small></a>
-            <a href="../musica/musica-para-teatro/"><small>MÚSICA PARA TEATRO</small></a>
-            <a href="../experiencias/">EXPERIENCIAS</a>
-            <a href="../contacto/">CONTACTO</a>
+
+            <a href="../historias-contrabajo/">
+                HISTORIAS CONTRABAJO
+            </a>
+
+            <a href="../musica/">
+                MÚSICA
+            </a>
+
+            <a href="../musica/mi-musica/">
+                <small>MI MÚSICA</small>
+            </a>
+
+            <a href="../musica/cancionero/">
+                <small>CANCIONERO</small>
+            </a>
+
+            <a href="../musica/musica-para-teatro/">
+                <small>MÚSICA PARA TEATRO</small>
+            </a>
+
+            <a href="../experiencias/">
+                EXPERIENCIAS
+            </a>
+
+            <a href="../contacto/">
+                CONTACTO
+            </a>
 
         </nav>
 
     </div>
 
 
+    <!-- =========================================
+         BIOGRAFÍA
+    ========================================== -->
+
     <main class="bio-page">
+
+
+        <!-- APERTURA -->
 
         <section class="bio-opening">
 
@@ -148,6 +216,7 @@
                 <span>01</span>
                 <span>BIO</span>
             </div>
+
 
             <div class="bio-opening-title">
 
@@ -162,6 +231,7 @@
 
             </div>
 
+
             <div class="bio-opening-image">
 
                 <img
@@ -171,19 +241,29 @@
 
             </div>
 
+
             <div class="bio-opening-caption">
 
-                <span>Córdoba · Argentina</span>
-                <span>↓</span>
+                <span>
+                    Córdoba · Argentina
+                </span>
+
+                <span>
+                    ↓
+                </span>
 
             </div>
 
         </section>
 
 
+        <!-- COMIENZOS -->
+
         <section class="bio-intro">
 
-            <div class="bio-year">01</div>
+            <div class="bio-year">
+                01
+            </div>
 
             <div class="bio-intro-content">
 
@@ -225,6 +305,8 @@
         </section>
 
 
+        <!-- FOTO 2 -->
+
         <section class="bio-photo bio-photo-large">
 
             <img
@@ -233,10 +315,14 @@
                 loading="lazy"
             >
 
-            <span class="photo-number">02</span>
+            <span class="photo-number">
+                02
+            </span>
 
         </section>
 
+
+        <!-- CONTRABAJO -->
 
         <section class="bio-dual">
 
@@ -252,7 +338,9 @@
 
             <div class="bio-dual-text">
 
-                <span class="bio-year">02</span>
+                <span class="bio-year">
+                    02
+                </span>
 
                 <p class="bio-section-label">
                     EL CONTRABAJO
@@ -274,11 +362,15 @@
         </section>
 
 
+        <!-- TEATRO -->
+
         <section class="bio-theatre">
 
             <div class="bio-theatre-header">
 
-                <span class="bio-section-label">2003</span>
+                <span class="bio-section-label">
+                    2003
+                </span>
 
                 <h2>
                     El teatro
@@ -286,6 +378,7 @@
                 </h2>
 
             </div>
+
 
             <div class="bio-theatre-content">
 
@@ -313,6 +406,7 @@
 
                 </div>
 
+
                 <div class="bio-theatre-image">
 
                     <img
@@ -332,6 +426,8 @@
         </section>
 
 
+        <!-- FOTO 5 -->
+
         <section class="bio-photo bio-photo-offset">
 
             <img
@@ -341,16 +437,23 @@
             >
 
             <div class="photo-note">
+
                 <span>03</span>
                 <span>ESCENA</span>
+
             </div>
 
         </section>
 
 
+        <!-- DOCENCIA -->
+
         <section class="bio-education">
 
-            <div class="bio-education-number">04</div>
+            <div class="bio-education-number">
+                04
+            </div>
+
 
             <div class="bio-education-content">
 
@@ -383,6 +486,8 @@
         </section>
 
 
+        <!-- FOTOS -->
+
         <section class="bio-photo-grid">
 
             <div class="bio-grid-main">
@@ -412,6 +517,8 @@
         </section>
 
 
+        <!-- TIERRA ADENTRO -->
+
         <section class="bio-tierra">
 
             <div class="bio-tierra-image">
@@ -423,6 +530,7 @@
                 >
 
             </div>
+
 
             <div class="bio-tierra-content">
 
@@ -457,9 +565,13 @@
         </section>
 
 
+        <!-- FINAL -->
+
         <section class="bio-final">
 
-            <div class="bio-final-year">2025</div>
+            <div class="bio-final-year">
+                2025
+            </div>
 
             <div class="bio-final-content">
 
@@ -485,13 +597,10 @@
                     href="../historias-contrabajo/"
                     class="bio-final-link"
                 >
-
                     <span>
                         CONOCER HISTORIAS CONTRABAJO
                     </span>
-
                     <span>↗</span>
-
                 </a>
 
             </div>
@@ -500,6 +609,10 @@
 
     </main>
 
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
 
     <footer class="site-footer">
 
@@ -513,7 +626,9 @@
 
         <div class="footer-center">
 
-            <span>CREADO POR</span>
+            <span>
+                CREADO POR
+            </span>
 
             <a
                 href="https://www.somosnomade.com.ar/"
@@ -536,7 +651,12 @@
     </footer>
 
 
+    <!-- JAVASCRIPT -->
+
     <script src="../js/main.js"></script>
+
+
+    <!-- ACCESIBILIDAD -->
 
     <script
         src="https://static.getwcag.com/widget.js"
