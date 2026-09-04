@@ -1,308 +1,251 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Pablo Brie — Músico</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <meta
         name="description"
-        content="Pablo Brie. Músico, compositor y artista."
+        content="Pablo Brie — Músico, compositor y artista."
     >
 
-    <link rel="stylesheet" href="css/style.css">
+    <title>Pablo Brie — Músico</title>
 
+    <!-- TIPOGRAFÍAS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap"
         rel="stylesheet"
     >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
+
 
 <body>
 
-    <!-- NAVEGACIÓN -->
+    <!-- =========================================
+         HEADER
+    ========================================== -->
 
-    <header class="header">
+    <header class="site-header">
 
-        <a href="/" class="logo">
-            PABLO<br>BRIE
+        <a href="/" class="logo" aria-label="Pablo Brie - Inicio">
+
+            <img
+                src="assets/img/logo.avif"
+                alt="Pablo Brie — Músico"
+            >
+
         </a>
 
-        <button class="menu-toggle" aria-label="Abrir menú">
-            <span></span>
-            <span></span>
-        </button>
 
-        <nav class="nav">
+        <!-- MENÚ DESKTOP -->
 
-            <a href="bio/">BIO</a>
+        <nav class="main-nav" aria-label="Navegación principal">
 
-            <a href="historias-contrabajo/">
-                HISTORIAS<br>CONTRABAJO
+            <a href="/" class="active">
+                INICIO
             </a>
 
-            <div class="nav-dropdown">
+            <a href="bio/">
+                BIO
+            </a>
 
-                <a href="musica/">MÚSICA</a>
+            <a href="historias-contrabajo/">
+                HISTORIAS CONTRABAJO
+            </a>
 
-                <div class="dropdown-menu">
-                    <a href="musica/mi-musica/">MI MÚSICA</a>
-                    <a href="musica/cancionero/">CANCIONERO</a>
+
+            <div class="nav-item">
+
+                <a href="musica/">
+                    MÚSICA
+                </a>
+
+                <div class="submenu">
+
+                    <a href="musica/mi-musica/">
+                        MI MÚSICA
+                    </a>
+
+                    <a href="musica/cancionero/">
+                        CANCIONERO
+                    </a>
+
                     <a href="musica/musica-para-teatro/">
                         MÚSICA PARA TEATRO
                     </a>
+
                 </div>
 
             </div>
 
-            <a href="experiencias/">EXPERIENCIAS</a>
 
-            <a href="contacto/">CONTACTO</a>
+            <a href="experiencias/">
+                EXPERIENCIAS
+            </a>
+
+            <a href="contacto/">
+                CONTACTO
+            </a>
 
         </nav>
+
+
+        <!-- BOTÓN MOBILE -->
+
+        <button
+            class="menu-button"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+        >
+
+            <span></span>
+            <span></span>
+
+        </button>
 
     </header>
 
 
-    <!-- HERO -->
+    <!-- =========================================
+         MENÚ MOBILE
+    ========================================== -->
 
-    <main>
+    <div class="mobile-menu">
+
+        <nav>
+
+            <a href="/">
+                INICIO
+            </a>
+
+            <a href="bio/">
+                BIO
+            </a>
+
+            <a href="historias-contrabajo/">
+                HISTORIAS CONTRABAJO
+            </a>
+
+            <a href="musica/">
+                MÚSICA
+            </a>
+
+            <a href="musica/mi-musica/">
+                <small>MI MÚSICA</small>
+            </a>
+
+            <a href="musica/cancionero/">
+                <small>CANCIONERO</small>
+            </a>
+
+            <a href="musica/musica-para-teatro/">
+                <small>MÚSICA PARA TEATRO</small>
+            </a>
+
+            <a href="experiencias/">
+                EXPERIENCIAS
+            </a>
+
+            <a href="contacto/">
+                CONTACTO
+            </a>
+
+        </nav>
+
+    </div>
+
+
+    <!-- =========================================
+         PORTADA
+    ========================================== -->
+
+    <main class="home">
 
         <section class="hero">
 
-            <div class="hero-image">
+            <!-- IMAGEN -->
 
-                <!--
-                    Esta imagen la reemplazamos después
-                    por una de las originales de Wix.
-                -->
+            <div class="hero-image">
 
                 <img
                     src="assets/img/hero.jpg"
-                    alt="Pablo Brie"
+                    alt="Pablo Brie con su contrabajo"
                 >
 
             </div>
 
-            <div class="hero-overlay"></div>
 
-            <div class="hero-content">
+            <!-- CAPA MUY SUTIL -->
 
-                <p class="eyebrow">
-                    MÚSICO · COMPOSITOR · ARTISTA
-                </p>
+            <div class="hero-shade"></div>
+
+
+            <!-- TEXTO / IDENTIDAD -->
+
+            <div class="hero-intro">
+
+                <span class="hero-small">
+                    MÚSICO
+                </span>
 
                 <h1>
-                    Pablo<br>
-                    <em>Brie</em>
+                    Pablo Brie
                 </h1>
 
-                <a
-                    href="historias-contrabajo/"
-                    class="hero-link"
-                >
-                    CONOCER SU OBRA
-                    <span>↗</span>
-                </a>
-
-            </div>
-
-            <div class="hero-scroll">
-                <span>SCROLL</span>
-                <span class="arrow">↓</span>
-            </div>
-
-        </section>
-
-
-        <!-- PRESENTACIÓN -->
-
-        <section class="intro">
-
-            <div class="intro-number">
-                01
-            </div>
-
-            <div class="intro-text">
-
-                <p class="section-label">
-                    SOBRE PABLO
-                </p>
-
-                <h2>
-                    Una vida atravesada
-                    <em>por la música.</em>
-                </h2>
-
-                <p class="intro-description">
-                    Músico, compositor y creador. Su recorrido reúne
-                    escenarios, canciones, teatro, contrabajo y
-                    experiencias compartidas.
-                </p>
-
-                <a href="bio/" class="text-link">
-                    CONOCER SU HISTORIA
-                    <span>→</span>
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- HISTORIAS CONTRABAJO -->
-
-        <section class="feature">
-
-            <div class="feature-image">
-
-                <img
-                    src="assets/img/historias-contrabajo.jpg"
-                    alt="Historias Contrabajo"
-                >
-
-            </div>
-
-            <div class="feature-content">
-
-                <p class="section-label">
-                    OBRA
-                </p>
-
-                <h2>
-                    Historias<br>
-                    <em>Contrabajo</em>
-                </h2>
-
-                <p>
-                    Una obra que pone al contrabajo en el centro
-                    de la escena y convierte la música en relato,
-                    memoria y encuentro.
-                </p>
-
-                <a
-                    href="historias-contrabajo/"
-                    class="text-link"
-                >
-                    VER PROYECTO
-                    <span>↗</span>
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- UNIVERSO -->
-
-        <section class="universe">
-
-            <div class="universe-header">
-
-                <p class="section-label">
-                    UNIVERSO
-                </p>
-
-                <h2>
-                    Música,<br>
-                    teatro y experiencias.
-                </h2>
-
             </div>
 
 
-            <div class="universe-grid">
-
-                <a
-                    href="musica/"
-                    class="universe-card"
-                >
-                    <span class="card-number">01</span>
-
-                    <h3>Música</h3>
-
-                    <span class="card-arrow">↗</span>
-                </a>
-
-
-                <a
-                    href="historias-contrabajo/"
-                    class="universe-card"
-                >
-                    <span class="card-number">02</span>
-
-                    <h3>Historias<br>Contrabajo</h3>
-
-                    <span class="card-arrow">↗</span>
-                </a>
-
-
-                <a
-                    href="experiencias/"
-                    class="universe-card"
-                >
-                    <span class="card-number">03</span>
-
-                    <h3>Experiencias</h3>
-
-                    <span class="card-arrow">↗</span>
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- CIERRE -->
-
-        <section class="closing">
-
-            <p>
-                Pablo Brie
-            </p>
-
-            <h2>
-                Escuchar.<br>
-                Crear.<br>
-                <em>Compartir.</em>
-            </h2>
+            <!-- LLAMADA PRINCIPAL -->
 
             <a
-                href="contacto/"
-                class="closing-link"
+                href="historias-contrabajo/"
+                class="hero-button"
             >
-                CONTACTO →
+
+                <span>
+                    HISTORIAS CONTRABAJO
+                </span>
+
+                <span class="button-arrow">
+                    ↗
+                </span>
+
             </a>
+
+
+            <!-- INDICADOR -->
+
+            <div class="hero-signature">
+
+                <span>
+                    MÚSICA · TEATRO · EXPERIENCIAS
+                </span>
+
+            </div>
 
         </section>
 
     </main>
 
 
-    <!-- FOOTER -->
-
-    <footer class="footer">
-
-        <div>
-            © <span id="year"></span> Pablo Brie
-        </div>
-
-        <div>
-            pablobrie@gmail.com
-        </div>
-
-        <div>
-            <a href="#">Instagram</a>
-        </div>
-
-    </footer>
-
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
 
     <script src="js/main.js"></script>
 
 </body>
+
 </html>
