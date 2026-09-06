@@ -1,0 +1,543 @@
+/* ==================================================
+   PABLO BRIE
+   EXPERIENCIAS
+================================================== */
+
+.experiencias-page {
+    background: var(--crema);
+    color: var(--texto-oscuro);
+}
+
+.experiencias-main {
+    padding-top: 170px;
+}
+
+/* ==================================================
+   HERO
+================================================== */
+
+.experiencias-hero {
+    min-height: calc(100vh - 170px);
+    padding: 100px 9vw 85px;
+    display: grid;
+    grid-template-columns: 18% 64% 18%;
+    align-items: center;
+    background: var(--gris-piedra);
+    color: var(--blanco);
+}
+
+.experiencias-hero-index {
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 6px;
+    color: var(--texto-suave);
+    font-size: 9px;
+    letter-spacing: .19em;
+}
+
+.experiencias-hero-copy {
+    max-width: 1020px;
+}
+
+.experiencias-kicker {
+    margin-bottom: 30px;
+    color: var(--beige);
+    font-size: 9px;
+    letter-spacing: .2em;
+}
+
+.experiencias-hero h1 {
+    max-width: 980px;
+    margin-bottom: 45px;
+    font-family: var(--sans);
+    font-size: clamp(72px, 9vw, 140px);
+    font-weight: 300;
+    line-height: .79;
+    letter-spacing: -.07em;
+}
+
+.experiencias-hero h1 em {
+    display: block;
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -.04em;
+}
+
+.experiencias-hero-lead {
+    max-width: 610px;
+    color: var(--texto-suave);
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+.experiencias-hero-mark {
+    align-self: end;
+    justify-self: end;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 18px;
+    color: var(--dorado);
+    font-size: 9px;
+    letter-spacing: .18em;
+}
+
+/* ==================================================
+   INTRO
+================================================== */
+
+.experiencia-intro {
+    min-height: 760px;
+    display: grid;
+    grid-template-columns: 48% 52%;
+    background: var(--blanco);
+}
+
+.experiencia-intro-image {
+    min-height: 760px;
+    overflow: hidden;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 760px;
+    padding: 55px;
+    display: flex;
+    align-items: flex-end;
+    background:
+        radial-gradient(circle at 30% 30%, rgba(216,206,196,.36), transparent 26%),
+        linear-gradient(
+            145deg,
+            var(--gris-piedra) 0%,
+            var(--carbon) 65%,
+            var(--negro) 100%
+        );
+    color: var(--beige);
+}
+
+.image-placeholder span {
+    font-family: var(--serif);
+    font-size: clamp(55px, 6vw, 95px);
+    font-style: italic;
+    line-height: .82;
+}
+
+.experiencia-intro-copy {
+    padding: 120px clamp(45px, 7vw, 110px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.experience-year {
+    margin-top: 28px;
+    color: var(--terracota);
+    font-size: 10px;
+    letter-spacing: .19em;
+}
+
+.experiencia-intro-copy h2 {
+    margin: 25px 0 48px;
+    max-width: 700px;
+    font-family: var(--sans);
+    font-size: clamp(62px, 7vw, 108px);
+    font-weight: 300;
+    line-height: .82;
+    letter-spacing: -.07em;
+}
+
+.experiencia-intro-copy h2 em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.experiencia-intro-copy p:not(.section-label) {
+    max-width: 620px;
+    margin-bottom: 23px;
+    color: var(--gris-medio);
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+/* ==================================================
+   TEASER
+================================================== */
+
+.teaser-section {
+    padding: 150px 9vw;
+    display: grid;
+    grid-template-columns: 38% 62%;
+    gap: 70px;
+    align-items: center;
+    background: var(--terracota);
+    color: var(--blanco);
+}
+
+.teaser-copy {
+    max-width: 590px;
+}
+
+.teaser-copy .section-index {
+    display: block;
+    margin-bottom: 45px;
+    color: var(--beige);
+    font-size: 10px;
+    letter-spacing: .18em;
+}
+
+.teaser-copy .section-label {
+    color: var(--beige);
+}
+
+.teaser-copy h2 {
+    margin: 25px 0 40px;
+    font-family: var(--sans);
+    font-size: clamp(60px, 6.5vw, 98px);
+    font-weight: 300;
+    line-height: .82;
+    letter-spacing: -.07em;
+}
+
+.teaser-copy h2 em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.teaser-copy > p:last-child {
+    color: rgba(247,244,239,.82);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.teaser-video {
+    width: 100%;
+}
+
+.video-ratio {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--negro);
+}
+
+.video-ratio iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.video-caption {
+    display: block;
+    margin-top: 18px;
+    color: var(--beige);
+    font-size: 7px;
+    letter-spacing: .2em;
+}
+
+/* ==================================================
+   REFLEXIÓN
+================================================== */
+
+.experiencia-reflexion {
+    padding: 165px 12vw;
+    display: grid;
+    grid-template-columns: 18% 82%;
+    background: var(--beige);
+}
+
+.reflexion-number {
+    color: var(--terracota);
+    font-size: 10px;
+    letter-spacing: .18em;
+}
+
+.reflexion-copy {
+    max-width: 980px;
+}
+
+.reflexion-copy h2 {
+    max-width: 900px;
+    margin: 25px 0 55px;
+    font-family: var(--sans);
+    font-size: clamp(58px, 7vw, 110px);
+    font-weight: 300;
+    line-height: .84;
+    letter-spacing: -.07em;
+}
+
+.reflexion-copy h2 em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.reflexion-copy > p:not(.section-label) {
+    max-width: 690px;
+    margin-bottom: 23px;
+    color: var(--gris-medio);
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+.future-note {
+    width: max-content;
+    margin-top: 55px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(184,91,60,.45);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.future-note span {
+    color: var(--terracota);
+    font-size: 8px;
+    letter-spacing: .2em;
+}
+
+.future-note strong {
+    font-family: var(--serif);
+    font-size: 25px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* ==================================================
+   VIDEO COMPLETO
+================================================== */
+
+.full-video-section {
+    padding: 160px 9vw 140px;
+    background: var(--carbon);
+    color: var(--blanco);
+}
+
+.full-video-header {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    gap: 70px;
+    align-items: end;
+    margin-bottom: 75px;
+}
+
+.full-video-header h2 {
+    max-width: 800px;
+    margin: 25px 0 0;
+    font-family: var(--sans);
+    font-size: clamp(60px, 7vw, 110px);
+    font-weight: 300;
+    line-height: .83;
+    letter-spacing: -.07em;
+}
+
+.full-video-header h2 em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.full-video-header > p {
+    max-width: 430px;
+    margin: 0;
+    color: var(--texto-suave);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.full-video {
+    width: min(100%, 1100px);
+    margin-left: 18%;
+}
+
+.video-external-link {
+    display: inline-flex;
+    margin: 25px 0 0 18%;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--dorado);
+    color: var(--blanco);
+    font-size: 8px;
+    letter-spacing: .17em;
+}
+
+.video-external-link:hover {
+    color: var(--dorado);
+}
+
+/* ==================================================
+   CIERRE
+================================================== */
+
+.experiencias-closing {
+    min-height: 72vh;
+    padding: 120px 8vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--crema);
+    color: var(--texto-oscuro);
+}
+
+.experiencias-closing h2 {
+    max-width: 950px;
+    margin: 28px 0 35px;
+    font-family: var(--sans);
+    font-size: clamp(68px, 9vw, 135px);
+    font-weight: 300;
+    line-height: .8;
+    letter-spacing: -.07em;
+}
+
+.experiencias-closing h2 em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.experiencias-closing > p:not(.section-label) {
+    color: var(--gris-medio);
+    font-size: 14px;
+}
+
+.closing-link {
+    margin-top: 45px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid var(--terracota);
+    color: var(--texto-oscuro);
+    font-size: 9px;
+    letter-spacing: .18em;
+}
+
+.closing-link:hover {
+    color: var(--terracota);
+}
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 800px) {
+
+    .experiencias-main {
+        padding-top: 95px;
+    }
+
+    .experiencias-hero {
+        min-height: auto;
+        padding: 75px 25px 80px;
+        display: block;
+    }
+
+    .experiencias-hero-index {
+        margin-bottom: 65px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .experiencias-hero h1 {
+        font-size: 18vw;
+    }
+
+    .experiencias-hero-lead {
+        font-size: 14px;
+    }
+
+    .experiencias-hero-mark {
+        margin-top: 60px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .experiencia-intro {
+        display: block;
+    }
+
+    .experiencia-intro-image,
+    .image-placeholder {
+        min-height: 58vh;
+    }
+
+    .image-placeholder {
+        padding: 25px;
+    }
+
+    .image-placeholder span {
+        font-size: 17vw;
+    }
+
+    .experiencia-intro-copy {
+        padding: 95px 25px;
+    }
+
+    .experiencia-intro-copy h2 {
+        font-size: 16vw;
+    }
+
+    .teaser-section {
+        padding: 95px 25px;
+        display: block;
+    }
+
+    .teaser-copy {
+        margin-bottom: 55px;
+    }
+
+    .teaser-copy h2 {
+        font-size: 16vw;
+    }
+
+    .experiencia-reflexion {
+        padding: 100px 25px;
+        display: block;
+    }
+
+    .reflexion-number {
+        margin-bottom: 50px;
+    }
+
+    .reflexion-copy h2 {
+        font-size: 16vw;
+    }
+
+    .full-video-section {
+        padding: 100px 25px;
+    }
+
+    .full-video-header {
+        display: block;
+        margin-bottom: 55px;
+    }
+
+    .full-video-header > p {
+        margin-top: 35px;
+    }
+
+    .full-video-header h2 {
+        font-size: 16vw;
+    }
+
+    .full-video,
+    .video-external-link {
+        margin-left: 0;
+    }
+
+    .experiencias-closing {
+        min-height: 60vh;
+        padding: 90px 25px;
+    }
+
+    .experiencias-closing h2 {
+        font-size: 17vw;
+    }
+
+}
