@@ -1,0 +1,373 @@
+/* ==================================================
+   PABLO BRIE
+   CONTACTO
+================================================== */
+
+.contacto-page {
+    background: var(--crema);
+    color: var(--texto-oscuro);
+}
+
+.contacto-main {
+    padding-top: 170px;
+}
+
+/* ==================================================
+   HERO
+================================================== */
+
+.contacto-hero {
+    min-height: 55vh;
+    padding: 110px 9vw 90px;
+    display: grid;
+    grid-template-columns: 18% 82%;
+    align-items: center;
+    background: var(--gris-piedra);
+    color: var(--blanco);
+}
+
+.contacto-index {
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: var(--texto-suave);
+    font-size: 9px;
+    letter-spacing: .2em;
+}
+
+.contacto-hero-copy {
+    max-width: 1000px;
+}
+
+.contacto-kicker {
+    margin-bottom: 28px;
+    color: var(--beige);
+    font-size: 9px;
+    letter-spacing: .2em;
+}
+
+.contacto-hero h1 {
+    max-width: 900px;
+    margin-bottom: 35px;
+    font-family: var(--sans);
+    font-size: clamp(80px, 10vw, 155px);
+    font-weight: 300;
+    line-height: .78;
+    letter-spacing: -.07em;
+}
+
+.contacto-hero h1 em {
+    display: block;
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.contacto-hero-copy > p:last-child {
+    max-width: 600px;
+    color: var(--texto-suave);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* ==================================================
+   GRILLA PRINCIPAL
+================================================== */
+
+.contacto-grid {
+    min-height: 850px;
+    padding: 145px 9vw;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 90px;
+    background: var(--blanco);
+}
+
+/* ==================================================
+   INFORMACIÓN
+================================================== */
+
+.contacto-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contacto-info h2,
+.form-heading h2 {
+    margin: 25px 0 35px;
+    font-family: var(--sans);
+    font-size: clamp(68px, 7vw, 110px);
+    font-weight: 300;
+    line-height: .82;
+    letter-spacing: -.07em;
+}
+
+.contacto-info h2 em,
+.form-heading h2 em,
+.contacto-closing h2 em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.mail-link {
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--terracota);
+    color: var(--texto-oscuro);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.mail-link:hover {
+    color: var(--terracota);
+}
+
+.social-list {
+    width: min(100%, 420px);
+    margin-top: 80px;
+    border-top: 1px solid rgba(41,39,37,.18);
+}
+
+.social-list a {
+    min-height: 62px;
+    padding: 14px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(41,39,37,.18);
+    color: var(--texto-oscuro);
+    font-size: 9px;
+    letter-spacing: .18em;
+    transition: color .25s ease, padding-left .25s ease;
+}
+
+.social-list a:hover {
+    padding-left: 8px;
+    color: var(--terracota);
+}
+
+/* ==================================================
+   FORMULARIO
+================================================== */
+
+.contacto-form-wrap {
+    max-width: 760px;
+}
+
+.form-heading {
+    margin-bottom: 50px;
+}
+
+.form-heading h2 {
+    max-width: 700px;
+}
+
+.contact-form {
+    width: 100%;
+}
+
+.honey-field {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.form-field {
+    margin-bottom: 30px;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--gris-claro);
+    font-size: 8px;
+    letter-spacing: .2em;
+}
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    padding: 15px 0;
+    border: 0;
+    border-bottom: 1px solid rgba(41,39,37,.24);
+    outline: none;
+    background: transparent;
+    color: var(--texto-oscuro);
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 300;
+    border-radius: 0;
+    transition: border-color .25s ease;
+}
+
+.form-field textarea {
+    min-height: 150px;
+    resize: vertical;
+    line-height: 1.7;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+    color: var(--gris-claro);
+    opacity: .9;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+    border-color: var(--terracota);
+}
+
+.form-submit {
+    width: 100%;
+    margin-top: 15px;
+    padding: 20px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 0;
+    background: var(--gris-piedra);
+    color: var(--blanco);
+    font-family: var(--sans);
+    font-size: 9px;
+    letter-spacing: .18em;
+    cursor: pointer;
+    transition: background .3s ease, transform .3s ease;
+}
+
+.form-submit:hover {
+    background: var(--terracota);
+    transform: translateY(-2px);
+}
+
+.form-submit:disabled {
+    opacity: .65;
+    cursor: wait;
+    transform: none;
+}
+
+.form-submit.is-sending {
+    background: var(--gris-medio);
+}
+
+.form-status {
+    min-height: 25px;
+    margin-top: 18px;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.form-status.success {
+    color: #55745f;
+}
+
+.form-status.error {
+    color: var(--terracota);
+}
+
+/* ==================================================
+   CIERRE
+================================================== */
+
+.contacto-closing {
+    min-height: 65vh;
+    padding: 120px 8vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--beige);
+    color: var(--texto-oscuro);
+}
+
+.contacto-closing h2 {
+    max-width: 1000px;
+    margin: 30px 0 50px;
+    font-family: var(--sans);
+    font-size: clamp(68px, 8vw, 125px);
+    font-weight: 300;
+    line-height: .8;
+    letter-spacing: -.07em;
+}
+
+.closing-link {
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--terracota);
+    color: var(--texto-oscuro);
+    font-size: 9px;
+    letter-spacing: .18em;
+}
+
+.closing-link:hover {
+    color: var(--terracota);
+}
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 800px) {
+
+    .contacto-main {
+        padding-top: 95px;
+    }
+
+    .contacto-hero {
+        min-height: auto;
+        padding: 75px 25px 80px;
+        display: block;
+    }
+
+    .contacto-index {
+        margin-bottom: 60px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .contacto-hero h1 {
+        font-size: 20vw;
+    }
+
+    .contacto-grid {
+        min-height: auto;
+        padding: 95px 25px;
+        display: block;
+    }
+
+    .contacto-info h2,
+    .form-heading h2 {
+        font-size: 17vw;
+    }
+
+    .mail-link {
+        font-size: 13px;
+    }
+
+    .social-list {
+        margin-top: 60px;
+        margin-bottom: 90px;
+    }
+
+    .form-heading {
+        margin-bottom: 40px;
+    }
+
+    .form-field {
+        margin-bottom: 27px;
+    }
+
+    .contacto-closing {
+        min-height: 58vh;
+        padding: 90px 25px;
+    }
+
+    .contacto-closing h2 {
+        font-size: 17vw;
+    }
+
+}
