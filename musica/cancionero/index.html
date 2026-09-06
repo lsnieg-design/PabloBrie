@@ -1,1446 +1,404 @@
-/* ==================================================
-   PABLO BRIE — MÚSICA
-================================================== */   
-
-.music-page,
-.music-detail-page {
-    background: var(--gris-piedra);
-    color: var(--blanco);
-}
-
-.music-landing {
-    padding-top: 170px;
-}
-
-.music-landing-hero {
-    min-height: 55vh;
-    padding: 110px 9vw 90px;
-    display: grid;
-    grid-template-columns: 18% 82%;
-    align-items: end;
-    background: var(--gris-piedra);
-}
-
-.music-landing-meta {
-    align-self: start;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    color: var(--texto-suave);
-    font-size: 9px;
-    letter-spacing: .18em;
-}
-
-.music-landing-copy {
-    max-width: 1050px;
-}
-
-.music-kicker,
-.section-label {
-    font-size: 9px;
-    letter-spacing: .2em;
-}
-
-.music-kicker {
-    margin-bottom: 25px;
-    color: var(--beige);
-}
-
-.music-landing h1 {
-    margin-bottom: 35px;
-    font-family: var(--sans);
-    font-size: clamp(75px, 10vw, 155px);
-    font-weight: 300;
-    line-height: .8;
-    letter-spacing: -.07em;
-}
-
-.music-landing h1 em,
-.detail-hero h1 em,
-.cancionero-title h1 em,
-.theatre-title h1 em {
-    font-family: var(--serif);
-    font-style: italic;
-    font-weight: 400;
-}
-
-.music-landing-copy > p:last-child {
-    max-width: 620px;
-    color: var(--texto-suave);
-    font-size: 16px;
-    line-height: 1.8;
-}
-
-.music-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.music-card {
-    min-height: 520px;
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-top: 1px solid rgba(247,244,239,.17);
-    border-right: 1px solid rgba(247,244,239,.17);
-    transition: transform .4s ease, color .4s ease, background .4s ease;
-}
-
-.music-card:first-child { border-left: 1px solid rgba(247,244,239,.17); }
-
-.card-solista { background: var(--terracota); }
-.card-cancionero { background: var(--beige); color: var(--texto-oscuro); }
-.card-teatro { background: var(--carbon); }
-
-.music-card:hover {
-    transform: translateY(-8px);
-}
-
-.music-card p {
-    font-size: 8px;
-    letter-spacing: .18em;
-    opacity: .7;
-}
-
-.music-card h2 {
-    margin-top: 35px;
-    font-family: var(--sans);
-    font-size: clamp(45px, 5vw, 78px);
-    font-weight: 300;
-    line-height: .85;
-    letter-spacing: -.06em;
-}
-
-.music-card h2 em {
-    font-family: var(--serif);
-    font-style: italic;
-}
-
-.card-no {
-    font-size: 9px;
-    letter-spacing: .2em;
-    opacity: .7;
-}
-
-.card-link {
-    font-size: 9px;
-    letter-spacing: .16em;
-}
-
-/* ---------- DETAIL HERO ---------- */
-
-.mi-musica-page,
-.cancionero-page,
-.teatro-page {
-    padding-top: 170px;
-}
-
-.detail-hero {
-    min-height: 48vh;
-    padding: 100px 9vw;
-    display: grid;
-    grid-template-columns: 18% 82%;
-    align-items: end;
-}
-
-.detail-hero-muted { background: var(--gris-piedra); }
-
-.detail-index {
-    align-self: start;
-    color: var(--dorado);
-    font-size: 9px;
-    letter-spacing: .2em;
-}
-
-.detail-hero h1,
-.cancionero-title h1,
-.theatre-title h1 {
-    font-family: var(--sans);
-    font-size: clamp(72px, 10vw, 150px);
-    font-weight: 300;
-    line-height: .78;
-    letter-spacing: -.07em;
-}
-
-.detail-lead {
-    max-width: 600px;
-    margin-top: 35px;
-    color: var(--texto-suave);
-    font-size: 15px;
-    line-height: 1.8;
-}
-
-/* ---------- PROJECT OVERVIEW ---------- */
-
-.project-overview {
-    padding: 150px 9vw;
-    display: grid;
-    grid-template-columns: 42% 58%;
-    gap: 70px;
-    background: var(--blanco);
-    color: var(--texto-oscuro);
-}
-
-.project-overview h2,
-.spotify-feature h2,
-.album-intro h2,
-.songs-header h2,
-.credits-section h2,
-.theatre-story h2,
-.theatre-listen h2 {
-    margin: 25px 0 45px;
-    font-family: var(--sans);
-    font-size: clamp(54px, 6vw, 98px);
-    font-weight: 300;
-    line-height: .84;
-    letter-spacing: -.06em;
-}
-
-.project-overview h2 em,
-.spotify-feature h2 em,
-.album-intro h2 em,
-.songs-header h2 em,
-.credits-section h2 em,
-.theatre-story h2 em,
-.theatre-listen h2 em {
-    font-family: var(--serif);
-    font-style: italic;
-}
-
-.overview-copy > p:last-child {
-    max-width: 600px;
-    color: var(--gris-medio);
-    font-size: 15px;
-    line-height: 1.85;
-}
-
-.overview-media {
-    display: grid;
-    grid-template-columns: 1.3fr .7fr;
-    gap: 20px;
-    align-items: end;
-}
-
-.video-card {
-    position: relative;
-    min-height: 420px;
-    overflow: hidden;
-    background: #111;
-}
-
-.video-card-small {
-    min-height: 260px;
-}
-
-.video-card iframe {
-    width: 100%;
-    height: 100%;
-    min-height: 420px;
-    border: 0;
-}
-
-.video-card-small iframe {
-    min-height: 260px;
-}
-
-.media-label {
-    position: absolute;
-    z-index: 3;
-    top: 15px;
-    left: 15px;
-    padding: 8px 10px;
-    background: var(--crema);
-    color: var(--texto-oscuro);
-    font-size: 7px;
-    letter-spacing: .16em;
-}
-
-/* ---------- SPOTIFY ---------- */
-
-.spotify-feature {
-    padding: 170px 9vw;
-    display: grid;
-    grid-template-columns: 45% 55%;
-    gap: 70px;
-    align-items: center;
-    background: var(--carbon);
-}
-
-.spotify-feature > div:first-child > p:not(.section-label) {
-    max-width: 560px;
-    color: var(--texto-suave);
-    font-size: 14px;
-    line-height: 1.85;
-}
-
-.spotify-embed {
-    width: 100%;
-}
-
-/* ---------- TEATRO ---------- */
-
-.theatre-hero {
-    min-height: 62vh;
-    padding: 105px 11vw;
-    display: grid;
-    grid-template-columns: 18% 82%;
-    align-items: end;
-    background: var(--terracota);
-}
-
-.theatre-title h1 {
-    color: var(--blanco);
-}
-
-.theatre-title > p:last-child {
-    max-width: 600px;
-    margin-top: 35px;
-    color: rgba(247,244,239,.82);
-    font-size: 15px;
-    line-height: 1.8;
-}
-
-.theatre-story {
-    padding: 160px 11vw;
-    display: grid;
-    grid-template-columns: 25% 75%;
-    background: var(--blanco);
-    color: var(--texto-oscuro);
-}
-
-.theatre-year {
-    font-family: var(--serif);
-    font-size: 105px;
-    color: var(--terracota);
-    font-style: italic;
-}
-
-.theatre-story > div:last-child {
-    max-width: 900px;
-}
-
-.theatre-story > div:last-child p:not(.section-label) {
-    max-width: 700px;
-    margin-bottom: 24px;
-    color: var(--gris-medio);
-    font-size: 15px;
-    line-height: 1.85;
-}
-
-.theatre-works {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.work-card {
-    min-height: 420px;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: var(--gris-piedra);
-    color: var(--blanco);
-    border-right: 1px solid rgba(247,244,239,.15);
-}
-
-.work-card:nth-child(2) { background: var(--beige); color: var(--texto-oscuro); }
-.work-card:nth-child(3) { background: var(--carbon); }
-
-.work-card > span {
-    font-size: 9px;
-    letter-spacing: .18em;
-}
-
-.work-card h3 {
-    font-family: var(--serif);
-    font-size: clamp(38px, 4vw, 62px);
-    font-weight: 400;
-    line-height: .9;
-}
-
-.work-card p {
-    max-width: 280px;
-    font-size: 12px;
-    line-height: 1.7;
-    opacity: .75;
-}
-
-.work-card a {
-    width: max-content;
-    padding-bottom: 8px;
-    border-bottom: 1px solid currentColor;
-    font-size: 8px;
-    letter-spacing: .16em;
-}
-
-.theatre-listen {
-    padding: 160px 11vw;
-    display: grid;
-    grid-template-columns: 60% 40%;
-    gap: 70px;
-    background: var(--crema);
-    color: var(--texto-oscuro);
-}
-
-.theatre-listen > div:first-child {
-    max-width: 900px;
-}
-
-.theatre-listen p:not(.section-label) {
-    max-width: 590px;
-    color: var(--gris-medio);
-    font-size: 14px;
-    line-height: 1.8;
-}
-
-.solid-link {
-    display: inline-flex;
-    margin-top: 40px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--dorado);
-    color: var(--texto);
-    font-size: 8px;
-    letter-spacing: .17em;
-}
-
-.theatre-listen .solid-link {
-    color: var(--texto-oscuro);
-}
-
-.theatre-question {
-    min-height: 300px;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: var(--beige);
-}
-
-.theatre-question span {
-    font-size: 8px;
-    letter-spacing: .18em;
-    color: var(--gris-medio);
-}
-
-.theatre-question strong {
-    font-family: var(--serif);
-    font-size: 36px;
-    font-weight: 400;
-    line-height: .95;
-}
-
-.outline-link {
-    width: max-content;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--texto-oscuro);
-    font-size: 8px;
-    letter-spacing: .16em;
-}
-
-/* ---------- MOBILE ---------- */
-
-@media (max-width: 800px) {
-
-    .music-landing,
-    .mi-musica-page,
-    .cancionero-page,
-    .teatro-page {
-        padding-top: 95px;
-    }
-
-    .music-landing-hero,
-    .detail-hero,
-    .cancionero-hero,
-    .theatre-hero {
-        min-height: auto;
-        padding: 75px 25px 70px;
-        display: block;
-    }
-
-    .music-landing-meta,
-    .detail-index {
-        margin-bottom: 55px;
-    }
-
-    .music-landing h1,
-    .detail-hero h1,
-    .cancionero-title h1,
-    .theatre-title h1 {
-        font-size: 19vw;
-    }
-
-    .music-cards,
-    .project-overview,
-    .spotify-feature,
-    .album-intro,
-    .songs-header,
-    .credits-section,
-    .theatre-story,
-    .theatre-listen {
-        display: block;
-    }
-
-    .music-card {
-        min-height: 350px;
-        border-left: 1px solid rgba(247,244,239,.17);
-    }
-
-    .project-overview,
-    .album-intro,
-    .songs-section,
-    .credits-section,
-    .theatre-story,
-    .theatre-listen {
-        padding: 90px 25px;
-    }
-
-    .overview-media {
-        display: flex;
-        flex-direction: column;
-        margin-top: 55px;
-    }
-
-    .video-card,
-    .video-card-small {
-        min-height: 300px;
-        width: 100%;
-    }
-
-    .video-card iframe,
-    .video-card-small iframe {
-        min-height: 300px;
-    }
-
-    .spotify-embed {
-        margin-top: 50px;
-    }
-
-    .album-cover-wrap {
-        width: 75vw;
-        margin-top: 50px;
-    }
-
-    .album-info {
-        padding: 95px 25px;
-        display: block;
-    }
-
-    .album-player-block {
-        margin-top: 55px;
-    }
-
-    .songs-section {
-        padding: 95px 25px;
-    }
-
-    .songs-intro {
-        display: block;
-        margin-bottom: 55px;
-    }
-
-    .songs-help {
-        margin-top: 35px;
-    }
-
-    .song-trigger {
-        min-height: 78px;
-        grid-template-columns: 11% 1fr auto;
-        gap: 10px;
-    }
-
-    .song-name {
-        font-size: 27px;
-    }
-
-    .song-action {
-        font-size: 7px;
-    }
-
-    .song-panel {
-        padding: 5px 0 45px 11%;
-        display: block;
-    }
-
-    .listen-column {
-        margin-top: 35px;
-    }
-
-    .theatre-works {
-        grid-template-columns: 1fr;
-    }
-
-    .work-card {
-        min-height: 320px;
-        border-right: 0;
-        border-bottom: 1px solid rgba(247,244,239,.15);
-    }
-
-    .theatre-year {
-        margin-bottom: 45px;
-        font-size: 75px;
-    }
-
-    .theatre-listen .theatre-question {
-        margin-top: 55px;
-    }
-}
-
-
-/* ==================================================
-   PABLO BRIE — CANCIONERO
-================================================== */
-
-.cancionero-page {
-    background: var(--gris-piedra);
-    color: var(--blanco);
-}
-
-.cancionero-main {
-    padding-top: 170px;
-}
-
-/* ---------- ENCABEZADO ---------- */
-
-.cancionero-intro {
-    min-height: 500px;
-    padding: 78px 9vw 75px;
-    display: grid;
-    grid-template-columns: 1fr 280px;
-    gap: 70px;
-    align-items: center;
-    background: var(--gris-piedra);
-}
-
-.cancionero-title-block {
-    align-self: start;
-}
-
-.cancionero-title-block .section-index {
-    margin-bottom: 38px;
-    color: var(--beige);
-    font-size: 9px;
-    letter-spacing: .18em;
-}
-
-.cancionero-title-block h1 {
-    margin: 14px 0 15px;
-    font-family: var(--serif);
-    font-size: clamp(68px, 7vw, 112px);
-    font-weight: 400;
-    line-height: .8;
-    letter-spacing: -.04em;
-    color: var(--beige);
-}
-
-.cancionero-title-block h1 em {
-    font-style: italic;
-}
-
-.album-year {
-    font-size: 17px;
-    letter-spacing: .07em;
-    color: var(--blanco);
-}
-
-.album-cover-wrap {
-    width: 280px;
-    justify-self: end;
-}
-
-.album-cover {
-    width: 100%;
-    aspect-ratio: 1;
-    display: block;
-    object-fit: cover;
-    box-shadow: 18px 18px 0 rgba(37,35,33,.28);
-}
-
-/* ---------- INFO + SPOTIFY ---------- */
-
-.album-info {
-    padding: 120px 9vw;
-    display: grid;
-    grid-template-columns: 52% 48%;
-    gap: 70px;
-    background: var(--beige);
-    color: var(--texto-oscuro);
-}
-
-.album-story {
-    max-width: 760px;
-}
-
-.album-story h2 {
-    margin: 25px 0 42px;
-    max-width: 700px;
-    font-family: var(--sans);
-    font-size: clamp(52px, 5.5vw, 88px);
-    font-weight: 300;
-    line-height: .86;
-    letter-spacing: -.06em;
-}
-
-.album-story h2 em {
-    font-family: var(--serif);
-    font-style: italic;
-    font-weight: 400;
-}
-
-.album-story > p:not(.section-label) {
-    max-width: 680px;
-    margin-bottom: 24px;
-    color: var(--gris-medio);
-    font-size: 14px;
-    line-height: 1.85;
-}
-
-.album-player-block {
-    padding-top: 6px;
-}
-
-.album-player {
-    margin-top: 22px;
-}
-
-.album-player iframe {
-    display: block;
-    width: 100%;
-    border: 0;
-    border-radius: 12px;
-}
-
-/* ---------- LISTADO ---------- */
-
-.songs-section {
-    padding: 145px 9vw;
-    background: var(--blanco);
-    color: var(--texto-oscuro);
-}
-
-.songs-intro {
-    margin-bottom: 70px;
-    display: grid;
-    grid-template-columns: 55% 45%;
-    gap: 70px;
-    align-items: end;
-}
-
-.songs-intro h2 {
-    margin-top: 22px;
-    font-family: var(--sans);
-    font-size: clamp(55px, 6vw, 95px);
-    font-weight: 300;
-    line-height: .85;
-    letter-spacing: -.065em;
-}
-
-.songs-intro h2 em {
-    font-family: var(--serif);
-    font-style: italic;
-    font-weight: 400;
-}
-
-.songs-help {
-    max-width: 520px;
-    color: var(--gris-medio);
-    font-size: 14px;
-    line-height: 1.8;
-}
-
-.songs-list {
-    border-top: 1px solid rgba(41,39,37,.18);
-}
-
-.song-row {
-    border-bottom: 1px solid rgba(41,39,37,.18);
-}
-
-.song-trigger {
-    width: 100%;
-    min-height: 92px;
-    padding: 20px 0;
-    display: grid;
-    grid-template-columns: 8% 1fr auto;
-    gap: 25px;
-    align-items: center;
-    border: 0;
-    background: transparent;
-    color: var(--texto-oscuro);
-    text-align: left;
-    cursor: pointer;
-}
-
-.song-trigger:hover {
-    color: var(--terracota);
-}
-
-.song-no {
-    font-size: 9px;
-    letter-spacing: .18em;
-    color: var(--terracota);
-}
-
-.song-name {
-    font-family: var(--serif);
-    font-size: clamp(27px, 3vw, 44px);
-    font-style: italic;
-    line-height: .95;
-}
-
-.song-action {
-    font-size: 8px;
-    letter-spacing: .16em;
-    color: var(--gris-claro);
-    white-space: nowrap;
-}
-
-.song-action b {
-    font-size: 15px;
-    font-weight: 300;
-}
-
-.song-trigger[aria-expanded="true"] {
-    color: var(--terracota);
-}
-
-/* ---------- LETRA ABIERTA ---------- */
-
-.song-panel {
-    padding: 10px 0 55px 8%;
-    display: grid;
-    grid-template-columns: 58% 42%;
-    gap: 60px;
-    align-items: start;
-}
-
-.lyrics {
-    max-width: 650px;
-    color: var(--gris-medio);
-    font-size: 14px;
-    line-height: 1.9;
-}
-
-.listen-column {
-    padding-top: 3px;
-}
-
-.mini-label {
-    margin-bottom: 15px;
-    color: var(--gris-claro);
-    font-size: 8px;
-    letter-spacing: .18em;
-}
-
-.listen-column iframe {
-    display: block;
-    width: 100%;
-    border: 0;
-    border-radius: 12px;
-}
-
-.song-spotify {
-    width: max-content;
-    margin-top: 18px;
-    padding-bottom: 8px;
-    display: block;
-    border-bottom: 1px solid var(--terracota);
-    color: var(--texto-oscuro);
-    font-size: 8px;
-    letter-spacing: .16em;
-}
-
-/* ---------- FICHA ---------- */
-
-.credits-section {
-    padding: 160px 9vw;
-    display: grid;
-    grid-template-columns: 46% 54%;
-    gap: 70px;
-    background: var(--carbon);
-    color: var(--blanco);
-}
-
-.credits-title h2 {
-    margin-top: 25px;
-    max-width: 650px;
-    font-family: var(--sans);
-    font-size: clamp(58px, 6.5vw, 98px);
-    font-weight: 300;
-    line-height: .83;
-    letter-spacing: -.065em;
-}
-
-.credits-title h2 em {
-    font-family: var(--serif);
-    font-style: italic;
-}
-
-.credits-list {
-    border-top: 1px solid rgba(247,244,239,.17);
-}
-
-.credits-list > div {
-    padding: 15px 0;
-    display: grid;
-    grid-template-columns: 45% 55%;
-    gap: 20px;
-    border-bottom: 1px solid rgba(247,244,239,.11);
-    font-size: 12px;
-    line-height: 1.55;
-}
-
-.credits-list span {
-    color: var(--texto-suave);
-}
-
-.credits-list strong {
-    color: var(--blanco);
-    font-weight: 300;
-}
-
-.guest-credit {
-    margin-top: 25px;
-    padding-top: 25px !important;
-}
-
-.guest-credit span {
-    color: var(--dorado);
-    text-transform: uppercase;
-    letter-spacing: .14em;
-    font-size: 8px;
-}
-
-/* ---------- CIERRE ---------- */
-
-.cancionero-closing {
-    min-height: 70vh;
-    padding: 120px 9vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: var(--crema);
-    color: var(--texto-oscuro);
-}
-
-.cancionero-closing h2 {
-    margin: 28px 0 55px;
-    font-family: var(--sans);
-    font-size: clamp(60px, 8vw, 120px);
-    font-weight: 300;
-    line-height: .82;
-    letter-spacing: -.07em;
-}
-
-.cancionero-closing h2 em {
-    font-family: var(--serif);
-    font-style: italic;
-}
-
-.back-link {
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--terracota);
-    font-size: 9px;
-    letter-spacing: .18em;
-}
-
-/* ---------- MOBILE ---------- */
-
-@media (max-width: 800px) {
-
-    .cancionero-main {
-        padding-top: 95px;
-    }
-
-    .cancionero-intro {
-        min-height: auto;
-        padding: 75px 25px 80px;
-        display: block;
-    }
-
-    .cancionero-title-block .section-index {
-        margin-bottom: 50px;
-    }
-
-    .cancionero-title-block h1 {
-        font-size: 21vw;
-    }
-
-    .album-cover-wrap {
-        width: min(78vw, 340px);
-        margin-top: 50px;
-    }
-
-    .album-info,
-    .credits-section {
-        padding: 95px 25px;
-        display: block;
-    }
-
-    .album-player-block {
-        margin-top: 55px;
-    }
-
-    .songs-section {
-        padding: 95px 25px;
-    }
-
-    .songs-intro {
-        display: block;
-        margin-bottom: 55px;
-    }
-
-    .songs-help {
-        margin-top: 35px;
-    }
-
-    .song-trigger {
-        min-height: 78px;
-        grid-template-columns: 11% 1fr auto;
-        gap: 10px;
-    }
-
-    .song-name {
-        font-size: 27px;
-    }
-
-    .song-action {
-        font-size: 7px;
-    }
-
-    .song-panel {
-        padding: 5px 0 45px 11%;
-        display: block;
-    }
-
-    .listen-column {
-        margin-top: 35px;
-    }
-
-    .credits-title {
-        margin-bottom: 55px;
-    }
-
-    .credits-list > div {
-        grid-template-columns: 1fr;
-        gap: 6px;
-    }
-
-    .cancionero-closing {
-        min-height: 60vh;
-        padding: 90px 25px;
-    }
-}
-
-
-/* ==================================================
-   CANCIONERO — OVERRIDES FOR CURRENT MARKUP
-================================================== */
-
-.cancionero-page .section-label {
-    color: var(--beige);
-}
-
-.cancionero-page .cancionero-intro .section-label {
-    color: var(--beige);
-}
-
-.cancionero-page .album-info .section-label,
-.cancionero-page .songs-section .section-label {
-    color: var(--gris-claro);
-}
-
-.cancionero-page .credits-section .section-label {
-    color: var(--dorado);
-}
-
-@media (max-width: 800px) {
-    .cancionero-page .cancionero-intro {
-        display: block;
-    }
-
-    .cancionero-page .album-cover-wrap {
-        width: min(78vw, 340px);
-        margin-top: 50px;
-    }
-
-    .cancionero-page .album-cover {
-        transform: none;
-    }
-
-    .cancionero-page .album-player-block {
-        margin-top: 55px;
-    }
-}
-
-/* ==================================================
-   CANCIONERO — ÚNICA VERSIÓN
-   Esta sección coincide con el HTML actual.
-================================================== */
-
-.cancionero-page {
-    background: var(--gris-piedra);
-    color: var(--blanco);
-}
-
-.cancionero-page .cancionero-hero {
-    min-height: 62vh;
-    padding: 90px 11vw 80px;
-    display: grid;
-    grid-template-columns: 16% 49% 35%;
-    gap: 45px;
-    align-items: center;
-    background: var(--gris-piedra);
-}
-
-.cancionero-page .detail-index {
-    align-self: start;
-    color: var(--dorado);
-    font-size: 9px;
-    letter-spacing: .2em;
-}
-
-.cancionero-page .cancionero-title {
-    align-self: center;
-}
-
-.cancionero-page .music-kicker {
-    margin-bottom: 22px;
-    color: var(--beige);
-    font-size: 9px;
-    letter-spacing: .2em;
-}
-
-.cancionero-page .cancionero-title h1 {
-    margin: 0;
-    font-family: var(--serif);
-    font-size: clamp(78px, 9vw, 145px);
-    font-weight: 400;
-    line-height: .78;
-    letter-spacing: -.045em;
-    color: var(--beige);
-}
-
-.cancionero-page .cancionero-title h1 em {
-    font-style: italic;
-}
-
-.cancionero-page .cancionero-title .year {
-    margin-top: 22px;
-    color: var(--blanco);
-    font-family: var(--sans);
-    font-size: 17px;
-    letter-spacing: .07em;
-}
-
-.cancionero-page .album-cover {
-    justify-self: end;
-    width: min(320px, 100%);
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    box-shadow: 18px 18px 0 rgba(37,35,33,.24);
-}
-
-.cancionero-page .album-cover img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-}
-
-/* ---------- HISTORIA DEL DISCO ---------- */
-
-.cancionero-page .album-intro {
-    padding: 135px 11vw;
-    display: grid;
-    grid-template-columns: 45% 55%;
-    gap: 75px;
-    background: var(--beige);
-    color: var(--texto-oscuro);
-}
-
-.cancionero-page .album-intro > div:first-child {
-    max-width: 650px;
-}
-
-.cancionero-page .album-intro h2 {
-    margin: 25px 0 45px;
-    max-width: 700px;
-    font-family: var(--sans);
-    font-size: clamp(55px, 6vw, 94px);
-    font-weight: 300;
-    line-height: .84;
-    letter-spacing: -.065em;
-}
-
-.cancionero-page .album-intro h2 em {
-    font-family: var(--serif);
-    font-style: italic;
-    font-weight: 400;
-}
-
-.cancionero-page .album-intro-copy p {
-    max-width: 710px;
-    margin-bottom: 24px;
-    color: var(--gris-medio);
-    font-size: 14px;
-    line-height: 1.85;
-}
-
-/* ---------- CANCIONES ---------- */
-
-.cancionero-page .songs-section {
-    padding: 145px 11vw;
-    background: var(--blanco);
-    color: var(--texto-oscuro);
-}
-
-.cancionero-page .songs-header {
-    margin-bottom: 75px;
-    display: grid;
-    grid-template-columns: 55% 45%;
-    gap: 70px;
-    align-items: end;
-}
-
-.cancionero-page .songs-header h2 {
-    margin: 24px 0 0;
-    font-family: var(--sans);
-    font-size: clamp(58px, 6vw, 96px);
-    font-weight: 300;
-    line-height: .84;
-    letter-spacing: -.065em;
-}
-
-.cancionero-page .songs-header h2 em {
-    font-family: var(--serif);
-    font-style: italic;
-    font-weight: 400;
-}
-
-.cancionero-page .songs-header > p {
-    max-width: 540px;
-    color: var(--gris-medio);
-    font-size: 14px;
-    line-height: 1.8;
-}
-
-.cancionero-page .songs-list {
-    border-top: 1px solid rgba(41,39,37,.18);
-}
-
-.cancionero-page .song {
-    border-bottom: 1px solid rgba(41,39,37,.18);
-}
-
-.cancionero-page .song summary {
-    min-height: 94px;
-    padding: 20px 0;
-    display: grid;
-    grid-template-columns: 9% 1fr auto;
-    gap: 24px;
-    align-items: center;
-    cursor: pointer;
-    list-style: none;
-    color: var(--texto-oscuro);
-}
-
-.cancionero-page .song summary::-webkit-details-marker {
-    display: none;
-}
-
-.cancionero-page .song summary:hover {
-    color: var(--terracota);
-}
-
-.cancionero-page .song-number {
-    color: var(--terracota);
-    font-size: 9px;
-    letter-spacing: .18em;
-}
-
-.cancionero-page .song-title {
-    font-family: var(--serif);
-    font-size: clamp(28px, 3vw, 45px);
-    font-style: italic;
-    line-height: .95;
-}
-
-.cancionero-page .song-open {
-    color: var(--gris-claro);
-    font-size: 8px;
-    letter-spacing: .17em;
-    white-space: nowrap;
-}
-
-.cancionero-page .song-content {
-    padding: 8px 0 58px 9%;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 360px;
-    gap: 60px;
-    align-items: start;
-}
-
-.cancionero-page .lyrics {
-    max-width: 680px;
-    color: var(--gris-medio);
-    font-size: 14px;
-    line-height: 1.9;
-}
-
-.cancionero-page .song-spotify {
-    width: max-content;
-    margin-top: 22px;
-    padding-bottom: 8px;
-    display: inline-block;
-    border-bottom: 1px solid var(--terracota);
-    color: var(--texto-oscuro);
-    font-size: 8px;
-    letter-spacing: .16em;
-}
-
-.cancionero-page .song-spotify:hover {
-    color: var(--terracota);
-}
-
-/* ---------- FICHA ---------- */
-
-.cancionero-page .credits-section {
-    padding: 160px 11vw;
-    display: grid;
-    grid-template-columns: 45% 55%;
-    gap: 70px;
-    background: var(--carbon);
-    color: var(--blanco);
-}
-
-.cancionero-page .credits h2 {
-    margin: 25px 0 0;
-    max-width: 650px;
-    font-family: var(--sans);
-    font-size: clamp(58px, 6.5vw, 98px);
-    font-weight: 300;
-    line-height: .83;
-    letter-spacing: -.065em;
-}
-
-.cancionero-page .credits h2 em {
-    font-family: var(--serif);
-    font-style: italic;
-}
-
-.cancionero-page .credits {
-    border-top: 1px solid rgba(247,244,239,.18);
-}
-
-.cancionero-page .credits p {
-    margin: 0;
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(247,244,239,.11);
-    color: var(--texto-suave);
-    font-size: 12px;
-    line-height: 1.55;
-}
-
-.cancionero-page .credits .guest {
-    margin-top: 25px;
-    padding-bottom: 5px;
-    color: var(--dorado);
-    border-bottom: 0;
-    text-transform: uppercase;
-    letter-spacing: .14em;
-    font-size: 8px;
-}
-
-/* ---------- ESTADO ABIERTO ---------- */
-
-.cancionero-page .song[open] summary {
-    color: var(--terracota);
-}
-
-.cancionero-page .song[open] .song-open {
-    color: var(--terracota);
-}
-
-/* ---------- MOBILE ---------- */
-
-@media (max-width: 800px) {
-
-    .cancionero-page .cancionero-hero {
-        min-height: auto;
-        padding: 75px 25px 80px;
-        display: block;
-    }
-
-    .cancionero-page .detail-index {
-        margin-bottom: 55px;
-    }
-
-    .cancionero-page .cancionero-title h1 {
-        font-size: 21vw;
-    }
-
-    .cancionero-page .album-cover {
-        width: min(78vw, 340px);
-        margin-top: 50px;
-        justify-self: start;
-    }
-
-    .cancionero-page .album-intro,
-    .cancionero-page .credits-section {
-        padding: 95px 25px;
-        display: block;
-    }
-
-    .cancionero-page .album-intro > div + div {
-        margin-top: 55px;
-    }
-
-    .cancionero-page .album-intro h2,
-    .cancionero-page .songs-header h2,
-    .cancionero-page .credits h2 {
-        font-size: 16vw;
-    }
-
-    .cancionero-page .songs-section {
-        padding: 95px 25px;
-    }
-
-    .cancionero-page .songs-header {
-        display: block;
-        margin-bottom: 55px;
-    }
-
-    .cancionero-page .songs-header > p {
-        margin-top: 35px;
-    }
-
-    .cancionero-page .song summary {
-        min-height: 80px;
-        grid-template-columns: 11% 1fr auto;
-        gap: 10px;
-    }
-
-    .cancionero-page .song-title {
-        font-size: 27px;
-    }
-
-    .cancionero-page .song-open {
-        font-size: 7px;
-    }
-
-    .cancionero-page .song-content {
-        padding: 5px 0 45px 11%;
-        display: block;
-    }
-
-    .cancionero-page .song-content > .song-spotify {
-        margin-top: 30px;
-    }
-
-    .cancionero-page .credits {
-        margin-top: 10px;
-    }
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cancionero de Este Barro, de Pablo Brie. Letras de las ocho canciones.">
+<title>Cancionero — Este Barro — Pablo Brie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/musica.css?v=7">
+</head>
+<body class="internal-page music-detail-page cancionero-page">
+
+<header class="site-header">
+    <a href="../../" class="brand" aria-label="Pablo Brie - Inicio">
+        <img src="../../assets/img/logo.avif" alt="" class="brand-symbol">
+        <span class="brand-name">
+            <span class="brand-title">Pablo Brie</span>
+            <span class="brand-subtitle">Músico</span>
+        </span>
+    </a>
+
+    <nav class="main-nav" aria-label="Navegación principal">
+        <a href="../../">INICIO</a>
+        <a href="../../bio/">BIO</a>
+        <a href="../../historias-contrabajo/">HISTORIAS CONTRABAJO</a>
+        <div class="nav-item">
+            <a href="../" class="active">MÚSICA</a>
+            <div class="submenu">
+                <a href="../mi-musica/">MI MÚSICA</a>
+                <a href="./" class="sub-active">CANCIONERO</a>
+                <a href="../musica-para-teatro/">MÚSICA PARA TEATRO</a>
+            </div>
+        </div>
+        <a href="../../experiencias/">EXPERIENCIAS</a>
+        <a href="../../contacto/">CONTACTO</a>
+    </nav>
+
+    <button class="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span>
+    </button>
+</header>
+
+<div class="mobile-menu">
+    <nav>
+        <a href="../../">INICIO</a>
+        <a href="../../bio/">BIO</a>
+        <a href="../../historias-contrabajo/">HISTORIAS CONTRABAJO</a>
+        <a href="../">MÚSICA</a>
+        <a href="../mi-musica/"><small>MI MÚSICA</small></a>
+        <a href="../cancionero/"><small>CANCIONERO</small></a>
+        <a href="../musica-para-teatro/"><small>MÚSICA PARA TEATRO</small></a>
+        <a href="../../experiencias/">EXPERIENCIAS</a>
+        <a href="../../contacto/">CONTACTO</a>
+    </nav>
+</div>
+
+<main class="cancionero-page">
+    <section class="cancionero-hero">
+        <div class="detail-index">03 / 02</div>
+        <div class="cancionero-title">
+            <p class="music-kicker">CANCIONERO</p>
+            <h1>Este <em>barro.</em></h1>
+            <div class="year">2021</div>
+        </div>
+        <div class="album-cover">
+            <img src="../../assets/img/este-barro.jpg" alt="Portada del disco Este Barro de Pablo Brie">
+        </div>
+    </section>
+
+    <section class="album-intro">
+        <div>
+            <p class="section-label">EL DISCO</p>
+            <h2>Un mundo que pudimos <em>inventarnos.</em></h2>
+        </div>
+        <div class="album-intro-copy">
+            <p>Este Barro es mi primer trabajo como cantautor. Fue gestado durante la pandemia e inspirado por la vivencia familiar durante el encierro, en la que Paulina, mi compañera ceramista, ante la imposibilidad de ir a trabajar a su taller, hizo un pozo en el jardín de nuestra casa para sacar barro y comenzar a modelar amuletos.</p>
+            <p>Esta experiencia fue un disparador creativo para toda la familia, incluyendo nuestro hijo Vicente que, por entonces tenía tres años. Aquí están las canciones que nacieron en ese tiempo, en ese otro mundo que pudimos inventarnos.</p>
+        </div>
+    </section>
+
+    <section class="songs-section">
+        <div class="songs-header">
+            <div>
+                <p class="section-label">LAS CANCIONES</p>
+                <h2>Elegí una.<br><em>Abrí la letra.</em></h2>
+            </div>
+            <p>Ocho canciones de <em>Este Barro</em>. Cada título funciona como una puerta: al abrirla aparece la letra y el enlace para escucharla.</p>
+        </div>
+
+        <div class="songs-list">
+            <details class="song">
+    <summary>
+        <span class="song-number">01</span>
+        <span class="song-title">Una puerta en el aire</span>
+        <span class="song-open">ABRIR +</span>
+    </summary>
+    <div class="song-content">
+        <div class="lyrics">Abres los ojos, regresas de un sueño
+Donde abres una puerta que da al cuarto
+Donde acabas de despertar
+Para descubrir tu dedo
+Dibujando una puerta en el aire
+
+Así tal vez, el sueño te llevaba
+Al lugar en que dormías
+Donde alguien que no veías
+Te tocaba la espalda
+Y se iba por la misma puerta
+
+Dibujas una puerta, abres la puerta
+Para dibujar un camino
+Dibujas árboles al lado del camino
+Y un río donde un hombre está dormido
+Porque lo dibujas dormido
+Lo miras, no lo despiertas
+Y corres de regreso
+Por el sendero y los árboles
+Hasta la puerta de tu dibujo
+
+Detrás de la puerta
+Se esconde el hombre que dibujaste en el río
+Sobre sus labios ahora dibujas un beso</div>
+        <a class="song-spotify" href="https://open.spotify.com/track/7fR8B5hyXPTi2GMb8C5Eh7" target="_blank" rel="noopener noreferrer">ESCUCHAR ESTA CANCIÓN ↗</a>
+    </div>
+</details>
+<details class="song">
+    <summary>
+        <span class="song-number">02</span>
+        <span class="song-title">Amuletos</span>
+        <span class="song-open">ABRIR +</span>
+    </summary>
+    <div class="song-content">
+        <div class="lyrics">Las preguntas se quedan
+Lo normal desvanece
+Las ideas se ausentan
+Los pulmones olvidan
+Los mundos recuerdan
+Los pies se confunden
+Los niños preguntan
+Las paredes conspiran
+Mientras tanto ella sigue
+construyendo amuletos
+
+La luz te devuelve
+Las raíces nos guían
+Las estrellas te nombran
+La palabra nos pierde
+La tierra se entrega
+Las manos conservan
+La suerte se ríe
+Los muertos alumbran
+Mientras tanto ella sigue
+construyendo amuletos</div>
+        <a class="song-spotify" href="https://open.spotify.com/track/3ey1fEp4OBneTMNhHnyQmB" target="_blank" rel="noopener noreferrer">ESCUCHAR ESTA CANCIÓN ↗</a>
+    </div>
+</details>
+<details class="song">
+    <summary>
+        <span class="song-number">03</span>
+        <span class="song-title">Casiopea</span>
+        <span class="song-open">ABRIR +</span>
+    </summary>
+    <div class="song-content">
+        <div class="lyrics">Vuelo sobre mis pasos
+Atravieso universos
+La guía cabe en mi palma
+Mejor es ir más lento
+
+Con su mirada sabia
+La niña sabe escucharme
+Casiopea llevame
+Despacio hacia mi destino
+
+Quiero guardar en mis ojos
+Cada hoja del camino
+Casiopea llevame
+Despacio hacia mi destino
+
+Los fantasmas del tiempo
+Ya querrán aturdirme
+El miedo es su gran espada
+Ella me lo recuerda
+
+Sé que seré alimento
+La muerte no es más que un sueño</div>
+        <a class="song-spotify" href="https://open.spotify.com/track/0jo78MNBWLeGB7WP8UqY4I" target="_blank" rel="noopener noreferrer">ESCUCHAR ESTA CANCIÓN ↗</a>
+    </div>
+</details>
+<details class="song">
+    <summary>
+        <span class="song-number">04</span>
+        <span class="song-title">Agua de lluvia</span>
+        <span class="song-open">ABRIR +</span>
+    </summary>
+    <div class="song-content">
+        <div class="lyrics">Agua de lluvia, besa este barro
+Dejalo suave, que lo han de amasar
+Mis manos
+
+Qué secretos traías del cielo
+El viento te habrá contado
+En cada gota se esconde
+El infinito universo
+Y al caer lo olvidan todo
+
+¿Por cuánto tiempo somos gotas?
+¿Olvidamos el mar del que venimos?
+
+Y otra vez serás barro
+Y un ángel de aire y fuego
+Te llevará al mundo
+Y mi soplo se volverá canto
+Y tu canto será misión
+
+Y otra vez aprenderás
+Que este mar es amor
+Y el amor sos vos</div>
+        <a class="song-spotify" href="https://open.spotify.com/search/Agua%20de%20lluvia%20Pablo%20Brie" target="_blank" rel="noopener noreferrer">ESCUCHAR ESTA CANCIÓN ↗</a>
+    </div>
+</details>
+<details class="song">
+    <summary>
+        <span class="song-number">05</span>
+        <span class="song-title">Ámense</span>
+        <span class="song-open">ABRIR +</span>
+    </summary>
+    <div class="song-content">
+        <div class="lyrics">Amense después de todo
+Amense con los silencios de la noche
+Y en plena oscuridad
+Alivien las distancias
+
+Amense después de todo
+Amense como violenta primavera
+Arrasando con la exactitud
+De la inevitable ternura
+
+Amense después de todo
+Amense colegas de la desolación
+Porque de ustedes es el reino
+De la esperanza
+
+Amense después de todo
+Con un gesto, un decir
+Con todas las certezas
+O ninguna
+
+Amense después de todo</div>
+        <a class="song-spotify" href="https://open.spotify.com/track/3C7UOpIWrSpygKBBc6xLyM" target="_blank" rel="noopener noreferrer">ESCUCHAR ESTA CANCIÓN ↗</a>
+    </div>
+</details>
+<details class="song">
+    <summary>
+        <span class="song-number">06</span>
+        <span class="song-title">Hermano dolor, hermano alegría</span>
+        <span class="song-open">ABRIR +</span>
+    </summary>
+    <div class="song-content">
+        <div class="lyrics">¿Dónde van los dolores cuando acaban?
+¿Se mudan, se esfuman, se alojan en otra casa?
+
+¿Dónde van las alegrías cuando acaban?
+¿Se escapan, golpean la puerta del vecino?
+¿Vuelan?
+
+¿De dónde vienen los dolores cuando llegan?
+¿De lejos, de otra época, de dentro o afuera?
+
+¿Y si alegría y dolor fueran hermanos
+que nunca se separan
+y salieran a la calle cuando alguien los llama?
+
+Si llaman a su hermana, el dolor
+se queda a un costado, sin hacerse notar,
+como quien escucha una conversación privada
+A veces interviene como un escalofrío
+en una tarde cálida
+
+Si llaman al dolor, su hermana alegría está detrás
+buscando el modo de sonreír, de poner la mesa
+para alivianar la pena</div>
+        <a class="song-spotify" href="https://open.spotify.com/track/5NIFEAWo9UHUhXuboTTSwj" target="_blank" rel="noopener noreferrer">ESCUCHAR ESTA CANCIÓN ↗</a>
+    </div>
+</details>
+<details class="song">
+    <summary>
+        <span class="song-number">07</span>
+        <span class="song-title">Cantar</span>
+        <span class="song-open">ABRIR +</span>
+    </summary>
+    <div class="song-content">
+        <div class="lyrics">Que tus palabras se vuelvan acciones
+Con fuerza, dirección, verdad y belleza
+
+Esas palabras por las que un día
+Responderás a Dios, a tu mujer,
+Al hijo que consolaste
+Y al espejo donde no sirve
+Que maquilles tu conciencia
+
+Cantar, cantar, cantar
+Como si te jugaras la vida
+Porque toda mentira será descubierta
+Toda verdad, iluminada
+
+Todo peso caerá por su peso
+Y volará solo aquello que el amor
+Tocó con su lengua</div>
+        <a class="song-spotify" href="https://open.spotify.com/track/56Dcm08Y3mCn4uFrjSGHQ7" target="_blank" rel="noopener noreferrer">ESCUCHAR ESTA CANCIÓN ↗</a>
+    </div>
+</details>
+<details class="song">
+    <summary>
+        <span class="song-number">08</span>
+        <span class="song-title">Uno con todo</span>
+        <span class="song-open">ABRIR +</span>
+    </summary>
+    <div class="song-content">
+        <div class="lyrics">Que encuentres a tu paso
+Las herramientas para desplegarte
+Que nunca avances en contra de un sentimiento
+Que te conozcas lo suficiente para vencer al miedo
+
+Que enfrentes los cambios con coraje
+Y sepas mantener calmas tus aguas
+Que sepas reconocer el fin y el inicio de los ciclos
+Hasta darte cuenta de que no existe principio ni fin
+
+Te regalo la certeza vivida
+De que siempre todo está en orden
+De que te sostiene una trama invisible
+No te olvides que sos uno con todo
+
+Que hagas amistad con las fuerzas creadoras
+Que la curiosidad nos guíe
+Que hagamos fácil lo que se ve difícil
+Y divertido lo aburrido
+Que busques el tesoro hasta encontrarte
+Y te divierta el juego</div>
+        <a class="song-spotify" href="https://open.spotify.com/track/7AXqWlGt4qmX3hPxAolQqB" target="_blank" rel="noopener noreferrer">ESCUCHAR ESTA CANCIÓN ↗</a>
+    </div>
+</details>
+        </div>
+    </section>
+
+    <section class="credits-section">
+        <div>
+            <p class="section-label">FICHA TÉCNICA</p>
+            <h2>Las personas<br><em>detrás del disco.</em></h2>
+        </div>
+        <div class="credits">
+            <p>Lautaro Fernández — Guitarras</p>
+            <p>Juanjo Castelli — Acordeón</p>
+            <p>Leo Vivas — Percusión</p>
+            <p>Bruno Orgaz — Piano</p>
+            <p>Nano Campoliete — Coros</p>
+            <p>Sebastián Medina — Violoncello</p>
+            <p>Misael Hilal — Baterías, Producción y Mezcla</p>
+            <p>Hernán Lezak — Pre-producción musical</p>
+            <p>Martín Solimo — Mastering</p>
+            <p>Pablo Gamba — Diseño de portada</p>
+            <p class="guest">Artista invitada</p>
+            <p>Pilar Magalí Policano — Violín</p>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+
+    <div class="footer-left">
+        <span>© <span id="footer-year"></span> · PABLO BRIE</span>
+    </div>
+
+    <div class="footer-center">
+        <span>CREADO POR</span>
+
+        <a
+            href="https://www.somosnomade.com.ar/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            NÓMADE
+        </a>
+    </div>
+
+    <div class="footer-right">
+        <span>MÚSICA · TEATRO · EXPERIENCIAS</span>
+    </div>
+
+</footer>
+
+<script src="../../js/main.js"></script>
+
+<script
+    src="https://static.getwcag.com/widget.js"
+    config-url="https://static.getwcag.com/configs/L5VOLgu5S8h80TInUxdV/config.json"
+    use-important="false"
+></script>
+
+</body>
+</html>
