@@ -1333,3 +1333,90 @@ body {
     }
 
 }
+
+/* ==================================================
+   BIO — FOTOS MÁS PEQUEÑAS
+================================================== */
+
+@media (min-width: 761px) {
+
+    .bio-opening-image {
+        height: 350px;
+    }
+
+    .bio-photo-large {
+        width: min(68%, 820px);
+        height: 330px;
+    }
+
+    .bio-dual-image {
+        height: 320px;
+    }
+
+    .bio-theatre-image {
+        height: 340px;
+    }
+
+    .bio-photo-offset {
+        width: 52%;
+        height: 330px;
+    }
+
+    .bio-grid-main {
+        height: 340px;
+    }
+
+    .bio-grid-small {
+        height: 230px;
+    }
+
+    .bio-tierra-image {
+        height: 330px;
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 760px) {
+
+    .bio-opening-image {
+        height: 32vh;
+    }
+
+    .bio-photo-large {
+        width: calc(100% - 70px);
+        height: 30vh;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .bio-dual-image {
+        height: 30vh;
+    }
+
+    .bio-theatre-image {
+        height: 31vh;
+    }
+
+    .bio-photo-offset {
+        width: calc(100% - 70px);
+        height: 30vh;
+    }
+
+    .bio-grid-main {
+        height: 31vh;
+    }
+
+    .bio-grid-small {
+        height: 22vh;
+    }
+
+    .bio-tierra-image {
+        height: 30vh;
+    }
+
+}
