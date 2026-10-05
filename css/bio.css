@@ -1,32 +1,6 @@
 /* ==================================================
-   HABILITAR SCROLL EN BIO
-================================================== */
-
-html,
-body {
-
-    height: auto;
-
-    min-height: 100%;
-
-    overflow-x: hidden;
-
-    overflow-y: auto;
-
-}
-
-
-
-
-
-.bio-page {
-
-    overflow: visible;
-
-}
-/* ==================================================
-   PABLO BRIE
-   BIO
+   PABLO BRIE — BIO
+   DISEÑO EDITORIAL COMPACTO
 ================================================== */
 
 
@@ -34,427 +8,458 @@ body {
    BASE
 ================================================== */
 
-.bio-page {
-
-    background: var(--crema);
-
-    color: var(--texto-oscuro);
-
+html,
+body {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
+
+.bio-page {
+    width: 100%;
+    background: var(--crema);
+    color: var(--texto-oscuro);
+}
+
+
+/* ==================================================
+   TIPOGRAFÍA GENERAL
+================================================== */
+
+.bio-page h1,
+.bio-page h2,
+.bio-page h3,
+.bio-page p {
+    margin-top: 0;
+}
+
+.bio-page p {
+    font-size: 14px;
+    line-height: 1.72;
+    color: var(--gris-medio);
+}
+
+.bio-page em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+}
+
 
 /* ==================================================
    APERTURA
 ================================================== */
 
 .bio-opening {
-
-    position: relative;
-
-    min-height: 100vh;
+    min-height: auto;
 
     padding:
-        210px
-        clamp(35px, 9vw, 170px)
-        70px;
+        175px
+        clamp(28px, 8vw, 125px)
+        55px;
 
     display: grid;
 
-    grid-template-columns: 18% 42% 40%;
+    grid-template-columns:
+        90px
+        minmax(300px, 1fr)
+        minmax(320px, 470px);
 
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto auto auto;
+
+    column-gap: clamp(25px, 4vw, 65px);
+    row-gap: 20px;
 
     align-items: center;
 
     background: var(--crema);
-
 }
 
 
-.bio-opening-label {
+/* etiqueta lateral */
 
+.bio-opening-label {
     align-self: start;
 
     display: flex;
-
     flex-direction: column;
 
-    gap: 8px;
+    gap: 7px;
 
-    padding-top: 10px;
+    padding-top: 5px;
 
-    font-size: 9px;
-
-    letter-spacing: .2em;
-
-    color: var(--gris-medio);
-
-}
-
-
-.bio-opening-title {
-
-    align-self: center;
-
-    z-index: 5;
-
-}
-
-
-.bio-kicker {
-
-    margin-bottom: 25px;
-
-    font-family: var(--sans);
-
-    font-size: 9px;
-
+    font-size: 8px;
     letter-spacing: .18em;
 
-    color: var(--gris-medio);
-
+    color: var(--gris-claro);
 }
 
 
-.bio-opening-title h1 {
+/* título */
+
+.bio-opening-title {
+    align-self: center;
+    z-index: 5;
+}
+
+.bio-kicker {
+    margin-bottom: 16px;
 
     font-family: var(--sans);
 
-    font-size: clamp(75px, 10vw, 155px);
-
-    font-weight: 300;
-
-    line-height: .78;
-
-    letter-spacing: -.07em;
-
-}
-
-
-.bio-opening-title h1 em {
-
-    font-family: var(--serif);
-
+    font-size: 8px;
     font-weight: 400;
 
-    font-style: italic;
+    line-height: 1.5;
 
-    letter-spacing: -.05em;
+    letter-spacing: .16em;
 
+    color: var(--gris-medio);
 }
 
+.bio-opening-title h1 {
+    margin: 0;
+
+    font-family: var(--sans);
+
+    font-size: clamp(58px, 7vw, 105px);
+    font-weight: 300;
+
+    line-height: .82;
+
+    letter-spacing: -.065em;
+
+    color: var(--texto-oscuro);
+}
+
+.bio-opening-title h1 em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+
+    letter-spacing: -.045em;
+}
+
+
+/* foto */
 
 .bio-opening-image {
-
     width: 100%;
-
-    height: min(70vh, 700px);
+    height: 430px;
 
     overflow: hidden;
-
 }
 
-
 .bio-opening-image img {
+    display: block;
 
     width: 100%;
     height: 100%;
 
-    display: block;
-
     object-fit: cover;
-
     object-position: center;
 
-    animation: bioImageIn 1.2s ease-out both;
-
+    animation: bioImageIn .9s ease-out both;
 }
 
-
 @keyframes bioImageIn {
-
     from {
-
         opacity: 0;
-
-        transform: scale(1.04);
-
+        transform: scale(1.025);
     }
 
     to {
-
         opacity: 1;
-
         transform: scale(1);
-
     }
-
 }
 
 
-.bio-opening-caption {
+/* caption */
 
+.bio-opening-caption {
     grid-column: 2 / 4;
 
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
 
-    margin-top: 20px;
+    padding-top: 5px;
 
     font-size: 8px;
-
     letter-spacing: .18em;
 
-    color: var(--gris-medio);
-
+    color: var(--gris-claro);
 }
 
 
 /* ==================================================
-   INTRO
+   BLOQUES GENERALES
+================================================== */
+
+.bio-intro,
+.bio-theatre,
+.bio-education,
+.bio-photo-grid,
+.bio-final {
+    background: var(--crema);
+}
+
+
+/* ==================================================
+   01 — COMIENZOS
 ================================================== */
 
 .bio-intro {
-
     padding:
-        180px
-        clamp(35px, 12vw, 220px);
+        65px
+        clamp(28px, 8vw, 125px)
+        70px;
 
     display: grid;
 
-    grid-template-columns: 18% 82%;
+    grid-template-columns: 90px minmax(0, 1fr);
 
-    background: var(--blanco);
+    column-gap: clamp(25px, 4vw, 65px);
 
+    border-top: 1px solid rgba(88, 84, 81, .16);
 }
-
 
 .bio-year {
-
     font-family: var(--sans);
-
-    font-size: 10px;
-
-    letter-spacing: .2em;
-
-    color: var(--terracota);
-
-}
-
-
-.bio-intro-content {
-
-    max-width: 1000px;
-
-}
-
-
-.bio-section-label {
 
     font-size: 9px;
 
-    letter-spacing: .2em;
+    letter-spacing: .18em;
 
-    color: var(--gris-claro);
-
+    color: var(--terracota);
 }
 
+.bio-intro-content {
+    max-width: 900px;
+}
+
+.bio-section-label {
+    font-size: 8px;
+
+    letter-spacing: .18em;
+
+    color: var(--gris-claro);
+}
 
 .bio-intro h2 {
-
-    max-width: 850px;
+    max-width: 720px;
 
     margin:
-        30px
+        18px
         0
-        60px;
+        30px;
 
     font-family: var(--sans);
 
-    font-size: clamp(50px, 7vw, 105px);
+    font-size: clamp(40px, 4.8vw, 70px);
 
     font-weight: 300;
 
-    line-height: .88;
+    line-height: .92;
 
-    letter-spacing: -.06em;
+    letter-spacing: -.055em;
 
+    color: var(--texto-oscuro);
 }
-
 
 .bio-intro h2 em {
-
     font-family: var(--serif);
-
     font-style: italic;
-
     font-weight: 400;
-
 }
 
-
 .bio-text {
-
     max-width: 760px;
 
     display: grid;
 
     grid-template-columns: 1fr 1fr;
 
-    gap: 60px;
-
-}
-
-
-.bio-text p,
-.bio-dual-text > p,
-.bio-theatre-text p,
-.bio-education-content > p,
-.bio-tierra-content > p,
-.bio-final-content > p {
-
-    font-size: 14px;
-
-    line-height: 1.8;
-
-    color: var(--gris-medio);
-
+    gap: 35px;
 }
 
 
 /* ==================================================
-   FOTOS
+   FOTO 02
 ================================================== */
 
 .bio-photo {
-
     position: relative;
 
     overflow: hidden;
-
 }
 
-
 .bio-photo img {
+    display: block;
 
     width: 100%;
     height: 100%;
 
-    display: block;
-
     object-fit: cover;
 
-    transition:
-        transform .8s ease;
-
+    transition: transform .7s ease;
 }
-
 
 .bio-photo:hover img {
-
-    transform: scale(1.025);
-
+    transform: scale(1.02);
 }
 
-
 .bio-photo-large {
+    width: min(84%, 1100px);
 
-    height: 75vh;
+    height: 430px;
 
     margin:
         0
-        clamp(35px, 9vw, 170px);
-
+        auto
+        60px;
 }
 
-
 .photo-number {
-
     position: absolute;
 
-    top: 25px;
+    top: 18px;
+    right: 18px;
 
-    right: 25px;
+    font-size: 8px;
 
-    font-size: 9px;
-
-    letter-spacing: .2em;
+    letter-spacing: .18em;
 
     color: var(--blanco);
-
 }
 
 
 /* ==================================================
-   CONTRABAJO
+   02 — CONTRABAJO
 ================================================== */
 
 .bio-dual {
-
-    min-height: 750px;
+    padding:
+        70px
+        clamp(28px, 8vw, 125px);
 
     display: grid;
 
-    grid-template-columns: 58% 42%;
+    grid-template-columns:
+        minmax(300px, 1fr)
+        minmax(300px, .85fr);
 
-    background: var(--gris-piedra);
+    gap: clamp(35px, 6vw, 85px);
 
-    color: var(--blanco);
+    align-items: center;
 
+    background: #ddd4cb;
+
+    color: var(--texto-oscuro);
+
+    border-top: 1px solid rgba(88, 84, 81, .14);
 }
-
 
 .bio-dual-image {
+    width: 100%;
+    height: 410px;
 
     overflow: hidden;
-
 }
 
-
 .bio-dual-image img {
+    display: block;
 
     width: 100%;
     height: 100%;
 
-    display: block;
-
     object-fit: cover;
-
 }
 
-
 .bio-dual-text {
-
-    padding: 100px clamp(40px, 7vw, 110px);
+    padding: 5px 0;
 
     display: flex;
-
     flex-direction: column;
 
     justify-content: center;
 
+    max-width: 600px;
 }
-
 
 .bio-dual-text .bio-year {
-
-    margin-bottom: 80px;
-
+    margin-bottom: 26px;
 }
 
-
 .bio-dual-text h2 {
+    max-width: 540px;
 
     margin:
-        25px
+        15px
         0
-        50px;
+        28px;
 
     font-family: var(--sans);
 
-    font-size: clamp(55px, 6vw, 90px);
+    font-size: clamp(40px, 4.6vw, 68px);
+
+    font-weight: 300;
+
+    line-height: .9;
+
+    letter-spacing: -.055em;
+
+    color: var(--texto-oscuro);
+}
+
+.bio-dual-text h2 em {
+    font-family: var(--serif);
+}
+
+.bio-dual-text > p:last-child {
+    max-width: 430px;
+
+    color: var(--gris-medio);
+}
+
+
+/* ==================================================
+   2003 — TEATRO
+================================================== */
+
+.bio-theatre {
+    padding:
+        75px
+        clamp(28px, 8vw, 125px)
+        80px;
+
+    border-top: 1px solid rgba(88, 84, 81, .16);
+}
+
+.bio-theatre-header {
+    display: grid;
+
+    grid-template-columns: 90px minmax(0, 1fr);
+
+    column-gap: clamp(25px, 4vw, 65px);
+
+    align-items: start;
+}
+
+.bio-theatre-header .bio-section-label {
+    padding-top: 5px;
+}
+
+.bio-theatre-header h2 {
+    max-width: 820px;
+
+    margin: 0;
+
+    font-family: var(--sans);
+
+    font-size: clamp(46px, 5.4vw, 78px);
 
     font-weight: 300;
 
@@ -462,617 +467,470 @@ body {
 
     letter-spacing: -.06em;
 
+    color: var(--texto-oscuro);
 }
-
-
-.bio-dual-text h2 em {
-
-    font-family: var(--serif);
-
-    font-style: italic;
-
-    font-weight: 400;
-
-}
-
-
-.bio-dual-text > p:last-child {
-
-    max-width: 400px;
-
-    color: var(--texto-suave);
-
-}
-
-
-/* ==================================================
-   TEATRO
-================================================== */
-
-.bio-theatre {
-
-    padding:
-        170px
-        clamp(35px, 9vw, 170px);
-
-    background: var(--beige);
-
-}
-
-
-.bio-theatre-header {
-
-    display: grid;
-
-    grid-template-columns: 18% 82%;
-
-    align-items: start;
-
-}
-
-
-.bio-theatre-header h2 {
-
-    max-width: 900px;
-
-    font-family: var(--sans);
-
-    font-size: clamp(60px, 8vw, 125px);
-
-    font-weight: 300;
-
-    line-height: .82;
-
-    letter-spacing: -.07em;
-
-}
-
 
 .bio-theatre-header h2 em {
-
     font-family: var(--serif);
-
-    font-style: italic;
-
 }
 
-
 .bio-theatre-content {
-
-    margin-top: 100px;
+    margin-top: 42px;
 
     display: grid;
 
-    grid-template-columns: 40% 60%;
+    grid-template-columns:
+        minmax(250px, .7fr)
+        minmax(320px, 1.3fr);
+
+    gap: clamp(30px, 5vw, 75px);
 
     align-items: center;
-
 }
-
 
 .bio-theatre-text {
-
-    max-width: 480px;
-
-    padding-right: 50px;
-
+    max-width: 470px;
 }
-
 
 .bio-theatre-text p {
-
-    margin-bottom: 25px;
-
+    margin-bottom: 17px;
 }
-
 
 .bio-theatre-text em {
-
     font-family: var(--serif);
 
-    font-size: 1.15em;
-
+    font-size: 1.08em;
 }
-
 
 .bio-theatre-image {
-
     position: relative;
 
-    height: 650px;
+    height: 430px;
 
     overflow: hidden;
-
 }
 
-
 .bio-theatre-image img {
+    display: block;
 
     width: 100%;
     height: 100%;
 
-    display: block;
-
     object-fit: cover;
-
 }
 
-
 .bio-theatre-image > span {
-
     position: absolute;
 
-    bottom: 25px;
+    left: 18px;
+    bottom: 18px;
 
-    left: 25px;
-
-    padding: 10px 13px;
+    padding:
+        8px
+        11px;
 
     background: var(--crema);
 
     color: var(--texto-oscuro);
 
-    font-size: 8px;
+    font-size: 7px;
 
-    letter-spacing: .18em;
-
+    letter-spacing: .16em;
 }
 
 
 /* ==================================================
-   FOTO OFFSET
+   FOTO ESCENA
 ================================================== */
 
 .bio-photo-offset {
+    position: relative;
 
-    width: 68%;
+    width: min(62%, 850px);
 
-    height: 80vh;
+    height: 420px;
 
     margin:
-        140px
+        20px
         8vw
-        140px
+        65px
         auto;
 
+    overflow: hidden;
 }
 
+.bio-photo-offset img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
 
 .photo-note {
-
     position: absolute;
 
-    left: 25px;
-
-    bottom: 25px;
+    left: 18px;
+    bottom: 18px;
 
     display: flex;
-
-    gap: 18px;
 
     align-items: center;
 
-    font-size: 8px;
+    gap: 14px;
 
-    letter-spacing: .2em;
+    font-size: 7px;
+
+    letter-spacing: .18em;
 
     color: var(--blanco);
-
 }
 
 
 /* ==================================================
-   DOCENCIA
+   04 — DOCENCIA
 ================================================== */
 
 .bio-education {
-
     padding:
-        180px
-        clamp(35px, 12vw, 220px);
+        70px
+        clamp(28px, 8vw, 125px)
+        75px;
 
     display: grid;
 
-    grid-template-columns: 18% 82%;
+    grid-template-columns: 90px minmax(0, 1fr);
 
-    background: var(--blanco);
+    column-gap: clamp(25px, 4vw, 65px);
 
+    border-top: 1px solid rgba(88, 84, 81, .16);
 }
 
+.bio-education-number {
+    font-size: 9px;
+
+    letter-spacing: .18em;
+
+    color: var(--terracota);
+}
 
 .bio-education-content {
-
-    max-width: 950px;
-
+    max-width: 900px;
 }
 
-
 .bio-education-content h2 {
-
-    max-width: 850px;
+    max-width: 760px;
 
     margin:
-        30px
+        18px
         0
-        55px;
+        28px;
 
     font-family: var(--sans);
 
-    font-size: clamp(50px, 7vw, 105px);
+    font-size: clamp(42px, 5vw, 72px);
 
     font-weight: 300;
 
-    line-height: .85;
+    line-height: .9;
 
     letter-spacing: -.06em;
 
+    color: var(--texto-oscuro);
 }
-
 
 .bio-education-content h2 em {
-
     font-family: var(--serif);
-
-    font-style: italic;
-
 }
-
 
 .bio-education-content .large-text {
+    max-width: 680px;
 
-    max-width: 700px;
+    margin-bottom: 20px;
 
-    margin-bottom: 35px;
+    font-size: 17px;
 
-    font-size: 21px;
-
-    line-height: 1.6;
+    line-height: 1.55;
 
     color: var(--texto-oscuro);
-
 }
 
-
 .bio-education-content > p:last-child {
-
-    max-width: 600px;
-
+    max-width: 620px;
 }
 
 
 /* ==================================================
-   GRID DE FOTOS
+   FOTOS — COMPOSICIÓN
 ================================================== */
 
 .bio-photo-grid {
-
     position: relative;
 
-    min-height: 850px;
+    min-height: auto;
 
     padding:
-        120px
-        10vw;
+        55px
+        9vw
+        75px;
 
     display: grid;
 
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1.55fr .85fr;
 
-    gap: 25px;
+    gap: 20px;
 
     align-items: end;
 
-    background: var(--gris-piedra);
-
+    border-top: 1px solid rgba(88, 84, 81, .16);
 }
-
 
 .bio-grid-main {
-
-    height: 620px;
+    height: 450px;
 
     overflow: hidden;
-
 }
-
 
 .bio-grid-small {
+    height: 290px;
 
-    height: 400px;
-
-    margin-bottom: 100px;
+    margin-bottom: 55px;
 
     overflow: hidden;
-
 }
-
 
 .bio-grid-main img,
 .bio-grid-small img {
+    display: block;
 
     width: 100%;
     height: 100%;
 
-    display: block;
-
     object-fit: cover;
 
-    transition: transform .8s ease;
-
+    transition: transform .7s ease;
 }
-
 
 .bio-grid-main:hover img,
 .bio-grid-small:hover img {
-
-    transform: scale(1.025);
-
+    transform: scale(1.02);
 }
 
-
 .grid-label {
-
     position: absolute;
 
-    top: 35px;
+    top: 25px;
+    right: 9vw;
 
-    right: 10vw;
+    font-size: 7px;
 
-    font-size: 8px;
+    letter-spacing: .18em;
 
-    letter-spacing: .2em;
-
-    color: var(--texto-suave);
-
+    color: var(--gris-claro);
 }
 
 
 /* ==================================================
-   TIERRA ADENTRO
+   2015 — TIERRA ADENTRO
 ================================================== */
 
 .bio-tierra {
+    padding:
+        75px
+        clamp(28px, 8vw, 125px);
 
     display: grid;
 
-    grid-template-columns: 55% 45%;
+    grid-template-columns:
+        minmax(300px, 1fr)
+        minmax(300px, .85fr);
 
-    min-height: 800px;
+    gap: clamp(35px, 6vw, 85px);
 
-    background: var(--terracota);
+    align-items: center;
+
+    background: #c56a4b;
 
     color: var(--blanco);
 
+    border-top: 1px solid rgba(255, 255, 255, .18);
 }
-
 
 .bio-tierra-image {
+    height: 420px;
 
     overflow: hidden;
-
 }
 
-
 .bio-tierra-image img {
+    display: block;
 
     width: 100%;
     height: 100%;
 
-    display: block;
-
     object-fit: cover;
-
 }
-
 
 .bio-tierra-content {
+    max-width: 560px;
 
-    padding:
-        100px
-        clamp(40px, 7vw, 110px);
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
+    padding: 5px 0;
 }
 
+.bio-tierra-content .bio-section-label {
+    color: var(--beige);
+}
 
 .bio-tierra-content h2 {
-
     margin:
-        25px
+        18px
         0
-        55px;
+        28px;
 
     font-family: var(--sans);
 
-    font-size: clamp(60px, 7vw, 105px);
+    font-size: clamp(48px, 5.6vw, 82px);
 
     font-weight: 300;
 
-    line-height: .8;
+    line-height: .84;
 
-    letter-spacing: -.07em;
-
+    letter-spacing: -.065em;
 }
-
 
 .bio-tierra-content h2 em {
-
     font-family: var(--serif);
-
-    font-style: italic;
-
 }
-
 
 .bio-tierra-content p {
+    max-width: 500px;
 
-    max-width: 470px;
+    margin-bottom: 17px;
 
-    margin-bottom: 25px;
-
-    color: rgba(247, 244, 239, .82);
-
-}
-
-
-.bio-tierra-content .bio-section-label {
-
-    color: var(--beige);
-
+    color: rgba(247, 244, 239, .88);
 }
 
 
 /* ==================================================
-   FINAL 2025
+   FINAL — 2025
 ================================================== */
 
 .bio-final {
-
-    min-height: 90vh;
-
     padding:
-        150px
-        clamp(35px, 12vw, 220px);
+        80px
+        clamp(28px, 8vw, 125px)
+        90px;
 
     display: grid;
 
-    grid-template-columns: 18% 82%;
+    grid-template-columns: 90px minmax(0, 1fr);
+
+    column-gap: clamp(25px, 4vw, 65px);
 
     background: var(--carbon);
 
     color: var(--blanco);
 
+    border-top: 1px solid rgba(198, 163, 90, .25);
 }
-
 
 .bio-final-year {
-
-    font-size: 11px;
-
-    letter-spacing: .2em;
-
-    color: var(--dorado);
-
-}
-
-
-.bio-final-content {
-
-    max-width: 950px;
-
-}
-
-
-.bio-final-content h2 {
-
-    max-width: 850px;
-
-    margin:
-        30px
-        0
-        55px;
-
-    font-family: var(--sans);
-
-    font-size: clamp(60px, 8vw, 125px);
-
-    font-weight: 300;
-
-    line-height: .82;
-
-    letter-spacing: -.07em;
-
-}
-
-
-.bio-final-content h2 em {
-
-    font-family: var(--serif);
-
-    font-style: italic;
-
-}
-
-
-.bio-final-content > p {
-
-    max-width: 600px;
-
-    color: var(--texto-suave);
-
-}
-
-
-.bio-final-link {
-
-    width: max-content;
-
-    margin-top: 60px;
-
-    padding-bottom: 9px;
-
-    display: flex;
-
-    gap: 25px;
-
-    border-bottom: 1px solid var(--dorado);
-
-    color: var(--blanco);
+    padding-top: 5px;
 
     font-size: 9px;
 
     letter-spacing: .18em;
 
-    transition: color .3s ease;
-
+    color: var(--dorado);
 }
 
+.bio-final-content {
+    max-width: 880px;
+}
+
+.bio-final-content .bio-section-label {
+    color: var(--gris-claro);
+}
+
+.bio-final-content h2 {
+    max-width: 780px;
+
+    margin:
+        18px
+        0
+        28px;
+
+    font-family: var(--sans);
+
+    font-size: clamp(48px, 5.8vw, 85px);
+
+    font-weight: 300;
+
+    line-height: .86;
+
+    letter-spacing: -.06em;
+}
+
+.bio-final-content h2 em {
+    font-family: var(--serif);
+}
+
+.bio-final-content > p {
+    max-width: 620px;
+
+    color: var(--texto-suave);
+}
+
+.bio-final-link {
+    width: max-content;
+
+    margin-top: 30px;
+
+    padding-bottom: 7px;
+
+    display: flex;
+
+    gap: 20px;
+
+    border-bottom: 1px solid var(--dorado);
+
+    color: var(--blanco);
+
+    font-size: 8px;
+
+    letter-spacing: .16em;
+
+    transition: color .3s ease;
+}
 
 .bio-final-link:hover {
-
     color: var(--dorado);
-
 }
 
 
 /* ==================================================
-   ANIMACIONES AL SCROLL
+   ANIMACIÓN DE IMÁGENES
 ================================================== */
 
 .bio-page img {
-
     animation: bioReveal linear both;
 
     animation-timeline: view();
 
-    animation-range: entry 5% cover 30%;
-
+    animation-range: entry 5% cover 25%;
 }
 
-
 @keyframes bioReveal {
-
     from {
-
-        opacity: .45;
-
-        transform: scale(.98);
-
+        opacity: .6;
+        transform: scale(.985);
     }
 
     to {
-
         opacity: 1;
-
         transform: scale(1);
-
     }
-
 }
 
 
@@ -1083,51 +941,46 @@ body {
 @media (max-width: 1000px) {
 
     .bio-opening {
+        grid-template-columns:
+            65px
+            minmax(250px, 1fr)
+            minmax(280px, .9fr);
 
-        padding:
-            180px
-            40px
-            50px;
-
-        grid-template-columns: 15% 45% 40%;
-
+        padding-left: 35px;
+        padding-right: 35px;
     }
 
+    .bio-intro,
+    .bio-education,
+    .bio-final,
+    .bio-theatre {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+    .bio-dual,
+    .bio-tierra {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+    .bio-photo-grid {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
 
     .bio-opening-title h1 {
-
-        font-size: 11vw;
-
+        font-size: 9vw;
     }
-
 
     .bio-text {
-
-        gap: 35px;
-
+        gap: 25px;
     }
-
-
-    .bio-dual {
-
-        grid-template-columns: 52% 48%;
-
-    }
-
-
-    .bio-theatre-content {
-
-        grid-template-columns: 45% 55%;
-
-    }
-
 
     .bio-photo-offset {
-
-        width: 75%;
-
+        width: 70%;
+        margin-right: 35px;
     }
-
 }
 
 
@@ -1137,1249 +990,78 @@ body {
 
 @media (max-width: 760px) {
 
-
-    .bio-page {
-
-        overflow: visible;
-
-    }
-
-
     /* APERTURA */
 
     .bio-opening {
-
-        min-height: calc(100vh - 95px);
-
         padding:
-            125px
-            25px
+            110px
+            22px
             35px;
 
         display: flex;
-
         flex-direction: column;
 
         align-items: stretch;
 
-        justify-content: space-between;
-
+        gap: 0;
     }
 
-
     .bio-opening-label {
-
         flex-direction: row;
 
         justify-content: space-between;
 
         padding: 0;
 
+        margin-bottom: 35px;
     }
-
 
     .bio-opening-title {
-
-        margin:
-            70px
-            0
-            35px;
-
+        margin: 0 0 25px;
     }
-
 
     .bio-kicker {
+        max-width: 280px;
+
+        margin-bottom: 14px;
 
         font-size: 7px;
-
-        line-height: 1.6;
-
-        margin-bottom: 20px;
-
     }
-
 
     .bio-opening-title h1 {
+        font-size: 20vw;
 
-        font-size: 21vw;
-
+        line-height: .8;
     }
-
 
     .bio-opening-image {
-
-        height: 50vh;
-
+        height: 48vh;
     }
-
 
     .bio-opening-caption {
-
         grid-column: auto;
 
-        margin-top: 12px;
+        margin-top: 9px;
 
+        font-size: 7px;
     }
 
 
-    /* INTRO */
-
-    .bio-intro {
-
-        padding:
-            100px
-            25px;
-
-        display: block;
-
-    }
-
-
-    .bio-intro .bio-year {
-
-        margin-bottom: 45px;
-
-    }
-
-
-    .bio-intro h2 {
-
-        margin:
-            25px
-            0
-            40px;
-
-        font-size: 15vw;
-
-    }
-
-
-    .bio-text {
-
-        display: block;
-
-    }
-
-
-    .bio-text p {
-
-        margin-bottom: 25px;
-
-    }
-
-
-    /* FOTO */
-
-    .bio-photo-large {
-
-        height: 60vh;
-
-        margin:
-            0
-            25px;
-
-    }
-
-
-    /* CONTRABAJO */
-
-    .bio-dual {
-
-        display: block;
-
-    }
-
-
-    .bio-dual-image {
-
-        height: 60vh;
-
-    }
-
-
-    .bio-dual-text {
-
-        min-height: 500px;
-
-        padding:
-            80px
-            25px;
-
-    }
-
-
-    .bio-dual-text .bio-year {
-
-        margin-bottom: 55px;
-
-    }
-
-
-    .bio-dual-text h2 {
-
-        font-size: 16vw;
-
-    }
-
-
-    /* TEATRO */
-
-    .bio-theatre {
-
-        padding:
-            100px
-            25px;
-
-    }
-
-
-    .bio-theatre-header {
-
-        display: block;
-
-    }
-
-
-    .bio-theatre-header h2 {
-
-        margin-top: 25px;
-
-        font-size: 16vw;
-
-    }
-
-
-    .bio-theatre-content {
-
-        margin-top: 65px;
-
-        display: flex;
-
-        flex-direction: column;
-
-    }
-
-
-    .bio-theatre-text {
-
-        padding: 0;
-
-        margin-bottom: 50px;
-
-    }
-
-
-    .bio-theatre-image {
-
-        width: 100%;
-
-        height: 60vh;
-
-    }
-
-
-    /* FOTO OFFSET */
-
-    .bio-photo-offset {
-
-        width: calc(100% - 50px);
-
-        height: 65vh;
-
-        margin:
-            90px
-            25px;
-
-    }
-
-
-    /* DOCENCIA */
-
-    .bio-education {
-
-        padding:
-            100px
-            25px;
-
-        display: block;
-
-    }
-
-
-    .bio-education-number {
-
-        margin-bottom: 50px;
-
-        font-size: 10px;
-
-        letter-spacing: .2em;
-
-        color: var(--terracota);
-
-    }
-
-
-    .bio-education-content h2 {
-
-        margin:
-            25px
-            0
-            40px;
-
-        font-size: 15vw;
-
-    }
-
-
-    .bio-education-content .large-text {
-
-        font-size: 18px;
-
-    }
-
-
-    /* FOTOS */
-
-    .bio-photo-grid {
-
-        min-height: auto;
-
-        padding:
-            70px
-            25px;
-
-        display: flex;
-
-        flex-direction: column;
-
-        gap: 20px;
-
-    }
-
-
-    .bio-grid-main {
-
-        width: 100%;
-
-        height: 60vh;
-
-    }
-
-
-    .bio-grid-small {
-
-        width: 72%;
-
-        height: 42vh;
-
-        margin:
-            0
-            0
-            0
-            auto;
-
-    }
-
-
-    .grid-label {
-
-        position: static;
-
-        order: -1;
-
-        align-self: flex-start;
-
-        margin-bottom: 20px;
-
-    }
-
-
-    /* TIERRA */
-
-    .bio-tierra {
-
-        display: block;
-
-    }
-
-
-    .bio-tierra-image {
-
-        height: 60vh;
-
-    }
-
-
-    .bio-tierra-content {
-
-        min-height: 650px;
-
-        padding:
-            90px
-            25px;
-
-    }
-
-
-    .bio-tierra-content h2 {
-
-        font-size: 17vw;
-
-    }
-
-
-    /* FINAL */
-
-    .bio-final {
-
-        min-height: 80vh;
-
-        padding:
-            100px
-            25px;
-
-        display: block;
-
-    }
-
-
-    .bio-final-year {
-
-        margin-bottom: 55px;
-
-    }
-
-
-    .bio-final-content h2 {
-
-        font-size: 17vw;
-
-    }
-
-
-    /* FOOTER */
-
-    .bio-footer {
-
-        padding:
-            25px;
-
-        flex-direction: column;
-
-        gap: 14px;
-
-    }
-
-}
- 
-/* ==================================================
-   BIO — COMPOSICIÓN MÁS COMPACTA
-   MENOS AIRE / MÁS NÚCLEO
-================================================== */
-
-
-/* ==================================================
-   APERTURA
-================================================== */
-
-.bio-opening {
-    min-height: auto;
-
-    padding:
-        155px
-        clamp(35px, 9vw, 150px)
-        35px;
-}
-
-.bio-opening-image {
-    height: min(52vh, 520px);
-}
-
-.bio-opening-caption {
-    margin-top: 10px;
-}
-
-
-/* ==================================================
-   COMIENZOS
-================================================== */
-
-.bio-intro {
-    padding:
-        90px
-        clamp(35px, 10vw, 170px);
-}
-
-.bio-intro h2 {
-    margin:
-        22px
-        0
-        38px;
-}
-
-.bio-text {
-    gap: 45px;
-}
-
-
-/* ==================================================
-   FOTO 02
-================================================== */
-
-.bio-photo-large {
-    height: 52vh;
-
-    margin:
-        0
-        clamp(35px, 9vw, 150px);
-}
-
-
-/* ==================================================
-   CONTRABAJO
-================================================== */
-
-.bio-dual {
-    min-height: 570px;
-}
-
-.bio-dual-text {
-    padding:
-        70px
-        clamp(40px, 6vw, 90px);
-}
-
-.bio-dual-text .bio-year {
-    margin-bottom: 45px;
-}
-
-.bio-dual-text h2 {
-    margin:
-        20px
-        0
-        35px;
-}
-
-
-/* ==================================================
-   TEATRO
-================================================== */
-
-.bio-theatre {
-    padding:
-        90px
-        clamp(35px, 9vw, 150px);
-}
-
-.bio-theatre-content {
-    margin-top: 55px;
-}
-
-.bio-theatre-text p {
-    margin-bottom: 18px;
-}
-
-.bio-theatre-image {
-    height: 500px;
-}
-
-
-/* ==================================================
-   FOTO ESCENA
-================================================== */
-
-.bio-photo-offset {
-    width: 62%;
-
-    height: 58vh;
-
-    margin:
-        70px
-        8vw
-        70px
-        auto;
-}
-
-
-/* ==================================================
-   DOCENCIA
-================================================== */
-
-.bio-education {
-    padding:
-        95px
-        clamp(35px, 10vw, 170px);
-}
-
-.bio-education-content h2 {
-    margin:
-        22px
-        0
-        38px;
-}
-
-.bio-education-content .large-text {
-    margin-bottom: 22px;
-}
-
-
-/* ==================================================
-   GALERÍA
-================================================== */
-
-.bio-photo-grid {
-    min-height: auto;
-
-    padding:
-        80px
-        9vw;
-}
-
-.bio-grid-main {
-    height: 500px;
-}
-
-.bio-grid-small {
-    height: 320px;
-
-    margin-bottom: 65px;
-}
-
-
-/* ==================================================
-   TIERRA ADENTRO
-================================================== */
-
-.bio-tierra {
-    min-height: 620px;
-}
-
-.bio-tierra-content {
-    padding:
-        75px
-        clamp(40px, 6vw, 90px);
-}
-
-.bio-tierra-content h2 {
-    margin:
-        20px
-        0
-        38px;
-}
-
-.bio-tierra-content p {
-    margin-bottom: 18px;
-}
-
-
-/* ==================================================
-   FINAL
-================================================== */
-
-.bio-final {
-    min-height: auto;
-
-    padding:
-        100px
-        clamp(35px, 10vw, 170px);
-}
-
-.bio-final-content h2 {
-    margin:
-        22px
-        0
-        38px;
-}
-
-.bio-final-link {
-    margin-top: 40px;
-}
-
-
-/* ==================================================
-   TRANSICIONES
-   MENOS "CORTE" ENTRE SECCIONES
-================================================== */
-
-.bio-opening + .bio-intro,
-.bio-intro + .bio-photo,
-.bio-photo + .bio-dual,
-.bio-dual + .bio-theatre,
-.bio-theatre + .bio-photo,
-.bio-photo + .bio-education,
-.bio-education + .bio-photo-grid,
-.bio-photo-grid + .bio-tierra,
-.bio-tierra + .bio-final {
-    margin-top: 0;
-}
-
-
-/* ==================================================
-   MOBILE — MÁS COMPACTO
-================================================== */
-
-@media (max-width: 760px) {
-
-    .bio-opening {
-        min-height: auto;
-
-        padding:
-            110px
-            25px
-            25px;
-    }
-
-    .bio-opening-title {
-        margin:
-            45px
-            0
-            25px;
-    }
-
-    .bio-opening-image {
-        height: 42vh;
-    }
+    /* COMIENZOS */
 
     .bio-intro {
         padding:
-            65px
-            25px;
+            55px
+            22px
+            65px;
+
+        display: block;
     }
 
     .bio-intro .bio-year {
-        margin-bottom: 25px;
-    }
+        display: block;
 
-    .bio-intro h2 {
-        margin:
-            20px
-            0
-            30px;
-    }
-
-    .bio-photo-large {
-        height: 48vh;
-
-        margin:
-            0
-            25px;
-    }
-
-    .bio-dual-image {
-        height: 45vh;
-    }
-
-    .bio-dual-text {
-        min-height: auto;
-
-        padding:
-            60px
-            25px;
-    }
-
-    .bio-dual-text .bio-year {
-        margin-bottom: 35px;
-    }
-
-    .bio-theatre {
-        padding:
-            65px
-            25px;
-    }
-
-    .bio-theatre-content {
-        margin-top: 40px;
-    }
-
-    .bio-theatre-text {
-        margin-bottom: 35px;
-    }
-
-    .bio-theatre-image {
-        height: 46vh;
-    }
-
-    .bio-photo-offset {
-        width: calc(100% - 50px);
-
-        height: 48vh;
-
-        margin:
-            55px
-            25px;
-    }
-
-    .bio-education {
-        padding:
-            65px
-            25px;
-    }
-
-    .bio-education-number {
-        margin-bottom: 30px;
-    }
-
-    .bio-education-content h2 {
-        margin:
-            20px
-            0
-            30px;
-    }
-
-    .bio-photo-grid {
-        padding:
-            55px
-            25px;
-
-        gap: 15px;
-    }
-
-    .bio-grid-main {
-        height: 45vh;
-    }
-
-    .bio-grid-small {
-        height: 30vh;
-
-        margin:
-            0
-            0
-            0
-            auto;
-    }
-
-    .bio-tierra-image {
-        height: 45vh;
-    }
-
-    .bio-tierra-content {
-        min-height: auto;
-
-        padding:
-            65px
-            25px;
-    }
-
-    .bio-tierra-content h2 {
-        margin:
-            20px
-            0
-            30px;
-    }
-
-    .bio-final {
-        min-height: auto;
-
-        padding:
-            65px
-            25px;
-    }
-
-    .bio-final-year {
-        margin-bottom: 30px;
-    }
-
-    .bio-final-content h2 {
-        margin:
-            20px
-            0
-            30px;
-    }
-
-    .bio-final-link {
-        margin-top: 30px;
-    }
-
-}
-
-/* ==================================================
-   BIO — VERSIÓN MÁS ARTICULADA
-   UNA SOLA NARRACIÓN VISUAL
-================================================== */
-
-
-/* ==================================================
-   FONDO GENERAL
-================================================== */
-
-.bio-page {
-    background: var(--crema);
-    color: var(--texto-oscuro);
-}
-
-
-/* ==================================================
-   TODAS LAS SECCIONES COMPARTEN EL MISMO LENGUAJE
-================================================== */
-
-.bio-opening,
-.bio-intro,
-.bio-theatre,
-.bio-education,
-.bio-photo-grid,
-.bio-final {
-    background: var(--crema);
-}
-
-
-/* ==================================================
-   APERTURA
-================================================== */
-
-.bio-opening {
-    min-height: auto;
-
-    padding:
-        155px
-        clamp(35px, 9vw, 150px)
-        45px;
-}
-
-.bio-opening-image {
-    height: min(54vh, 560px);
-}
-
-.bio-opening-caption {
-    margin-top: 10px;
-}
-
-
-/* ==================================================
-   COMIENZOS
-================================================== */
-
-.bio-intro {
-    padding:
-        80px
-        clamp(35px, 10vw, 170px)
-        95px;
-
-    border-top: 1px solid rgba(88,84,81,.16);
-}
-
-.bio-intro h2 {
-    margin:
-        20px
-        0
-        35px;
-}
-
-.bio-text {
-    gap: 55px;
-}
-
-
-/* ==================================================
-   FOTO — INTEGRADA A LA NARRACIÓN
-================================================== */
-
-.bio-photo-large {
-    width: 84%;
-    height: 52vh;
-
-    margin:
-        0
-        auto;
-
-    background: transparent;
-}
-
-.bio-photo-large .photo-number {
-    right: 18px;
-    top: 18px;
-}
-
-
-/* ==================================================
-   CONTRABAJO
-   DEJA DE SER "BLOQUE OSCURO"
-================================================== */
-
-.bio-dual {
-    min-height: auto;
-
-    display: grid;
-
-    grid-template-columns: 52% 48%;
-
-    padding:
-        95px
-        clamp(35px, 9vw, 150px);
-
-    gap: 7vw;
-
-    background: var(--crema);
-
-    color: var(--texto-oscuro);
-
-    border-top: 1px solid rgba(88,84,81,.16);
-}
-
-.bio-dual-image {
-    height: 500px;
-}
-
-.bio-dual-text {
-    padding: 30px 0;
-
-    justify-content: center;
-}
-
-.bio-dual-text .bio-year {
-    margin-bottom: 35px;
-}
-
-.bio-dual-text > p:last-child {
-    color: var(--gris-medio);
-}
-
-
-/* ==================================================
-   TEATRO
-================================================== */
-
-.bio-theatre {
-    padding:
-        90px
-        clamp(35px, 9vw, 150px)
-        105px;
-
-    border-top: 1px solid rgba(88,84,81,.16);
-}
-
-.bio-theatre-content {
-    margin-top: 50px;
-
-    grid-template-columns: 38% 62%;
-
-    gap: 6vw;
-}
-
-.bio-theatre-text {
-    padding-right: 0;
-}
-
-.bio-theatre-image {
-    height: 500px;
-}
-
-
-/* ==================================================
-   FOTO ESCENA
-================================================== */
-
-.bio-photo-offset {
-    width: 63%;
-    height: 56vh;
-
-    margin:
-        30px
-        9vw
-        80px
-        auto;
-}
-
-
-/* ==================================================
-   DOCENCIA
-================================================== */
-
-.bio-education {
-    padding:
-        90px
-        clamp(35px, 10vw, 170px)
-        95px;
-
-    border-top: 1px solid rgba(88,84,81,.16);
-}
-
-.bio-education-content h2 {
-    margin:
-        20px
-        0
-        35px;
-}
-
-.bio-education-content .large-text {
-    margin-bottom: 25px;
-}
-
-
-/* ==================================================
-   GALERÍA
-================================================== */
-
-.bio-photo-grid {
-    min-height: auto;
-
-    padding:
-        70px
-        9vw
-        95px;
-
-    border-top: 1px solid rgba(88,84,81,.16);
-
-    gap: 22px;
-}
-
-.bio-grid-main {
-    height: 470px;
-}
-
-.bio-grid-small {
-    height: 300px;
-
-    margin-bottom: 55px;
-}
-
-
-/* ==================================================
-   TIERRA ADENTRO
-   SIN BLOQUE TERRACOTA DE PARED ENTERA
-================================================== */
-
-.bio-tierra {
-    min-height: auto;
-
-    grid-template-columns: 52% 48%;
-
-    padding:
-        95px
-        clamp(35px, 9vw, 150px);
-
-    gap: 7vw;
-
-    background: var(--crema);
-
-    color: var(--texto-oscuro);
-
-    border-top: 1px solid rgba(88,84,81,.16);
-}
-
-.bio-tierra-image {
-    height: 500px;
-}
-
-.bio-tierra-content {
-    padding:
-        30px
-        0;
-
-    justify-content: center;
-}
-
-.bio-tierra-content h2 {
-    margin:
-        20px
-        0
-        35px;
-}
-
-.bio-tierra-content p {
-    color: var(--gris-medio);
-}
-
-.bio-tierra-content .bio-section-label {
-    color: var(--terracota);
-}
-
-
-/* ==================================================
-   FINAL
-================================================== */
-
-.bio-final {
-    min-height: auto;
-
-    padding:
-        95px
-        clamp(35px, 10vw, 170px)
-        110px;
-
-    border-top: 1px solid rgba(88,84,81,.16);
-}
-
-.bio-final-year {
-    color: var(--terracota);
-}
-
-.bio-final-content h2 {
-    margin:
-        20px
-        0
-        35px;
-}
-
-.bio-final-content > p {
-    color: var(--gris-medio);
-}
-
-.bio-final-link {
-    margin-top: 35px;
-
-    color: var(--texto-oscuro);
-}
-
-
-/* ==================================================
-   PEQUEÑAS VARIACIONES PARA QUE NO SEA TODO PLANO
-================================================== */
-
-.bio-opening-image,
-.bio-photo-large,
-.bio-dual-image,
-.bio-theatre-image,
-.bio-photo-offset,
-.bio-grid-main,
-.bio-grid-small,
-.bio-tierra-image {
-    position: relative;
-}
-
-
-/* líneas editoriales muy sutiles */
-
-.bio-intro,
-.bio-dual,
-.bio-theatre,
-.bio-education,
-.bio-photo-grid,
-.bio-tierra,
-.bio-final {
-    position: relative;
-}
-
-
-/* ==================================================
-   MOBILE
-================================================== */
-
-@media (max-width: 760px) {
-
-    .bio-opening {
-        padding:
-            110px
-            25px
-            30px;
-    }
-
-    .bio-opening-title {
-        margin:
-            40px
-            0
-            25px;
-    }
-
-    .bio-opening-image {
-        height: 42vh;
-    }
-
-
-    .bio-intro {
-        padding:
-            60px
-            25px
-            70px;
+        margin-bottom: 22px;
     }
 
     .bio-intro h2 {
@@ -2387,102 +1069,199 @@ body {
             18px
             0
             28px;
+
+        font-size: 12.5vw;
+    }
+
+    .bio-text {
+        display: block;
+
+        max-width: 620px;
+    }
+
+    .bio-text p {
+        margin-bottom: 18px;
     }
 
 
-    .bio-photo-large {
-        width: calc(100% - 50px);
+    /* FOTO 02 */
 
-        height: 46vh;
+    .bio-photo-large {
+        width: calc(100% - 44px);
+
+        height: 42vh;
 
         margin:
             0
-            auto;
+            22px
+            50px;
     }
 
+
+    /* CONTRABAJO */
 
     .bio-dual {
         display: block;
 
         padding:
-            70px
-            25px
-            75px;
-
-        background: var(--crema);
+            60px
+            22px
+            65px;
     }
 
     .bio-dual-image {
-        height: 42vh;
+        height: 40vh;
 
-        margin-bottom: 45px;
+        margin-bottom: 35px;
     }
 
     .bio-dual-text {
         padding: 0;
+
+        max-width: 620px;
     }
 
     .bio-dual-text .bio-year {
-        margin-bottom: 28px;
+        margin-bottom: 22px;
+    }
+
+    .bio-dual-text h2 {
+        margin:
+            15px
+            0
+            25px;
+
+        font-size: 13vw;
     }
 
 
+    /* TEATRO */
+
     .bio-theatre {
         padding:
-            65px
-            25px
-            75px;
+            60px
+            22px
+            65px;
+    }
+
+    .bio-theatre-header {
+        display: block;
+    }
+
+    .bio-theatre-header .bio-section-label {
+        display: block;
+
+        margin-bottom: 20px;
+    }
+
+    .bio-theatre-header h2 {
+        font-size: 13vw;
     }
 
     .bio-theatre-content {
         margin-top: 35px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 0;
     }
 
     .bio-theatre-text {
-        margin-bottom: 35px;
+        max-width: 620px;
+
+        margin-bottom: 28px;
     }
 
     .bio-theatre-image {
-        height: 43vh;
-    }
+        width: 100%;
 
-
-    .bio-photo-offset {
-        width: calc(100% - 50px);
-
-        height: 46vh;
-
-        margin:
-            15px
-            25px
-            65px
-            auto;
-    }
-
-
-    .bio-education {
-        padding:
-            65px
-            25px
-            75px;
-    }
-
-
-    .bio-photo-grid {
-        padding:
-            55px
-            25px
-            70px;
-
-        gap: 15px;
-    }
-
-    .bio-grid-main {
         height: 42vh;
     }
 
+
+    /* FOTO ESCENA */
+
+    .bio-photo-offset {
+        width: calc(100% - 44px);
+
+        height: 43vh;
+
+        margin:
+            10px
+            22px
+            55px
+            auto;
+    }
+
+
+    /* DOCENCIA */
+
+    .bio-education {
+        padding:
+            60px
+            22px
+            65px;
+
+        display: block;
+    }
+
+    .bio-education-number {
+        margin-bottom: 22px;
+    }
+
+    .bio-education-content h2 {
+        margin:
+            18px
+            0
+            28px;
+
+        font-size: 12.5vw;
+    }
+
+    .bio-education-content .large-text {
+        margin-bottom: 18px;
+
+        font-size: 16px;
+    }
+
+
+    /* GALERÍA */
+
+    .bio-photo-grid {
+        min-height: auto;
+
+        padding:
+            45px
+            22px
+            60px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 14px;
+    }
+
+    .grid-label {
+        position: static;
+
+        order: -1;
+
+        margin-bottom: 8px;
+    }
+
+    .bio-grid-main {
+        width: 100%;
+
+        height: 40vh;
+    }
+
     .bio-grid-small {
-        height: 28vh;
+        width: 70%;
+
+        height: 27vh;
 
         margin:
             0
@@ -2491,36 +1270,66 @@ body {
             auto;
     }
 
+
+    /* TIERRA */
 
     .bio-tierra {
         display: block;
 
         padding:
-            70px
-            25px
-            75px;
-
-        background: var(--crema);
+            60px
+            22px
+            65px;
     }
 
     .bio-tierra-image {
-        height: 42vh;
+        height: 40vh;
 
-        margin-bottom: 45px;
+        margin-bottom: 35px;
     }
 
     .bio-tierra-content {
         padding: 0;
 
-        min-height: auto;
+        max-width: 620px;
+    }
+
+    .bio-tierra-content h2 {
+        margin:
+            18px
+            0
+            28px;
+
+        font-size: 14vw;
     }
 
 
+    /* FINAL */
+
     .bio-final {
         padding:
-            70px
-            25px
-            80px;
+            65px
+            22px
+            75px;
+
+        display: block;
+    }
+
+    .bio-final-year {
+        margin-bottom: 22px;
+    }
+
+    .bio-final-content h2 {
+        margin:
+            18px
+            0
+            28px;
+
+        font-size: 14vw;
+    }
+
+    .bio-final-link {
+        margin-top: 28px;
     }
 
 }
