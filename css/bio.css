@@ -1420,3 +1420,88 @@ body {
     }
 
 }
+/* ==================================================
+   BIO — FOTOS MUCHO MÁS CHICAS
+================================================== */
+
+@media (min-width: 761px) {
+
+    .bio-opening-image {
+        height: 280px;
+    }
+
+    .bio-photo-large {
+        width: 55%;
+        height: 260px;
+    }
+
+    .bio-dual-image {
+        height: 250px;
+    }
+
+    .bio-theatre-image {
+        height: 270px;
+    }
+
+    .bio-photo-offset {
+        width: 43%;
+        height: 250px;
+    }
+
+    .bio-grid-main {
+        height: 270px;
+    }
+
+    .bio-grid-small {
+        height: 185px;
+    }
+
+    .bio-tierra-image {
+        height: 260px;
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 760px) {
+
+    .bio-opening-image {
+        height: 25vh;
+    }
+
+    .bio-photo-large {
+        width: 72%;
+        height: 23vh;
+    }
+
+    .bio-dual-image {
+        height: 23vh;
+    }
+
+    .bio-theatre-image {
+        height: 24vh;
+    }
+
+    .bio-photo-offset {
+        width: 72%;
+        height: 23vh;
+    }
+
+    .bio-grid-main {
+        height: 24vh;
+    }
+
+    .bio-grid-small {
+        width: 58%;
+        height: 17vh;
+    }
+
+    .bio-tierra-image {
+        height: 23vh;
+    }
+
+}
