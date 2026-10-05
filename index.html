@@ -289,7 +289,30 @@
 
     <script src="js/main.js"></script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+    const popup = document.getElementById("shows-popup");
+    const closeButton = document.getElementById("shows-popup-close");
+
+    if (!popup || !closeButton) {
+        return;
+    }
+
+    closeButton.onclick = function () {
+        popup.style.display = "none";
+        popup.setAttribute("aria-hidden", "true");
+    };
+
+    popup.onclick = function (event) {
+        if (event.target === popup) {
+            popup.style.display = "none";
+            popup.setAttribute("aria-hidden", "true");
+        }
+    };
+
+});
+</script>
     <!-- ACCESIBILIDAD -->
 
     <script
