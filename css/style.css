@@ -1445,3 +1445,360 @@ body.home-page .site-footer {
     }
 
 }
+/* ==================================================
+   POPUP — FUNCIONES
+================================================== */
+
+.shows-popup {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px;
+
+    background: rgba(23, 21, 19, .28);
+
+    backdrop-filter: blur(4px);
+
+    animation: showsFadeIn .35s ease both;
+
+}
+
+
+.shows-popup-card {
+
+    position: relative;
+
+    width: min(470px, 100%);
+
+    padding:
+        36px
+        40px
+        30px;
+
+    background: var(--crema);
+
+    color: var(--texto-oscuro);
+
+    border:
+        1px solid
+        rgba(88, 84, 81, .18);
+
+    box-shadow:
+        0 20px 70px rgba(23, 21, 19, .18);
+
+    animation: showsCardIn .45s ease both;
+
+}
+
+
+/* ==================================================
+   CERRAR
+================================================== */
+
+.shows-popup-close {
+
+    position: absolute;
+
+    top: 14px;
+    right: 17px;
+
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+
+    background: transparent;
+
+    color: var(--gris-medio);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 23px;
+
+    font-weight: 300;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        color .25s ease,
+        transform .25s ease;
+
+}
+
+
+.shows-popup-close:hover {
+
+    color: var(--terracota);
+
+    transform: rotate(90deg);
+
+}
+
+
+/* ==================================================
+   TÍTULO
+================================================== */
+
+.shows-popup-kicker {
+
+    margin-bottom: 8px;
+
+    font-family: var(--sans);
+
+    font-size: 8px;
+
+    font-weight: 400;
+
+    letter-spacing: .2em;
+
+    color: var(--terracota);
+
+}
+
+
+.shows-popup-card h2 {
+
+    margin: 0 0 25px;
+
+    font-family: var(--sans);
+
+    font-size: 42px;
+
+    font-weight: 300;
+
+    line-height: .9;
+
+    letter-spacing: -.05em;
+
+}
+
+
+.shows-popup-card h2 em {
+
+    font-family: var(--serif);
+
+    font-style: italic;
+
+    font-weight: 400;
+
+}
+
+
+/* ==================================================
+   LISTADO
+================================================== */
+
+.shows-list {
+
+    border-top: 1px solid rgba(88, 84, 81, .15);
+
+}
+
+
+.show-item {
+
+    display: grid;
+
+    grid-template-columns: 75px 1fr;
+
+    gap: 18px;
+
+    padding: 17px 0;
+
+    border-bottom: 1px solid rgba(88, 84, 81, .15);
+
+}
+
+
+.show-date {
+
+    padding-top: 2px;
+
+    font-family: var(--sans);
+
+    font-size: 9px;
+
+    font-weight: 400;
+
+    letter-spacing: .12em;
+
+    color: var(--terracota);
+
+}
+
+
+.show-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+
+.show-info strong {
+
+    font-family: var(--sans);
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    color: var(--texto-oscuro);
+
+}
+
+
+.show-info span {
+
+    font-family: var(--sans);
+
+    font-size: 9px;
+
+    line-height: 1.45;
+
+    color: var(--gris-medio);
+
+}
+
+
+/* ==================================================
+   PIE
+================================================== */
+
+.shows-popup-footer {
+
+    padding-top: 18px;
+
+    font-family: var(--sans);
+
+    font-size: 7px;
+
+    letter-spacing: .18em;
+
+    color: var(--gris-claro);
+
+}
+
+
+/* ==================================================
+   ANIMACIONES
+================================================== */
+
+@keyframes showsFadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes showsCardIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(10px)
+            scale(.98);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 760px) {
+
+    .shows-popup {
+
+        padding: 18px;
+
+    }
+
+
+    .shows-popup-card {
+
+        padding:
+            30px
+            25px
+            25px;
+
+    }
+
+
+    .shows-popup-card h2 {
+
+        font-size: 36px;
+
+        margin-bottom: 22px;
+
+    }
+
+
+    .show-item {
+
+        grid-template-columns: 65px 1fr;
+
+        gap: 12px;
+
+        padding: 15px 0;
+
+    }
+
+
+    .show-date {
+
+        font-size: 8px;
+
+    }
+
+
+    .show-info strong {
+
+        font-size: 10px;
+
+    }
+
+
+    .show-info span {
+
+        font-size: 8px;
+
+    }
+
+}
