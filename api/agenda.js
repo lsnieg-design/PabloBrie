@@ -5,7 +5,7 @@ const API_VERSION = "2022-11-28";
 const FILE_PATH = "data/funciones.json";
 
 function send(res, status, payload) {
-    return res.status(status).json(payload);
+    return res.status(status).json(payload); 
 }
 
 function passwordMatches(candidate, expected) {
