@@ -96,6 +96,18 @@ function normalizeFunctions(input) {
 }
 
 module.exports = async function handler(req, res) {
+        if (req.method === "GET") {
+        return res.status(200).json({
+            diagnostic: "Agenda API",
+            variables: {
+                AGENDA_ADMIN_PASSWORD: !!process.env.AGENDA_ADMIN_PASSWORD,
+                GITHUB_TOKEN: !!process.env.GITHUB_TOKEN,
+                GITHUB_OWNER: !!process.env.GITHUB_OWNER,
+                GITHUB_REPO: !!process.env.GITHUB_REPO,
+                GITHUB_BRANCH: !!process.env.GITHUB_BRANCH
+            }
+        });
+    }
 
     if (req.method !== "POST") {
         res.setHeader("Allow", "POST");
