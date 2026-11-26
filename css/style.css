@@ -1802,3 +1802,42 @@ body.home-page .site-footer {
     }
 
 }
+
+
+/* ==================================================
+   AGENDA DINÁMICA — VISIBILIDAD Y ENTRADAS
+================================================== */
+
+.shows-popup {
+    display: none;
+}
+
+.shows-popup.is-visible {
+    display: flex;
+}
+
+.show-ticket-link {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin-top: 7px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid var(--terracota);
+    color: var(--terracota);
+    font-family: var(--sans);
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: .12em;
+    transition: color .2s ease, border-color .2s ease;
+}
+
+.show-ticket-link:hover {
+    color: var(--rojo-tierra);
+    border-color: var(--rojo-tierra);
+}
+
+@media (max-width: 760px) {
+    .show-ticket-link {
+        font-size: 8px;
+    }
+}
