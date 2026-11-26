@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "date": "2027-02-01",
+    "time": "19:00",
+    "city": "hgfhg",
+    "venue": "hio",
+    "ticketUrl": "",
+    "visible": true
+  }
+]
