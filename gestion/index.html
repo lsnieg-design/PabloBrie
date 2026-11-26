@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="Administración privada de próximas funciones de Pablo Brie.">
+    <title>Agenda | Pablo Brie</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root{--bg:#252321;--panel:#302d2a;--panel2:#393530;--cream:#f0e9e1;--white:#f7f4ef;--muted:#c9c2bb;--gold:#c6a35a;--terra:#b85b3c;--line:rgba(240,233,225,.14)}
+        *{box-sizing:border-box}
+        body{margin:0;min-height:100vh;background:var(--bg);color:var(--cream);font-family:Montserrat,Arial,sans-serif;font-weight:300}
+        .wrap{width:min(920px,calc(100% - 32px));margin:0 auto;padding:42px 0 70px}
+        header{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+        .eyebrow{font-size:9px;letter-spacing:.22em;color:var(--gold);font-weight:500}
+        h1{font:italic 42px/1 "Cormorant Garamond",Georgia,serif;margin:8px 0 0;color:var(--white)}
+        .subtitle{font-size:10px;letter-spacing:.12em;color:var(--muted);margin-top:9px}
+        .login,.editor{width:min(100%,680px);margin:46px auto 0}
+        .panel{background:var(--panel);border:1px solid var(--line);padding:28px}
+        h2{font-size:12px;font-weight:500;letter-spacing:.16em;margin:0 0 20px}
+        label{display:block;font-size:9px;letter-spacing:.12em;color:var(--muted);margin:0 0 7px;text-transform:uppercase}
+        input{width:100%;min-width:0;border:1px solid rgba(240,233,225,.18);border-radius:0;background:#252321;color:var(--white);padding:12px 13px;font:12px Montserrat,Arial,sans-serif;outline:none}
+        input:focus{border-color:var(--gold)}
+        input[type=checkbox]{width:16px;height:16px;accent-color:var(--gold)}
+        .field{min-width:0}
+        .grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+        .full{grid-column:1/-1}
+        .btn{border:0;padding:13px 18px;background:var(--gold);color:#211e1a;font:600 9px Montserrat,Arial,sans-serif;letter-spacing:.14em;cursor:pointer}
+        .btn:hover{filter:brightness(1.08)}
+        .btn.secondary{background:transparent;color:var(--cream);border:1px solid var(--line)}
+        .btn.danger{background:transparent;color:#e2a08d;border:1px solid rgba(184,91,60,.5)}
+        .toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
+        .toolbar p{font-size:10px;color:var(--muted);line-height:1.6;margin:0}
+        .event-card{background:var(--panel2);border:1px solid var(--line);padding:20px;margin:14px 0}
+        .event-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:18px}
+        .event-number{font-size:9px;letter-spacing:.16em;color:var(--gold)}
+        .visibility{display:flex;align-items:center;gap:8px;font-size:9px;color:var(--muted);text-transform:none;letter-spacing:0;margin:0}
+        .visibility input{width:auto}
+        .event-fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+        .event-fields .field.full{grid-column:1/-1}
+        .event-actions{display:flex;justify-content:flex-end;margin-top:16px}
+        .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+        .status{min-height:18px;margin:15px 0 0;font-size:10px;line-height:1.5;color:var(--muted)}
+        .status.error{color:#efa58f}.status.success{color:#b9d5b3}
+        .empty{border:1px dashed var(--line);padding:28px;text-align:center;color:var(--muted);font-size:11px;line-height:1.7}
+        .hidden{display:none!important}
+        .top-actions{display:flex;gap:9px;align-items:center}
+        .foot{margin-top:26px;text-align:center;color:#9b938b;font-size:8px;letter-spacing:.14em}
+        @media(max-width:600px){.wrap{padding-top:28px}.panel{padding:20px}.grid,.event-fields{grid-template-columns:1fr}.full,.event-fields .field.full{grid-column:auto}h1{font-size:36px}.toolbar{align-items:flex-start;flex-direction:column}.top-actions{width:100%}.top-actions .btn{flex:1}}
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <header>
+        <div>
+            <div class="eyebrow">PANEL PRIVADO · NÓMADE</div>
+            <h1>Pablo Brie</h1>
+            <div class="subtitle">GESTIÓN DE PRÓXIMAS FUNCIONES</div>
+        </div>
+        <div class="top-actions">
+            <a class="btn secondary" href="/" target="_blank" rel="noopener">VER WEB ↗</a>
+        </div>
+    </header>
+
+    <section class="login" id="login-panel">
+        <div class="panel">
+            <h2>INGRESAR A LA AGENDA</h2>
+            <div class="field">
+                <label for="password">Contraseña</label>
+                <input id="password" type="password" autocomplete="current-password" placeholder="Ingresá tu contraseña">
+            </div>
+            <div class="actions">
+                <button class="btn" id="login-button" type="button">INGRESAR</button>
+            </div>
+            <p class="status" id="login-status" role="status"></p>
+        </div>
+    </section>
+
+    <section class="editor hidden" id="editor-panel">
+        <div class="toolbar">
+            <p>Agregá, modificá o quitá funciones.<br>Los cambios se publican en la web al guardarlos.</p>
+            <div class="top-actions">
+                <button class="btn secondary" id="logout-button" type="button">CERRAR SESIÓN</button>
+            </div>
+        </div>
+        <div id="events-list"></div>
+        <div class="actions">
+            <button class="btn secondary" id="add-button" type="button">+ AGREGAR FUNCIÓN</button>
+            <button class="btn" id="save-button" type="button">GUARDAR CAMBIOS</button>
+        </div>
+        <p class="status" id="editor-status" role="status"></p>
+    </section>
+
+    <div class="foot">PABLO BRIE · MÚSICA · TEATRO · EXPERIENCIAS</div>
+</div>
+
+<script>
+(() => {
+    const loginPanel = document.getElementById("login-panel");
+    const editorPanel = document.getElementById("editor-panel");
+    const passwordInput = document.getElementById("password");
+    const loginStatus = document.getElementById("login-status");
+    const editorStatus = document.getElementById("editor-status");
+    const eventsList = document.getElementById("events-list");
+    let password = "";
+    let functions = [];
+
+    const escapeHTML = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
+    }[char]));
+
+    function setStatus(element, message, type = "") {
+        element.textContent = message;
+        element.className = "status" + (type ? " " + type : "");
+    }
+
+    async function request(payload) {
+        const response = await fetch("/api/agenda", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ ...payload, password })
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(result.error || "No se pudo completar la operación.");
+        return result;
+    }
+
+    function render() {
+        if (!functions.length) {
+            eventsList.innerHTML = '<div class="empty">Todavía no hay funciones cargadas.<br>Usá “Agregar función” para crear la primera.</div>';
+            return;
+        }
+
+        eventsList.innerHTML = functions.map((item, index) => `
+            <article class="event-card" data-index="${index}">
+                <div class="event-top">
+                    <span class="event-number">FUNCIÓN ${String(index + 1).padStart(2, "0")}</span>
+                    <label class="visibility"><input class="visible" type="checkbox" ${item.visible !== false ? "checked" : ""}> Mostrar en la web</label>
+                </div>
+                <div class="event-fields">
+                    <div class="field">
+                        <label>Fecha</label>
+                        <input class="date" type="date" value="${escapeHTML(item.date)}" required>
+                    </div>
+                    <div class="field">
+                        <label>Hora (opcional)</label>
+                        <input class="time" type="text" value="${escapeHTML(item.time)}" placeholder="20:00">
+                    </div>
+                    <div class="field">
+                        <label>Ciudad y país</label>
+                        <input class="city" type="text" value="${escapeHTML(item.city)}" placeholder="Sucre, Bolivia" required>
+                    </div>
+                    <div class="field">
+                        <label>Lugar</label>
+                        <input class="venue" type="text" value="${escapeHTML(item.venue)}" placeholder="Nombre del espacio" required>
+                    </div>
+                    <div class="field full">
+                        <label>Link para comprar entradas (opcional)</label>
+                        <input class="ticket" type="url" value="${escapeHTML(item.ticketUrl)}" placeholder="https://...">
+                    </div>
+                </div>
+                <div class="event-actions">
+                    <button class="btn danger delete-button" type="button">ELIMINAR FUNCIÓN</button>
+                </div>
+            </article>
+        `).join("");
+    }
+
+    function readForm() {
+        return [...eventsList.querySelectorAll(".event-card")].map((card) => ({
+            date: card.querySelector(".date").value,
+            time: card.querySelector(".time").value.trim(),
+            city: card.querySelector(".city").value.trim(),
+            venue: card.querySelector(".venue").value.trim(),
+            ticketUrl: card.querySelector(".ticket").value.trim(),
+            visible: card.querySelector(".visible").checked
+        }));
+    }
+
+    document.getElementById("login-button").addEventListener("click", async () => {
+        password = passwordInput.value;
+        if (!password) {
+            setStatus(loginStatus, "Ingresá la contraseña para continuar.", "error");
+            return;
+        }
+        const button = document.getElementById("login-button");
+        button.disabled = true;
+        button.textContent = "INGRESANDO...";
+        setStatus(loginStatus, "Verificando acceso...");
+        try {
+            const result = await request({ action: "login" });
+            functions = Array.isArray(result.functions) ? result.functions : [];
+            loginPanel.classList.add("hidden");
+            editorPanel.classList.remove("hidden");
+            render();
+            setStatus(editorStatus, "Agenda cargada. Recordá guardar los cambios.", "success");
+        } catch (error) {
+            password = "";
+            passwordInput.value = "";
+            setStatus(loginStatus, error.message, "error");
+        } finally {
+            button.disabled = false;
+            button.textContent = "INGRESAR";
+        }
+    });
+
+    passwordInput.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") document.getElementById("login-button").click();
+    });
+
+    document.getElementById("add-button").addEventListener("click", () => {
+        functions = readForm();
+        functions.push({ date: "", time: "", city: "", venue: "", ticketUrl: "", visible: true });
+        render();
+        setStatus(editorStatus, "Completá los datos de la nueva función y guardá los cambios.");
+        eventsList.lastElementChild?.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+
+    eventsList.addEventListener("click", (event) => {
+        const button = event.target.closest(".delete-button");
+        if (!button) return;
+        const card = button.closest(".event-card");
+        const index = Number(card.dataset.index);
+        functions = readForm();
+        functions.splice(index, 1);
+        render();
+        setStatus(editorStatus, "Función quitada del listado. Guardá los cambios para publicarlo.");
+    });
+
+    document.getElementById("save-button").addEventListener("click", async () => {
+        functions = readForm();
+        const button = document.getElementById("save-button");
+        button.disabled = true;
+        button.textContent = "GUARDANDO...";
+        setStatus(editorStatus, "Guardando la agenda en GitHub...");
+        try {
+            const result = await request({ action: "save", functions });
+            setStatus(editorStatus, result.message || "Agenda guardada correctamente.", "success");
+        } catch (error) {
+            setStatus(editorStatus, error.message, "error");
+        } finally {
+            button.disabled = false;
+            button.textContent = "GUARDAR CAMBIOS";
+        }
+    });
+
+    document.getElementById("logout-button").addEventListener("click", () => {
+        password = "";
+        functions = [];
+        passwordInput.value = "";
+        editorPanel.classList.add("hidden");
+        loginPanel.classList.remove("hidden");
+        setStatus(loginStatus, "Sesión cerrada.");
+    });
+})();
+</script>
+</body>
+</html>
