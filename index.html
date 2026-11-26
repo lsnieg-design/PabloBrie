@@ -289,30 +289,7 @@
 
     <script src="js/main.js"></script>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
 
-    const popup = document.getElementById("shows-popup");
-    const closeButton = document.getElementById("shows-popup-close");
-
-    if (!popup || !closeButton) {
-        return;
-    }
-
-    closeButton.onclick = function () {
-        popup.style.display = "none";
-        popup.setAttribute("aria-hidden", "true");
-    };
-
-    popup.onclick = function (event) {
-        if (event.target === popup) {
-            popup.style.display = "none";
-            popup.setAttribute("aria-hidden", "true");
-        }
-    };
-
-});
-</script>
     <!-- ACCESIBILIDAD -->
 
     <script
@@ -321,111 +298,34 @@ document.addEventListener("DOMContentLoaded", function () {
         use-important="false"
     ></script>
 <!-- ==================================================
-     POPUP — FUNCIONES
+     POPUP — FUNCIONES DINÁMICAS
 ================================================== -->
 
 <div
     class="shows-popup"
     id="shows-popup"
-    aria-hidden="false"
+    aria-hidden="true"
 >
-
-    <div class="shows-popup-card">
-
+    <div class="shows-popup-card" role="dialog" aria-modal="true" aria-labelledby="shows-popup-title">
         <button
             class="shows-popup-close"
             id="shows-popup-close"
             type="button"
             aria-label="Cerrar próximas funciones"
-        >
-            ×
-        </button>
+        >×</button>
 
+        <div class="shows-popup-kicker">PRÓXIMAS FUNCIONES</div>
 
-        <div class="shows-popup-kicker">
-            PRÓXIMAS FUNCIONES
-        </div>
+        <h2 id="shows-popup-title">Pablo <em>Brie</em></h2>
 
+        <div class="shows-list" id="shows-list"></div>
 
-        <h2>
-            Pablo <em>Brie</em>
-        </h2>
-
-
-        <div class="shows-list">
-
-            <div class="show-item">
-
-                <div class="show-date">
-                    30 SEPT
-                </div>
-
-                <div class="show-info">
-
-                    <strong>
-                        Sucre, Bolivia
-                    </strong>
-
-                    <span>
-                        Centro Cultural Tanga Tanga
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div class="show-item">
-
-                <div class="show-date">
-                    02 OCT
-                </div>
-
-                <div class="show-info">
-
-                    <strong>
-                        Cochabamba, Bolivia
-                    </strong>
-
-                    <span>
-                        Palacio Patiño
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div class="show-item">
-
-                <div class="show-date">
-                    11 OCT
-                </div>
-
-                <div class="show-info">
-
-                    <strong>
-                        Morón, Pcia. Bs. As.
-                    </strong>
-
-                    <span>
-                        Sociedad Italiana de Morón
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="shows-popup-footer">
-            MÚSICA · TEATRO · ENCUENTRO
-        </div>
-
+        <div class="shows-popup-footer">MÚSICA · TEATRO · ENCUENTRO</div>
     </div>
-
 </div>
+
+<script src="js/agenda.js"></script>
+
 </body>
 
 </html>
