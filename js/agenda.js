@@ -1,7 +1,3 @@
-/* ==================================================
-   PABLO BRIE — AGENDA PÚBLICA
-   Lee las funciones publicadas en data/funciones.json
-================================================== */
 
 document.addEventListener("DOMContentLoaded", async () => {
     const popup = document.getElementById("shows-popup");
@@ -10,39 +6,33 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (!popup || !list || !closeButton) return;
 
-    const closePopup = () => {
-        popup.classList.remove("is-visible");
-        popup.setAttribute("aria-hidden", "true");
-    };
+    // Formatear fecha sin problemas de zona horaria
+    function formatDate(dateString) {
+        const [year, month, day] = dateString.split("-");
+        const date = new Date(Number(year), Number(month) - 1, Number(day));
 
-    closeButton.addEventListener("click", closePopup);
+        return {
+            day: date.toLocaleDateString("es-AR", { day: "2-digit" }),
+            month: date.toLocaleDateString("es-AR", { month: "short" }).replace(".", "").toUpperCase(),
+            full: date.toLocaleDateString("es-AR", {
+                weekday: "long",
+                day: "numeric",
+                month: "long"
+            })
+        };
+    }
 
-    popup.addEventListener("click", (event) => {
-        if (event.target === popup) closePopup();
-    });
+    function escapeHTML(value = "") {
+        return String(value).replace(/[&<>"']/g, char => ({
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#039;"
+        })[char]);
+    }
 
-    document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && popup.classList.contains("is-visible")) {
-            closePopup();
-        }
-    });
-
-    const escapeHTML = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({
-        "&": "&amp;",
-        "<": "&lt;",
-        ">": "&gt;",
-        '"': "&quot;",
-        "'": "&#039;"
-    }[char]));
-
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    const todayKey = [
-        today.getFullYear(),
-        String(today.getMonth() + 1).padStart(2, "0"),
-        String(today.getDate()).padStart(2, "0")
-    ].join("-");
-
+    // Cargar agenda
     try {
         const response = await fetch(`/data/funciones.json?v=${Date.now()}`, {
             cache: "no-store"
@@ -53,43 +43,112 @@ document.addEventListener("DOMContentLoaded", async () => {
         const functions = await response.json();
         if (!Array.isArray(functions)) return;
 
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const todayKey = [
+            today.getFullYear(),
+            String(today.getMonth() + 1).padStart(2, "0"),
+            String(today.getDate()).padStart(2, "0")
+        ].join("-");
+
         const upcoming = functions
-            .filter((item) => item && item.visible !== false && item.date && item.date >= todayKey)
+            .filter(item =>
+                item &&
+                item.visible !== false &&
+                item.date &&
+                item.date >= todayKey
+            )
             .sort((a, b) => a.date.localeCompare(b.date));
 
         if (!upcoming.length) return;
 
-        list.innerHTML = upcoming.map((item) => {
-            const date = new Date(`${item.date}T12:00:00`);
-            const dateLabel = new Intl.DateTimeFormat("es-AR", {
-                day: "2-digit",
-                month: "short"
-            }).format(date).replace(".", "").toUpperCase();
+        // Crear contenido del popup
+        list.innerHTML = upcoming.map(show => {
+            const date = formatDate(show.date);
 
-            const city = escapeHTML(item.city);
-            const venue = escapeHTML(item.venue);
-            const time = item.time ? ` · ${escapeHTML(item.time)} hs` : "";
-            const ticketUrl = typeof item.ticketUrl === "string" ? item.ticketUrl.trim() : "";
-            const safeTicketUrl = /^https?:\/\/\S+$/i.test(ticketUrl) ? escapeHTML(ticketUrl) : "";
+            const ticket = show.ticketUrl
+                ? `<a class="show-ticket-link" href="${escapeHTML(show.ticketUrl)}" target="_blank" rel="noopener noreferrer">RESERVAR / ENTRADAS ↗</a>`
+                : "";
 
             return `
                 <article class="show-item">
-                    <div class="show-date">${dateLabel}</div>
+                    <div class="show-date">
+                        ${date.day}<br>${date.month}
+                    </div>
                     <div class="show-info">
-                        <strong>${city}${time}</strong>
-                        <span>${venue}</span>
-                        ${safeTicketUrl ? `<a class="show-ticket-link" href="${safeTicketUrl}" target="_blank" rel="noopener noreferrer">COMPRAR ENTRADAS ↗</a>` : ""}
+                        <strong>${escapeHTML(show.city)}</strong>
+                        <span>${escapeHTML(show.venue)}</span>
+                        <span>${escapeHTML(show.time)} hs · ${date.full}</span>
+                        ${ticket}
                     </div>
                 </article>
             `;
         }).join("");
 
-        window.setTimeout(() => {
+        // Crear tarjeta pequeña automáticamente
+        const miniCard = document.createElement("button");
+        miniCard.type = "button";
+        miniCard.id = "shows-mini-card";
+        miniCard.className = "shows-mini-card";
+        miniCard.setAttribute("aria-label", "Ver próximas funciones");
+
+        const next = upcoming[0];
+        const nextDate = formatDate(next.date);
+
+        miniCard.innerHTML = `
+            <span class="mini-kicker">PRÓXIMA FUNCIÓN</span>
+            <span class="mini-content">
+                <span class="mini-date">
+                    <strong>${nextDate.day}</strong>
+                    <small>${nextDate.month}</small>
+                </span>
+                <span class="mini-info">
+                    <strong>${escapeHTML(next.city)}</strong>
+                    <small>${escapeHTML(next.venue)}</small>
+                    <small>${escapeHTML(next.time)} hs</small>
+                </span>
+            </span>
+            <span class="mini-link">VER AGENDA ↗</span>
+        `;
+
+        document.body.appendChild(miniCard);
+
+        // Abrir popup
+        function openPopup() {
             popup.classList.add("is-visible");
             popup.setAttribute("aria-hidden", "false");
-        }, 15000);
+            miniCard.classList.remove("is-visible");
+        }
+
+        // Cerrar popup y mostrar tarjeta pequeña
+        function closePopup() {
+            popup.classList.remove("is-visible");
+            popup.setAttribute("aria-hidden", "true");
+
+            miniCard.classList.add("is-visible");
+        }
+
+        closeButton.addEventListener("click", closePopup);
+
+        miniCard.addEventListener("click", openPopup);
+
+        popup.addEventListener("click", event => {
+            if (event.target === popup) {
+                closePopup();
+            }
+        });
+
+        document.addEventListener("keydown", event => {
+            if (event.key === "Escape" && popup.classList.contains("is-visible")) {
+                closePopup();
+            }
+        });
+
+        // Mostrar popup a los 5 segundos
+        window.setTimeout(openPopup, 5000);
 
     } catch (error) {
-        console.error("No se pudo cargar la agenda de próximas funciones.", error);
+        console.error("No se pudo cargar la agenda:", error);
     }
 });
