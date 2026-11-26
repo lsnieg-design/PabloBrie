@@ -1,19 +1,23 @@
+
 const crypto = require("crypto");
 
 const API_VERSION = "2022-11-28";
 const FILE_PATH = "data/funciones.json";
 
 function send(res, status, payload) {
-    res.status(status).json(payload);
+    return res.status(status).json(payload);
 }
 
 function passwordMatches(candidate, expected) {
     if (typeof candidate !== "string" || typeof expected !== "string" || !expected) {
         return false;
     }
+
     const a = Buffer.from(candidate);
     const b = Buffer.from(expected);
-    return a.length === b.length && crypto.timingSafeEqual(a, b);
+
+    return a.length === b.length &&
+        crypto.timingSafeEqual(a, b);
 }
 
 function githubHeaders(token) {
@@ -27,15 +31,24 @@ function githubHeaders(token) {
 
 async function getAgendaFile({ owner, repo, branch, token }) {
     const url = `https://api.github.com/repos/${owner}/${repo}/contents/${FILE_PATH}?ref=${encodeURIComponent(branch)}`;
-    const response = await fetch(url, { headers: githubHeaders(token) });
+
+    const response = await fetch(url, {
+        headers: githubHeaders(token)
+    });
 
     if (!response.ok) {
         const details = await response.text();
-        throw new Error(`GitHub no pudo leer la agenda (${response.status}): ${details.slice(0, 300)}`);
+        throw new Error(
+            `GitHub no pudo leer la agenda (${response.status}): ${details.slice(0, 300)}`
+        );
     }
 
     const file = await response.json();
-    const decoded = Buffer.from(file.content.replace(/\n/g, ""), "base64").toString("utf8");
+
+    const decoded = Buffer.from(
+        file.content.replace(/\n/g, ""),
+        "base64"
+    ).toString("utf8");
 
     return {
         sha: file.sha,
@@ -47,6 +60,7 @@ function normalizeFunctions(input) {
     if (!Array.isArray(input)) {
         throw new Error("La agenda debe ser una lista de funciones.");
     }
+
     if (input.length > 100) {
         throw new Error("Podés cargar hasta 100 funciones.");
     }
@@ -61,9 +75,11 @@ function normalizeFunctions(input) {
         if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
             throw new Error(`Revisá la fecha de la función ${index + 1}.`);
         }
+
         if (!city || !venue) {
             throw new Error(`Completá ciudad y lugar en la función ${index + 1}.`);
         }
+
         if (ticketUrl && !/^https?:\/\/\S+$/i.test(ticketUrl)) {
             throw new Error(`El enlace de entradas de la función ${index + 1} no es válido.`);
         }
@@ -80,9 +96,12 @@ function normalizeFunctions(input) {
 }
 
 module.exports = async function handler(req, res) {
+
     if (req.method !== "POST") {
         res.setHeader("Allow", "POST");
-        return send(res, 405, { error: "Método no permitido." });
+        return send(res, 405, {
+            error: "Método no permitido."
+        });
     }
 
     const {
@@ -93,15 +112,28 @@ module.exports = async function handler(req, res) {
         GITHUB_BRANCH = "main"
     } = process.env;
 
-    if (!AGENDA_ADMIN_PASSWORD || !GITHUB_TOKEN || !GITHUB_OWNER || !GITHUB_REPO) {
+    // DIAGNÓSTICO DE VARIABLES
+    const missing = [];
+
+    if (!AGENDA_ADMIN_PASSWORD) missing.push("AGENDA_ADMIN_PASSWORD");
+    if (!GITHUB_TOKEN) missing.push("GITHUB_TOKEN");
+    if (!GITHUB_OWNER) missing.push("GITHUB_OWNER");
+    if (!GITHUB_REPO) missing.push("GITHUB_REPO");
+
+    if (missing.length > 0) {
+        console.error("Variables faltantes:", missing);
+
         return send(res, 500, {
-            error: "Falta configurar alguna variable de entorno de la agenda en Vercel."
+            error: "Variables no disponibles: " + missing.join(", ")
         });
     }
 
     const body = req.body || {};
+
     if (!passwordMatches(body.password, AGENDA_ADMIN_PASSWORD)) {
-        return send(res, 401, { error: "Contraseña incorrecta." });
+        return send(res, 401, {
+            error: "Contraseña incorrecta."
+        });
     }
 
     const github = {
@@ -112,19 +144,29 @@ module.exports = async function handler(req, res) {
     };
 
     try {
+
         if (body.action === "login") {
             const file = await getAgendaFile(github);
-            return send(res, 200, { ok: true, functions: file.functions });
+
+            return send(res, 200, {
+                ok: true,
+                functions: file.functions
+            });
         }
 
         if (body.action === "save") {
+
             const functions = normalizeFunctions(body.functions);
 
-            // Leer el SHA actual inmediatamente antes de actualizar el archivo.
             const current = await getAgendaFile(github);
-            const content = Buffer.from(`${JSON.stringify(functions, null, 2)}\n`, "utf8").toString("base64");
+
+            const content = Buffer.from(
+                `${JSON.stringify(functions, null, 2)}\n`,
+                "utf8"
+            ).toString("base64");
 
             const url = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${FILE_PATH}`;
+
             const response = await fetch(url, {
                 method: "PUT",
                 headers: {
@@ -141,7 +183,10 @@ module.exports = async function handler(req, res) {
 
             if (!response.ok) {
                 const details = await response.text();
-                throw new Error(`GitHub no pudo guardar los cambios (${response.status}): ${details.slice(0, 300)}`);
+
+                throw new Error(
+                    `GitHub no pudo guardar los cambios (${response.status}): ${details.slice(0, 300)}`
+                );
             }
 
             return send(res, 200, {
@@ -150,9 +195,16 @@ module.exports = async function handler(req, res) {
             });
         }
 
-        return send(res, 400, { error: "Acción no reconocida." });
+        return send(res, 400, {
+            error: "Acción no reconocida."
+        });
+
     } catch (error) {
+
         console.error("Error en API de agenda:", error);
-        return send(res, 500, { error: error.message || "No se pudo procesar la agenda." });
+
+        return send(res, 500, {
+            error: error.message || "No se pudo procesar la agenda."
+        });
     }
 };
